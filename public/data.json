@@ -1,0 +1,891 @@
+{
+  "PROJECT": {
+    "name": "Project 1: Muscle Class Trend Board redesign (new version)",
+    "sprint": "PI 1 proposed · Sprint 0 Active (Oct 29 – Nov 1)",
+    "sprintGoal": "Kick off Project 1, agree roles, approve the charter, set cadence and demo gate",
+    "phase": 1,
+    "stepsDone": 2,
+    "stepsTotal": 3,
+    "stepNote": "Charter revised for per-sprint demos; approval pending",
+    "demoDates": "Tentative demos: Nov 12, Nov 25, Dec 10, Dec 23, Jan 7",
+    "waitingOnMichael": true
+  },
+  "BOARD": {
+    "asOf": "Thu Oct 29, 2026, 5:28 PM CT",
+    "sprintGoal": "Sprint 0: Kick off Project 1, agree roles and working agreement, approve the charter, set cadence and demo gate",
+    "waitingOnMichael": "Waiting on Michael: charter approval",
+    "cards": [
+      {
+        "title": "PO: decisions needed from Michael on P1 (daily refresh, saved marks, images)",
+        "short": "Decisions for Michael",
+        "status": "Backlog",
+        "role": "po",
+        "sprint": "Sprint 0"
+      },
+      {
+        "title": "IMPEDIMENT: no GitHub login on the box (Pym) - proposal: Page only, no repo for v1, awaiting Michael (charter decision 4)",
+        "short": "No GitHub login",
+        "status": "In review",
+        "role": "pm",
+        "sprint": "Sprint 0"
+      },
+      {
+        "title": "Project Charter P1: waiting on Michael's approval (Pym)",
+        "short": "Charter approval",
+        "status": "In review",
+        "role": "pm",
+        "sprint": "Sprint 0"
+      },
+      {
+        "title": "QA: baseline of current Trend Board, DoD and test approach (P1)",
+        "short": "QA baseline + DoD",
+        "status": "In review",
+        "role": "qa",
+        "sprint": "Sprint 0"
+      },
+      {
+        "title": "P1 Spike: technical review of current Trend Board (Dez)",
+        "short": "Tech review spike",
+        "status": "In review",
+        "role": "dev",
+        "sprint": "Sprint 0"
+      },
+      {
+        "title": "Designer: review current Trend Board page and send findings for charter",
+        "short": "Design review",
+        "status": "In review",
+        "role": "ds",
+        "sprint": "Sprint 0"
+      },
+      {
+        "title": "PI 1 planning (short version) and Sprint 1 planning facilitation (Anj)",
+        "short": "PI 1 + Sprint 1 plan",
+        "status": "Ready",
+        "role": "sm",
+        "sprint": "PI 1 Sprint 1 (proposed)"
+      },
+      {
+        "title": "Add Retro Actions database and PI/sprint linkage to HQ (Anj)",
+        "short": "Retro Actions DB",
+        "status": "Backlog",
+        "role": "sm",
+        "sprint": ""
+      },
+      {
+        "title": "PO: score the P1 Program Backlog items with WSJF",
+        "short": "WSJF scoring",
+        "status": "Backlog",
+        "role": "po",
+        "sprint": ""
+      },
+      {
+        "title": "PO: v2 design brief with Bruce",
+        "short": "v2 design brief",
+        "status": "Backlog",
+        "role": "po",
+        "sprint": ""
+      },
+      {
+        "title": "PO: Sprint 1 demo script",
+        "short": "Sprint 1 demo script",
+        "status": "Backlog",
+        "role": "po",
+        "sprint": ""
+      },
+      {
+        "title": "PO: refine S1-S16 with Bruce, Dez and Kourt (design, size, test notes)",
+        "short": "Refine S1-S16",
+        "status": "Backlog",
+        "role": "po",
+        "sprint": ""
+      },
+      {
+        "title": "S1 Spike: confirm which Page components and features are available for the redesign",
+        "short": "S1 Components spike",
+        "status": "Backlog",
+        "role": "dev",
+        "sprint": ""
+      },
+      {
+        "title": "S2 As Michael, I want the redesign as a new separate Page so I can compare old and new side by side",
+        "short": "S2 New separate Page",
+        "status": "Backlog",
+        "role": "dev",
+        "sprint": ""
+      },
+      {
+        "title": "S3 As Michael, I want all 17 fitness and 18 beyond-fitness trends on the new page with every field",
+        "short": "S3 All 35 trends",
+        "status": "Backlog",
+        "role": "dev",
+        "sprint": ""
+      },
+      {
+        "title": "S4 As Michael, I want the intro, Avoid list, sources and updated stamp carried over",
+        "short": "S4 Carry over content",
+        "status": "Backlog",
+        "role": "dev",
+        "sprint": ""
+      },
+      {
+        "title": "S5 Task: keep content as data in the same shape so the daily refresh can update the new page",
+        "short": "S5 Data shape",
+        "status": "Backlog",
+        "role": "dev",
+        "sprint": ""
+      },
+      {
+        "title": "S6 As Michael, I want to jump to any trend quickly instead of scrolling 35 cards",
+        "short": "S6 Jump to trend",
+        "status": "Backlog",
+        "role": "dev",
+        "sprint": ""
+      },
+      {
+        "title": "S7 As Michael, I want each trend card to make Film this and the policy flag easy to spot",
+        "short": "S7 Film this + flag",
+        "status": "Backlog",
+        "role": "dev",
+        "sprint": ""
+      },
+      {
+        "title": "S8 As Michael, I want very long trend descriptions to be readable",
+        "short": "S8 Long text",
+        "status": "Backlog",
+        "role": "dev",
+        "sprint": ""
+      },
+      {
+        "title": "S9 As Michael, I want my Try it / Done / Skip marks and filter to keep working",
+        "short": "S9 Marks + filter",
+        "status": "Backlog",
+        "role": "dev",
+        "sprint": ""
+      },
+      {
+        "title": "S10 As Michael, I want to search trends by keyword",
+        "short": "S10 Keyword search",
+        "status": "Backlog",
+        "role": "dev",
+        "sprint": ""
+      },
+      {
+        "title": "S11 As Michael, I want new, updated and last-call trends flagged at a glance",
+        "short": "S11 New/updated flags",
+        "status": "Backlog",
+        "role": "dev",
+        "sprint": ""
+      },
+      {
+        "title": "S12 As Michael, I want policy flags and the Avoid list always visible",
+        "short": "S12 Flags visible",
+        "status": "Backlog",
+        "role": "dev",
+        "sprint": ""
+      },
+      {
+        "title": "S13 As Michael, I want the 66 sources easier to browse",
+        "short": "S13 Sources browse",
+        "status": "Backlog",
+        "role": "dev",
+        "sprint": ""
+      },
+      {
+        "title": "S14 As a phone reader, I want the page readable on a narrow screen",
+        "short": "S14 Mobile",
+        "status": "Backlog",
+        "role": "qa",
+        "sprint": ""
+      },
+      {
+        "title": "S15 As Michael, I want the page to feel like the Muscle Class brand",
+        "short": "S15 Brand feel",
+        "status": "Backlog",
+        "role": "dev",
+        "sprint": ""
+      },
+      {
+        "title": "S16 Task: prepare the sprint demo script for each sprint",
+        "short": "S16 Demo scripts",
+        "status": "Backlog",
+        "role": "po",
+        "sprint": ""
+      },
+      {
+        "title": "PO: write stories S1-S16 with acceptance criteria on the Team Board",
+        "short": "Write S1-S16",
+        "status": "Done",
+        "role": "po",
+        "sprint": "Sprint 0"
+      },
+      {
+        "title": "PO: add the 10 Project 1 items to the Program Backlog",
+        "short": "10 items to backlog",
+        "status": "Done",
+        "role": "po",
+        "sprint": "Sprint 0"
+      },
+      {
+        "title": "PO: send scope, success measures and backlog themes to Pym for the charter",
+        "short": "Scope to Pym",
+        "status": "Done",
+        "role": "po",
+        "sprint": "Sprint 0"
+      },
+      {
+        "title": "PO: read the live Muscle Class Trend Board page and note what is on it",
+        "short": "Read Trend Board",
+        "status": "Done",
+        "role": "po",
+        "sprint": "Sprint 0"
+      },
+      {
+        "title": "Sprint 0: Roles page (Scrum Master, Designer, tidy-up), Cadence System Demo wording, Team Board rule, demo schedule risk (Anj)",
+        "short": "Roles + board rule",
+        "status": "Done",
+        "role": "sm",
+        "sprint": "Sprint 0"
+      },
+      {
+        "title": "Working Agreement, Cadence and Decision Log updated with demo rule (Pym)",
+        "short": "Working agreement",
+        "status": "Done",
+        "role": "pm",
+        "sprint": "Sprint 0"
+      },
+      {
+        "title": "Standing demo rule and Demo Gate built into Sprints and PIs (Anj)",
+        "short": "Demo Gate",
+        "status": "Done",
+        "role": "sm",
+        "sprint": "Sprint 0"
+      },
+      {
+        "title": "Kick off Project 1 from Michael's brief (Pym)",
+        "short": "Kick off P1",
+        "status": "Done",
+        "role": "pm",
+        "sprint": "Sprint 0"
+      },
+      {
+        "title": "Scrum Master input to team page review: old Page reviewed read-only, PI 1 / Sprint 1-4 / IP proposed rows, first 8 RAID rows (Anj)",
+        "short": "SM review + RAID",
+        "status": "Done",
+        "role": "sm",
+        "sprint": "Sprint 0"
+      },
+      {
+        "title": "Team roster and names set (Michael: Pym, Roma, Anj, Bruce, Dez, Kourt)",
+        "short": "Roster + names",
+        "status": "Done",
+        "role": "pm",
+        "sprint": "Sprint 0"
+      }
+    ]
+  },
+  "OFFICE": {
+    "asOf": "Thu Oct 29, 2026, 5:28 PM CT",
+    "updated": "5:28 PM CT",
+    "links": [
+      {
+        "label": "Charter",
+        "url": "https://app.notion.com/p/40820ecf0b0f81a28da1c85b82722dc5"
+      },
+      {
+        "label": "Team Board",
+        "url": "https://app.notion.com/p/13b13bc6fb1047138c3aa9781ad083df"
+      },
+      {
+        "label": "HQ",
+        "url": "https://app.notion.com/p/40820ecf0b0f8109b788e730ef8ef99a"
+      },
+      {
+        "label": "Sprint 0",
+        "url": "https://app.notion.com/p/40820ecf0b0f81979e7ccc2f528d916e"
+      }
+    ],
+    "sprintLine": "PI 1 proposed · Sprint 0",
+    "sprintGoal": "Sprint 0: kickoff and chartering",
+    "team": [
+      {
+        "key": "pm",
+        "role": "Product Manager",
+        "name": "Pym",
+        "color": "#3B82F6",
+        "skin": "#F1C27D",
+        "hair": "#3B2A1A",
+        "style": "short",
+        "status": "paused",
+        "received": "PAUSE from Michael (via Grok Bot)",
+        "now": "Paused: told the team to hold",
+        "next": "Hold until Michael says resume",
+        "inbox": 4,
+        "last": "about 5:20 PM CT"
+      },
+      {
+        "key": "po",
+        "role": "Product Owner",
+        "name": "Roma",
+        "color": "#F59E0B",
+        "skin": "#C68642",
+        "hair": "#111111",
+        "style": "long",
+        "status": "paused",
+        "received": "PAUSE from Pym",
+        "now": "Paused: 5 cards marked paused",
+        "next": "Hold until Pym says resume",
+        "inbox": 0,
+        "last": "about 5:20 PM CT"
+      },
+      {
+        "key": "sm",
+        "role": "Scrum Master",
+        "name": "Anj",
+        "color": "#10B981",
+        "skin": "#E0AC69",
+        "hair": "#8B4513",
+        "style": "bun",
+        "status": "paused",
+        "received": "PAUSE from Pym",
+        "now": "Paused: 2 cards marked paused",
+        "next": "Hold until Pym says resume",
+        "inbox": 0,
+        "last": "about 5:21 PM CT"
+      },
+      {
+        "key": "ds",
+        "role": "Designer",
+        "name": "Bruce",
+        "color": "#EC4899",
+        "skin": "#FFDBAC",
+        "hair": "#7C3AED",
+        "style": "bob",
+        "status": "paused",
+        "received": "PAUSE from Pym",
+        "now": "Paused: review card marked paused",
+        "next": "Hold until Pym says resume",
+        "inbox": 0,
+        "last": "about 5:20 PM CT"
+      },
+      {
+        "key": "dev",
+        "role": "Developer",
+        "name": "Dez",
+        "color": "#8B5CF6",
+        "skin": "#8D5524",
+        "hair": "#1F2937",
+        "style": "cap",
+        "status": "paused",
+        "received": "PAUSE from Pym",
+        "now": "Paused: spike card marked paused",
+        "next": "Hold until Pym says resume",
+        "inbox": 0,
+        "last": "about 5:20 PM CT"
+      },
+      {
+        "key": "qa",
+        "role": "QA",
+        "name": "Kourt",
+        "color": "#06B6D4",
+        "skin": "#F5D0A9",
+        "hair": "#D97706",
+        "style": "spiky",
+        "status": "paused",
+        "received": "PAUSE from Pym",
+        "now": "Paused: QA card marked paused",
+        "next": "Hold until Pym says resume",
+        "inbox": 0,
+        "last": "about 5:20 PM CT"
+      }
+    ]
+  },
+  "MESSAGES": [
+    {
+      "time": "2026-10-29T16:05:00-05:00",
+      "from": "gb",
+      "to": "pm",
+      "topic": "Project 1 kickoff brief from Michael"
+    },
+    {
+      "time": "2026-10-29T16:05:00-05:00",
+      "from": "pm",
+      "to": "po",
+      "topic": "Project 1 kickoff"
+    },
+    {
+      "time": "2026-10-29T16:05:00-05:00",
+      "from": "pm",
+      "to": "sm",
+      "topic": "Project 1 kickoff"
+    },
+    {
+      "time": "2026-10-29T16:05:00-05:00",
+      "from": "pm",
+      "to": "ds",
+      "topic": "Project 1 kickoff"
+    },
+    {
+      "time": "2026-10-29T16:05:00-05:00",
+      "from": "pm",
+      "to": "dev",
+      "topic": "Project 1 kickoff"
+    },
+    {
+      "time": "2026-10-29T16:05:00-05:00",
+      "from": "pm",
+      "to": "qa",
+      "topic": "Project 1 kickoff"
+    },
+    {
+      "time": "2026-10-29T16:05:00-05:00",
+      "from": "sm",
+      "to": "pm",
+      "topic": "Kickoff received, setting up PI 1"
+    },
+    {
+      "time": "2026-10-29T16:05:00-05:00",
+      "from": "ds",
+      "to": "pm",
+      "topic": "Design review of current page"
+    },
+    {
+      "time": "2026-10-29T16:05:00-05:00",
+      "from": "dev",
+      "to": "pm",
+      "topic": "Build findings, read-only"
+    },
+    {
+      "time": "2026-10-29T16:05:00-05:00",
+      "from": "qa",
+      "to": "pm",
+      "topic": "Baseline and test plan"
+    },
+    {
+      "time": "2026-10-29T16:05:00-05:00",
+      "from": "po",
+      "to": "pm",
+      "topic": "Scope and themes input"
+    },
+    {
+      "time": "2026-10-29T16:05:00-05:00",
+      "from": "po",
+      "to": "pm",
+      "topic": "10 themes in backlog"
+    },
+    {
+      "time": "2026-10-29T16:07:00-05:00",
+      "from": "sm",
+      "to": "pm",
+      "topic": "PI 1 plan and 8 risks"
+    },
+    {
+      "time": "2026-10-29T16:10:00-05:00",
+      "from": "pm",
+      "to": "gb",
+      "topic": "Charter ready for Michael's review"
+    },
+    {
+      "time": "2026-10-29T16:24:00-05:00",
+      "from": "gb",
+      "to": "pm",
+      "topic": "Team names from Michael"
+    },
+    {
+      "time": "2026-10-29T16:25:00-05:00",
+      "from": "gb",
+      "to": "pm",
+      "topic": "Rule: demo after every sprint"
+    },
+    {
+      "time": "2026-10-29T16:25:00-05:00",
+      "from": "gb",
+      "to": "sm",
+      "topic": "Demo rule: build a demo gate"
+    },
+    {
+      "time": "2026-10-29T16:25:00-05:00",
+      "from": "pm",
+      "to": "sm",
+      "topic": "Demo rule and team names"
+    },
+    {
+      "time": "2026-10-29T16:25:00-05:00",
+      "from": "pm",
+      "to": "po",
+      "topic": "Demo rule: you run demos"
+    },
+    {
+      "time": "2026-10-29T16:25:00-05:00",
+      "from": "pm",
+      "to": "ds",
+      "topic": "Demo rule and team names"
+    },
+    {
+      "time": "2026-10-29T16:25:00-05:00",
+      "from": "pm",
+      "to": "dev",
+      "topic": "Demo rule and team names"
+    },
+    {
+      "time": "2026-10-29T16:25:00-05:00",
+      "from": "pm",
+      "to": "qa",
+      "topic": "Demo rule and team names"
+    },
+    {
+      "time": "2026-10-29T16:25:00-05:00",
+      "from": "sm",
+      "to": "pm",
+      "topic": "Building Demo Gate in Notion"
+    },
+    {
+      "time": "2026-10-29T16:26:00-05:00",
+      "from": "sm",
+      "to": "pm",
+      "topic": "Demo Gate live, 5 demo dates"
+    },
+    {
+      "time": "2026-10-29T16:27:00-05:00",
+      "from": "pm",
+      "to": "sm",
+      "topic": "Demo gate and rhythm approved"
+    },
+    {
+      "time": "2026-10-29T16:27:00-05:00",
+      "from": "pm",
+      "to": "gb",
+      "topic": "Demo rule in Notion, charter draft"
+    },
+    {
+      "time": "2026-10-29T16:34:00-05:00",
+      "from": "gb",
+      "to": "sm",
+      "topic": "Team Board has zero rows: fix it"
+    },
+    {
+      "time": "2026-10-29T16:34:00-05:00",
+      "from": "gb",
+      "to": "po",
+      "topic": "Team Board has zero rows: add stories"
+    },
+    {
+      "time": "2026-10-29T16:34:00-05:00",
+      "from": "sm",
+      "to": "po",
+      "topic": "Creating Sprint 0, add your cards"
+    },
+    {
+      "time": "2026-10-29T16:34:00-05:00",
+      "from": "po",
+      "to": "pm",
+      "topic": "S1-S16 stories on the board"
+    },
+    {
+      "time": "2026-10-29T16:34:00-05:00",
+      "from": "po",
+      "to": "gb",
+      "topic": "Stories S1-S16 done"
+    },
+    {
+      "time": "2026-10-29T16:35:00-05:00",
+      "from": "gb",
+      "to": "pm",
+      "topic": "Board empty, Anj and Roma on it"
+    },
+    {
+      "time": "2026-10-29T16:35:00-05:00",
+      "from": "pm",
+      "to": "sm",
+      "topic": "Board empty: create Sprint 0"
+    },
+    {
+      "time": "2026-10-29T16:35:00-05:00",
+      "from": "pm",
+      "to": "po",
+      "topic": "Board empty: add your work"
+    },
+    {
+      "time": "2026-10-29T16:35:00-05:00",
+      "from": "pm",
+      "to": "ds",
+      "topic": "Rule: board shows real work"
+    },
+    {
+      "time": "2026-10-29T16:35:00-05:00",
+      "from": "pm",
+      "to": "dev",
+      "topic": "Rule: board shows real work"
+    },
+    {
+      "time": "2026-10-29T16:35:00-05:00",
+      "from": "pm",
+      "to": "qa",
+      "topic": "Rule: board shows real work"
+    },
+    {
+      "time": "2026-10-29T16:35:00-05:00",
+      "from": "pm",
+      "to": "gb",
+      "topic": "Board not done yet"
+    },
+    {
+      "time": "2026-10-29T16:35:00-05:00",
+      "from": "po",
+      "to": "sm",
+      "topic": "Stories on board, need Sprint 0"
+    },
+    {
+      "time": "2026-10-29T16:35:00-05:00",
+      "from": "po",
+      "to": "pm",
+      "topic": "Board no longer empty"
+    },
+    {
+      "time": "2026-10-29T16:35:00-05:00",
+      "from": "sm",
+      "to": "ds",
+      "topic": "Designer role + Sprint 0 card"
+    },
+    {
+      "time": "2026-10-29T16:35:00-05:00",
+      "from": "sm",
+      "to": "pm",
+      "topic": "On it: Sprint 0 + seeding cards"
+    },
+    {
+      "time": "2026-10-29T16:35:00-05:00",
+      "from": "ds",
+      "to": "sm",
+      "topic": "Added my design review card"
+    },
+    {
+      "time": "2026-10-29T16:35:00-05:00",
+      "from": "dev",
+      "to": "pm",
+      "topic": "Added my spike card"
+    },
+    {
+      "time": "2026-10-29T16:35:00-05:00",
+      "from": "qa",
+      "to": "pm",
+      "topic": "Added my QA baseline card"
+    },
+    {
+      "time": "2026-10-29T16:37:00-05:00",
+      "from": "sm",
+      "to": "po",
+      "topic": "Sprint 0 row exists"
+    },
+    {
+      "time": "2026-10-29T16:37:00-05:00",
+      "from": "sm",
+      "to": "pm",
+      "topic": "Board populated, Sprint 0 live"
+    },
+    {
+      "time": "2026-10-29T16:37:00-05:00",
+      "from": "po",
+      "to": "pm",
+      "topic": "My 4 Sprint 0 cards are in"
+    },
+    {
+      "time": "2026-10-29T16:37:00-05:00",
+      "from": "pm",
+      "to": "sm",
+      "topic": "Move Kourt's card to Sprint 0"
+    },
+    {
+      "time": "2026-10-29T16:37:00-05:00",
+      "from": "pm",
+      "to": "gb",
+      "topic": "Team Board populated"
+    },
+    {
+      "time": "2026-10-29T16:39:00-05:00",
+      "from": "sm",
+      "to": "po",
+      "topic": "Card #44 overlaps S16?"
+    },
+    {
+      "time": "2026-10-29T16:39:00-05:00",
+      "from": "sm",
+      "to": "dev",
+      "topic": "Your spike card needs a sprint"
+    },
+    {
+      "time": "2026-10-29T17:10:00-05:00",
+      "from": "gb",
+      "to": "pm",
+      "topic": "Rule: primary items on Team Board"
+    },
+    {
+      "time": "2026-10-29T17:10:00-05:00",
+      "from": "pm",
+      "to": "sm",
+      "topic": "Rule: primary items on board"
+    },
+    {
+      "time": "2026-10-29T17:10:00-05:00",
+      "from": "pm",
+      "to": "po",
+      "topic": "Rule: primary items on board"
+    },
+    {
+      "time": "2026-10-29T17:10:00-05:00",
+      "from": "pm",
+      "to": "ds",
+      "topic": "Rule: primary items on board"
+    },
+    {
+      "time": "2026-10-29T17:10:00-05:00",
+      "from": "pm",
+      "to": "dev",
+      "topic": "Rule: primary items on board"
+    },
+    {
+      "time": "2026-10-29T17:10:00-05:00",
+      "from": "pm",
+      "to": "qa",
+      "topic": "Rule: primary items on board"
+    },
+    {
+      "time": "2026-10-29T17:10:00-05:00",
+      "from": "po",
+      "to": "sm",
+      "topic": "Keeping #44 and S16"
+    },
+    {
+      "time": "2026-10-29T17:10:00-05:00",
+      "from": "po",
+      "to": "pm",
+      "topic": "Audit done, decisions card added"
+    },
+    {
+      "time": "2026-10-29T17:10:00-05:00",
+      "from": "ds",
+      "to": "pm",
+      "topic": "Audit done, nothing to copy"
+    },
+    {
+      "time": "2026-10-29T17:10:00-05:00",
+      "from": "dev",
+      "to": "pm",
+      "topic": "Audit done, nothing to copy"
+    },
+    {
+      "time": "2026-10-29T17:10:00-05:00",
+      "from": "dev",
+      "to": "sm",
+      "topic": "Spike card set to Sprint 0"
+    },
+    {
+      "time": "2026-10-29T17:10:00-05:00",
+      "from": "qa",
+      "to": "pm",
+      "topic": "Audit done, nothing to copy"
+    },
+    {
+      "time": "2026-10-29T17:12:00-05:00",
+      "from": "pm",
+      "to": "gb",
+      "topic": "Board at 39 cards, summary"
+    },
+    {
+      "time": "2026-10-29T17:12:00-05:00",
+      "from": "pm",
+      "to": "po",
+      "topic": "WSJF scores filled in"
+    },
+    {
+      "time": "2026-10-29T17:12:00-05:00",
+      "from": "pm",
+      "to": "sm",
+      "topic": "Board looks good, small tidy-ups"
+    },
+    {
+      "time": "2026-10-29T17:14:00-05:00",
+      "from": "sm",
+      "to": "pm",
+      "topic": "Board counts as of 5:15 PM"
+    },
+    {
+      "time": "2026-10-29T17:20:00-05:00",
+      "from": "gb",
+      "to": "pm",
+      "topic": "PAUSE from Michael: stop all work"
+    },
+    {
+      "time": "2026-10-29T17:20:00-05:00",
+      "from": "pm",
+      "to": "sm",
+      "topic": "PAUSE: hold, mark cards paused"
+    },
+    {
+      "time": "2026-10-29T17:20:00-05:00",
+      "from": "pm",
+      "to": "po",
+      "topic": "PAUSE: hold, mark cards paused"
+    },
+    {
+      "time": "2026-10-29T17:20:00-05:00",
+      "from": "pm",
+      "to": "ds",
+      "topic": "PAUSE: hold, mark cards paused"
+    },
+    {
+      "time": "2026-10-29T17:20:00-05:00",
+      "from": "pm",
+      "to": "dev",
+      "topic": "PAUSE: hold, mark cards paused"
+    },
+    {
+      "time": "2026-10-29T17:20:00-05:00",
+      "from": "pm",
+      "to": "qa",
+      "topic": "PAUSE: hold, mark cards paused"
+    },
+    {
+      "time": "2026-10-29T17:20:00-05:00",
+      "from": "po",
+      "to": "pm",
+      "topic": "Paused, 5 cards marked (not yet opened)"
+    },
+    {
+      "time": "2026-10-29T17:20:00-05:00",
+      "from": "dev",
+      "to": "pm",
+      "topic": "Paused, spike card marked (not yet opened)"
+    },
+    {
+      "time": "2026-10-29T17:20:00-05:00",
+      "from": "qa",
+      "to": "pm",
+      "topic": "Paused, QA card marked (not yet opened)"
+    },
+    {
+      "time": "2026-10-29T17:21:00-05:00",
+      "from": "sm",
+      "to": "pm",
+      "topic": "Paused, 2 cards marked (not yet opened)"
+    }
+  ],
+  "lastUpdated": "Thu Oct 29, 2026, 5:28 PM CT",
+  "links": [
+    {
+      "label": "Charter",
+      "url": "https://app.notion.com/p/40820ecf0b0f81a28da1c85b82722dc5"
+    },
+    {
+      "label": "Team Board",
+      "url": "https://app.notion.com/p/13b13bc6fb1047138c3aa9781ad083df"
+    },
+    {
+      "label": "HQ",
+      "url": "https://app.notion.com/p/40820ecf0b0f8109b788e730ef8ef99a"
+    },
+    {
+      "label": "Sprint 0",
+      "url": "https://app.notion.com/p/40820ecf0b0f81979e7ccc2f528d916e"
+    }
+  ]
+}
