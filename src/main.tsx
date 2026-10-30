@@ -1,6 +1,7 @@
 import { createRoot } from "react-dom/client";
 import { useEffect, useMemo, useState } from "react";
 import { makeOffice } from "./office";
+import { ThemeToggle } from "./ThemeToggle";
 
 const DATA_URL = `${import.meta.env.BASE_URL}data.json`;
 
@@ -19,7 +20,7 @@ function Root() {
     return () => { alive = false; clearInterval(id); };
   }, []);
   const App = useMemo(() => (data ? makeOffice(data) : null), [data]);
-  if (!App) return <div style={{ padding: 20 }}>{err ? `Could not load data.json: ${err}` : "Loading the office…"}</div>;
-  return <App />;
+  if (!App) return <div style={{ padding: 20, color: "inherit" }}>{err ? `Could not load data.json: ${err}` : "Loading the office…"}</div>;
+  return <><ThemeToggle /><App /></>;
 }
 createRoot(document.getElementById("root")!).render(<Root />);

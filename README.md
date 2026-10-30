@@ -4,6 +4,8 @@ Animated cartoon office showing Michael's six-agent team (Pym, Roma, Anj, Bruce,
 
 Live: https://ultra-madness.github.io/team-office/
 
+Features: dark mode toggle (remembers your choice, defaults to the system setting), hover/tap message cards, a clickable Team Board overlay, and a phone layout that fits 390px wide. Post-sync patches live in `scripts/phone-patch.mjs` (run automatically by `npm run sync`).
+
 It is a static Vite + React app. All live data (PROJECT, BOARD, OFFICE, MESSAGES, lastUpdated, links) lives in **`public/data.json`**. The app fetches it at load and again every 60 seconds, so a commit that only changes `data.json` updates the live site after the Pages workflow finishes (about 1 minute).
 
 The data is **not live**. It is only as fresh as the last refresh. The header shows "Last updated HH:MM CT".

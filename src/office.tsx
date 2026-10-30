@@ -207,9 +207,9 @@ function Desk(p: { m: Member; t: number }) {
       <rect x={d.x - 14} y={d.y + 2} width={34} height={8} rx={2} fill="#E5E7EB" />
       <circle className={p.m.status === "blocked" ? "of-pulse" : undefined} cx={d.x + 58} cy={d.y + 2} r={6} fill={s.color} stroke="#fff" strokeWidth={1.5} />
       <rect x={d.x - 62} y={d.y + 32} width={124} height={34} rx={6} fill="#FFFFFF" stroke={p.m.color} strokeWidth={2} />
-      <text x={d.x} y={d.y + 46} textAnchor="middle" fontSize={12} fontWeight={700} fill="#111827">{p.m.name || "Name to come"}</text>
-      <text x={d.x} y={d.y + 60} textAnchor="middle" fontSize={10} fill="#6B7280">{p.m.role}</text>
-      <text x={d.x} y={d.y + 82} textAnchor="middle" fontSize={11} fill="#374151">{"Now: " + p.m.now}</text>
+      <text className="of-lbl" x={d.x} y={d.y + 46} textAnchor="middle" fontSize={12} fontWeight={700} fill="#111827">{p.m.name || "Name to come"}</text>
+      <text className="of-lbl" x={d.x} y={d.y + 60} textAnchor="middle" fontSize={10} fill="#6B7280">{p.m.role}</text>
+      <text className="of-lbl" x={d.x} y={d.y + 82} textAnchor="middle" fontSize={11} fill="#374151">{"Now: " + p.m.now}</text>
       {p.m.inbox > 0 && <g><circle cx={d.x + 62} cy={d.y + 32} r={10} fill="#DC2626" stroke="#fff" strokeWidth={2} /><text x={d.x + 62} y={d.y + 36} textAnchor="middle" fontSize={11} fontWeight={700} fill="#fff">{p.m.inbox}</text></g>}
     </g>
   );
@@ -227,6 +227,15 @@ function App() {
   const [nowMs, setNowMs] = useState<number>(Date.now());
   useEffect(() => { const id = setInterval(() => setNowMs(Date.now()), 30000); return () => clearInterval(id); }, []);
   const focus = hover || pinned;
+  const [boardOpen, setBoardOpen] = useState<boolean>(false);
+  const tapPerson = (k: string) => { if (focus === k) { setPinned(""); setHover(""); } else { setHover(""); setPinned(k); } };
+  useEffect(() => {
+    const away = (e: any) => { const t = e.target as Element; if (t && t.closest && t.closest("[data-of-hit]")) return; setPinned(""); setHover(""); };
+    const esc = (e: KeyboardEvent) => { if (e.key === "Escape") { setBoardOpen(false); setPinned(""); setHover(""); } };
+    document.addEventListener("pointerdown", away);
+    document.addEventListener("keydown", esc);
+    return () => { document.removeEventListener("pointerdown", away); document.removeEventListener("keydown", esc); };
+  }, []);
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
     setReduced(mq.matches);
@@ -258,7 +267,7 @@ function App() {
       <div>
         <div style={{ fontSize: 26, fontWeight: 700 }}>Team Office</div>
         <div style={{ color: th.text.secondary, marginTop: 4, fontSize: 14 }}>{PROJECT.name} · {PROJECT.sprint} · Sprint goal: {PROJECT.sprintGoal || "not set yet"}</div>
-        <div style={{ color: th.text.tertiary, fontSize: 12, marginTop: 2 }}><span style={{ fontWeight: 700, color: "#78350F", background: "#FEF3C7", padding: "1px 6px", borderRadius: 6 }}>Last updated {OFFICE.updated}</span> ({OFFICE.asOf}). Not live: it updates when refreshed from the agents' transcripts. Walks replay real messages, with their time. Hover or tap a person to see their messages.</div>
+        <div style={{ color: th.text.tertiary, fontSize: 12, marginTop: 2 }}><span style={{ fontWeight: 700, color: "#78350F", background: "#FEF3C7", padding: "1px 6px", borderRadius: 6 }}>Last updated {OFFICE.updated}</span> ({OFFICE.asOf}). Not live: it updates when refreshed from the agents' transcripts. Walks replay real messages, with their time. Hover or tap a person to see their messages; click the Team Board to enlarge it.</div>
         <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginTop: 8, fontSize: 13 }}>
           <span style={{ color: th.text.tertiary }}>Links:</span>
           {OFFICE.links.map((l) => <a key={l.url} href={l.url} target="_blank" rel="noopener noreferrer" style={{ padding: "3px 10px", borderRadius: 999, border: `1px solid ${th.border.default}`, color: th.text.primary, textDecoration: "none" }}>{l.label} ↗</a>)}
@@ -337,6 +346,7 @@ function App() {
           <rect x={-24} y={-18} width={48} height={32} rx={10} fill="#B45309" />
           <text x={0} y={36} textAnchor="middle" fontSize={10} fontWeight={700} fill="#111827">Sponsor's seat: Michael</text>
         </g>
+        <rect className="of-board-hit" data-of-hit="1" x={726} y={18} width={258} height={158} rx={6} fill="transparent" style={{ cursor: "zoom-in" }} onClick={() => setBoardOpen(true)} onMouseEnter={() => setStick(-1)}><title>Open the Team Board</title></rect>
         {OFFICE.team.map((m) => { const s = seat(m.key); return <rect key={m.key + "c"} x={s.x - 16} y={s.y - 6} width={32} height={30} rx={8} fill="#4B5563" />; })}
         {seatedP.map((x) => <Person key={x.m.key} m={x.m} pose={x.pose} seated={true} t={time} />)}
         {OFFICE.team.map((m) => <Desk key={m.key} m={m} t={time} />)}
@@ -356,10 +366,10 @@ function App() {
         {OFFICE.team.map((m) => {
           const d = DESK[m.key];
           const pt = poses.find((x) => x.m.key === m.key)?.pose.pt ?? seat(m.key);
-          const on = () => setHover(m.key);
-          const tap = () => setPinned(pinned === m.key ? "" : m.key);
+          const on = () => setHover(m.key); const isMouse = (e: any) => e.pointerType === "mouse";
+          const tap = () => tapPerson(m.key);
           return (
-            <g key={m.key + "hit"} style={{ cursor: "pointer" }} onMouseEnter={on} onClick={tap} role="button" tabIndex={0} aria-label={`Show messages for ${who(m.key)}`} onFocus={on} onBlur={() => setHover("")}>
+            <g key={m.key + "hit"} data-of-hit="1" style={{ cursor: "pointer" }} onPointerEnter={(e: any) => { if (isMouse(e)) on(); }} onPointerLeave={(e: any) => { if (isMouse(e)) { setHover(""); setPinned(""); } }} onClick={tap} role="button" tabIndex={0} aria-label={`Show messages for ${who(m.key)}`} onFocus={(e: any) => { if (e.target.matches(":focus-visible")) on(); }} onBlur={() => setHover("")}>
               <rect x={d.x - 72} y={d.y - 62} width={144} height={132} fill="transparent" />
               <rect x={pt.x - 18} y={pt.y - 44} width={36} height={70} fill="transparent" />
               {focus === m.key && <rect x={d.x - 74} y={d.y - 64} width={148} height={136} rx={12} fill="none" stroke={m.color} strokeWidth={2.5} strokeDasharray="6 4" />}
@@ -367,6 +377,39 @@ function App() {
           );
         })}
       </svg>
+      {OFFICE.team.map((m: any) => { const d = DESK[m.key]; return (
+        <div key={m.key + "pl"} className="of-plbl" data-of-hit="1" onClick={() => tapPerson(m.key)} style={{ left: (d.x / 10) + "%", top: (((d.y + 33) / 580) * 100) + "%", borderColor: m.color }}>
+          <b>{m.name}</b><span>{m.role}</span><i>{m.now}</i>
+        </div>); })}
+      {boardOpen && (
+        <div className="of-board-bg" onPointerDown={(e: any) => { if (e.target === e.currentTarget) setBoardOpen(false); }} style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,.55)", zIndex: 50, display: "flex", alignItems: "flex-start", justifyContent: "center", padding: "24px 10px", overflowY: "auto" }}>
+          <div className="of-board" role="dialog" aria-modal="true" aria-label="Team Board" style={{ background: th.bg.elevated, color: th.text.primary, border: `1px solid ${th.border.default}`, borderRadius: 14, padding: 16, width: "100%", maxWidth: 1000, boxShadow: "0 10px 40px rgba(0,0,0,.35)" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 6 }}>
+              <div style={{ fontSize: 18, fontWeight: 700, flex: 1 }}>Team Board <span style={{ fontSize: 13, fontWeight: 400, color: th.text.tertiary }}>· {BOARD.cards.length} cards · as of {BOARD.asOf}</span></div>
+              <button className="of-board-close" onClick={() => setBoardOpen(false)} aria-label="Close Team Board" style={{ cursor: "pointer", padding: "4px 12px", borderRadius: 8, border: `1px solid ${th.border.default}`, background: "transparent", color: th.text.primary, fontSize: 14 }}>✕ Close</button>
+            </div>
+            {BOARD.waitingOnMichael && <div style={{ fontSize: 13, color: "#92400E", background: "#FEF3C7", borderRadius: 8, padding: "4px 8px", marginBottom: 6, display: "inline-block" }}>⚠ {BOARD.waitingOnMichael}</div>}
+            {BOARD.sprintGoal && <div style={{ fontSize: 13, color: th.text.secondary, marginBottom: 10 }}>{BOARD.sprintGoal}</div>}
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 12 }}>
+              {BOARD_COLS.map((col: any) => {
+                const list = BOARD.cards.filter((c: any) => col.statuses.includes(c.status)).sort((a: any, b: any) => col.statuses.indexOf(a.status) - col.statuses.indexOf(b.status));
+                return (
+                  <div key={col.label} style={{ background: th.bg.subtle, border: `1px solid ${th.border.subtle}`, borderRadius: 10, padding: 10 }}>
+                    <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 6 }}>{col.label} <span style={{ color: th.text.tertiary, fontWeight: 400 }}>({list.length})</span></div>
+                    {list.length === 0 && <div style={{ fontSize: 13, color: th.text.tertiary }}>No cards</div>}
+                    {list.map((c: any, i: number) => (
+                      <div key={i} style={{ borderLeft: `4px solid ${ROLE_COLOR[c.role] || "#9CA3AF"}`, background: th.bg.base, borderRadius: 6, padding: "6px 8px", marginBottom: 6, fontSize: 13 }}>
+                        <div style={{ fontWeight: 600 }}>{c.title}</div>
+                        <div style={{ color: th.text.secondary, fontSize: 12 }}>Owner: {ROLE_NAME[c.role] || c.role || "unassigned"} · Status: {c.status}{c.sprint ? " · " + c.sprint : ""}</div>
+                      </div>
+                    ))}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      )}
       {stick >= 0 && BOARD.cards[stick] && (
         <div style={{ position: "absolute", right: 8, top: "33%", maxWidth: 300, background: "#111827", color: "#F9FAFB", borderRadius: 8, padding: "8px 10px", fontSize: 12, lineHeight: 1.35, pointerEvents: "none", boxShadow: "0 4px 14px rgba(0,0,0,.25)", zIndex: 5 }}>
           <div style={{ fontWeight: 700, marginBottom: 4 }}>{BOARD.cards[stick].title}</div>
@@ -379,7 +422,7 @@ function App() {
         const top = d.y < AISLE;
         const list = mine(focus);
         return (
-          <div onClick={() => { setPinned(""); setHover(""); }} style={{ position: "absolute", left: `${(Math.min(Math.max(d.x, 170), 830) / 1000) * 100}%`, ...(top ? { top: `${((d.y + 74) / 580) * 100}%` } : { bottom: `${((580 - d.y + 66) / 580) * 100}%` }), transform: "translateX(-50%)", width: 330, maxWidth: "92%", background: th.bg.base, color: th.text.primary, border: `2px solid ${m.color}`, borderRadius: 12, padding: "10px 12px", boxShadow: "0 6px 20px rgba(0,0,0,.18)", fontSize: 12.5, zIndex: 5 }}>
+          <div className="of-card" data-of-hit="1" onClick={() => { setPinned(""); setHover(""); }} style={{ position: "absolute", left: `${(Math.min(Math.max(d.x, 170), 830) / 1000) * 100}%`, ...(top ? { top: `${((d.y + 74) / 580) * 100}%` } : { bottom: `${((580 - d.y + 66) / 580) * 100}%` }), transform: "translateX(-50%)", width: 330, maxWidth: "92%", background: th.bg.base, color: th.text.primary, border: `2px solid ${m.color}`, borderRadius: 12, padding: "10px 12px", boxShadow: "0 6px 20px rgba(0,0,0,.18)", fontSize: 12.5, zIndex: 5 }}>
             <div style={{ fontWeight: 700, marginBottom: 4 }}>{m.name} <span style={{ fontWeight: 400, color: th.text.tertiary }}>· {m.role} · latest {list.length}</span></div>
             {list.length === 0 && <div style={{ color: th.text.secondary }}>No messages yet</div>}
             {list.map((x, i) => {

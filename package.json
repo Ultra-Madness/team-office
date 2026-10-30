@@ -7,8 +7,19 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "sync": "node scripts/sync-from-canvas.mjs"
+    "sync": "node scripts/sync-from-canvas.mjs",
+    "postsync": "node scripts/phone-patch.mjs"
   },
-  "dependencies": { "react": "^18.3.1", "react-dom": "^18.3.1" },
-  "devDependencies": { "@vitejs/plugin-react": "^4.3.4", "vite": "^5.4.11", "esbuild": "^0.24.0", "typescript": "^5.6.3", "@types/react": "^18.3.12", "@types/react-dom": "^18.3.1" }
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "esbuild": "^0.24.0",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11"
+  }
 }
