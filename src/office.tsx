@@ -469,7 +469,5 @@ function App() {
   );
 }
 
-
-</cursor_untrusted_data_1337>
 return App;
 }
