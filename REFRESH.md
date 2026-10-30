@@ -88,28 +88,35 @@ Plates, cards, the replay line and the conversation log render names via `who()`
 
 ## Grok Bot routine recipe: refresh every 15 minutes (cron `*/15 * * * *`, America/Chicago)
 
-Paste the block below as the routine's instructions. It is read-only toward the teammates and Notion; the only writes are the Grok Bot Page, the repo on the box, and a git push to ultra-madness/team-office. No secrets are stored in the repo (git push uses the box's existing `gh auth setup-git` credential helper).
+Paste the block below as the routine's instructions. It does NOT use ReadTranscript (routines can't). Teammates log to the Notion "Office Activity Log"; the routine only reads Notion. Its only writes are the Grok Bot Page, the repo on the box, and a git push to ultra-madness/team-office. No secrets are stored in the repo (git push uses the box's existing `gh auth setup-git` credential helper).
 
 ```
 Refresh the Team Office (Page canvas 11d32928-8e3f-454c-8255-f879e376ff9d and https://ultra-madness.github.io/team-office/).
-1. ReadTranscript (newest 40 entries) for each teammate, full ids:
-   pm  c2951cd9-e19a-4fcc-9ec3-965afac3d372   po  cad5070a-b6bf-4fa9-8f26-e1aef9bd6db9
-   sm  f09b65ae-75bf-4aa0-ac17-5a1cc59aa845   ds  5de0b84f-2dcd-4099-bb24-e3546ff927ef
-   dev 0aa6a7a2-8911-42ec-8546-21effaf754db   qa  c44e1431-74d5-44a5-83fe-948d93b6788f
-   Collect SendToAgent messages newer than the newest `time:` in MESSAGES (from, to, short topic, time as ISO with -05:00), and each person's status/now/next/last active.
-2. Notion, read only: user-Notion notion-query-data-sources with
+Read only in Notion: never create, edit or delete Notion rows. Do not message teammates.
+1. Activity log (Office Activity Log, https://app.notion.com/p/72b19dec8076412faa7b58ef97b4e6e6,
+   data source collection://8f08c8f3-1377-46ff-841d-ad9e607b3f4d): CallDynamicTool user-Notion notion-query-data-sources,
+   write_to_file true, arguments
+   {"data":{"mode":"view","view_url":"view://40920ecf-0b0f-8137-b99a-000c631a55ad","page_size":100}}
+   Rows come newest first. "When" is returned in UTC (…Z): convert to America/Chicago ISO with -05:00 (CDT -05:00 / CST -06:00).
+2. Team Board: same tool, write_to_file true,
    {"data":{"mode":"view","view_url":"view://d9555fd5-abad-49d1-aff3-695cd51d0b2b","page_size":100}}
-   Map rows to BOARD.cards (title, status, role). Never write to Notion.
-3. One EditCanvas on canvas 11d32928-8e3f-454c-8255-f879e376ff9d: append new MESSAGES, update team statuses and BOARD.cards,
-   set BOARD.asOf and OFFICE.asOf to "Thu Mon D, YYYY, H:MM PM CT", OFFICE.updated to "H:MM PM CT",
-   OFFICE.asOfIso to the ISO time with -05:00. If nothing changed, still update the four time fields.
-4. ReadCanvas (write_to_file) and save the source (from the `import` line through the last line before the closing fence) to
-   /workspace/team-office/canvas.tsx
-5. Shell:
+   Map rows to BOARD.cards (title, status, role).
+3. Merge. Names to keys: Pym=pm Roma=po Anj=sm Bruce=ds Dez=dev Kourt=qa Michael=gb Team=team.
+   - Message rows newer than the newest `time:` already in MESSAGES (skip any with same time+from+to+topic):
+     append { time, from, to, topic: Title } (To blank -> "team").
+   - Status rows: for each person take only their newest Status row; set OFFICE.team[key].status from Status
+     (Working=engaged, Idle=idle, Blocked=blocked, Paused=paused, Waiting=waiting), "now" = Detail,
+     "last active" = its When in CT.
+4. One EditCanvas on canvas 11d32928-8e3f-454c-8255-f879e376ff9d: the new MESSAGES, statuses, BOARD.cards, and
+   BOARD.asOf + OFFICE.asOf = "Thu Mon D, YYYY, H:MM PM CT", OFFICE.updated = "H:MM PM CT", OFFICE.asOfIso = ISO with CT offset.
+   FALLBACK: if the log has no new rows, still apply the Team Board and these four time fields.
+5. ReadCanvas (write_to_file true) and save the source (from the `import` line through the last line before the closing fence)
+   to /workspace/team-office/canvas.tsx
+6. Shell:
    cd /workspace/team-office-repo && npm run sync -- /workspace/team-office/canvas.tsx && npm run build \
      && git add public/data.json src/office.tsx && git commit -m "Refresh $(date '+%Y-%m-%d %H:%M %Z')" && git push
-   (if git push fails with auth: gh auth setup-git, then push once more)
-6. Verify: gh run list -R ultra-madness/team-office -L 1, then gh run watch <id> --exit-status;
+   (if push fails with auth: gh auth setup-git, then push once more; if nothing changed, skip commit)
+7. Verify: gh run list -R ultra-madness/team-office -L 1, then gh run watch <id> --exit-status;
    curl -s "https://ultra-madness.github.io/team-office/data.json?t=$(date +%s)" | grep -o '"updated": *"[^"]*"'
    must show the new time. Report only what you saw; if any step fails, retry once, then stop and report.
 ```
