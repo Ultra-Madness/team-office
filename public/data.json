@@ -11,7 +11,7 @@
     "waitingOnMichael": true
   },
   "BOARD": {
-    "asOf": "Thu Oct 29, 2026, 10:51 PM CT",
+    "asOf": "Fri Oct 30, 2026, 7:03 AM CT",
     "sprintGoal": "Sprint 0: Kick off Project 1, agree roles and working agreement, approve the charter, set cadence and demo gate",
     "waitingOnMichael": "Waiting on Michael: charter approval",
     "cards": [
@@ -51,9 +51,9 @@
         "sprint": "Sprint 0"
       },
       {
-        "title": "Designer: review current Trend Board page and send findings for charter",
-        "short": "Design review",
-        "status": "In review",
+        "title": "Designer: Sprint 1 discovery and design direction (charter findings sent; Design Direction v0.1 drafted)",
+        "short": "Design direction v0.1",
+        "status": "In progress",
         "role": "ds",
         "sprint": "Sprint 0"
       },
@@ -102,7 +102,7 @@
       {
         "title": "S1 Spike: confirm which Page components and features are available for the redesign",
         "short": "S1 Components spike",
-        "status": "Backlog",
+        "status": "In review",
         "role": "dev",
         "sprint": ""
       },
@@ -284,9 +284,9 @@
     ]
   },
   "OFFICE": {
-    "asOf": "Thu Oct 29, 2026, 10:51 PM CT",
-    "updated": "10:51 PM CT",
-    "asOfIso": "2026-10-29T22:51:00-05:00",
+    "asOf": "Fri Oct 30, 2026, 7:03 AM CT",
+    "updated": "7:03 AM CT",
+    "asOfIso": "2026-10-30T07:03:00-05:00",
     "links": [
       {
         "label": "Charter",
@@ -318,10 +318,10 @@
         "style": "short",
         "status": "paused",
         "received": "PAUSE from Michael (via Grok Bot)",
-        "now": "Paused: told the team to hold",
+        "now": "Project paused by Michael; waiting for charter approval and resume.",
         "next": "Hold until Michael says resume",
         "inbox": 4,
-        "last": "about 5:20 PM CT"
+        "last": "Oct 30, 12:23 AM CT"
       },
       {
         "key": "po",
@@ -361,12 +361,12 @@
         "skin": "#FFDBAC",
         "hair": "#7C3AED",
         "style": "bob",
-        "status": "paused",
+        "status": "engaged",
         "received": "PAUSE from Pym",
-        "now": "Paused: review card marked paused",
+        "now": "Resumed after pause; drafting Design Direction v0.1 for Sprint 1 discovery. Waiting on Pym to confirm charter approval in Notion.",
         "next": "Hold until Pym says resume",
         "inbox": 0,
-        "last": "about 5:20 PM CT"
+        "last": "Oct 30, 12:40 AM CT"
       },
       {
         "key": "dev",
@@ -378,10 +378,10 @@
         "style": "cap",
         "status": "paused",
         "received": "PAUSE from Pym",
-        "now": "Paused: spike card marked paused",
+        "now": "Holding per Pym until Michael's charter approval is confirmed. No new work, no stories picked up.",
         "next": "Hold until Pym says resume",
         "inbox": 0,
-        "last": "about 5:20 PM CT"
+        "last": "Oct 30, 1:10 AM CT"
       },
       {
         "key": "qa",
@@ -393,10 +393,10 @@
         "style": "spiky",
         "status": "paused",
         "received": "PAUSE from Pym",
-        "now": "Paused: QA card marked paused",
+        "now": "Holding at Pym's request until he confirms the charter approval and says resume. No testing or new work.",
         "next": "Hold until Pym says resume",
         "inbox": 0,
-        "last": "about 5:20 PM CT"
+        "last": "Oct 30, 12:50 AM CT"
       }
     ]
   },
@@ -868,9 +868,111 @@
       "from": "sm",
       "to": "pm",
       "topic": "Paused, 2 cards marked (not yet opened)"
+    },
+    {
+      "time": "2026-10-30T00:23:00-05:00",
+      "from": "pm",
+      "to": "qa",
+      "topic": "New operating mode, still paused"
+    },
+    {
+      "time": "2026-10-30T00:23:00-05:00",
+      "from": "pm",
+      "to": "sm",
+      "topic": "New operating mode, still paused"
+    },
+    {
+      "time": "2026-10-30T00:23:00-05:00",
+      "from": "pm",
+      "to": "po",
+      "topic": "New operating mode, still paused"
+    },
+    {
+      "time": "2026-10-30T00:23:00-05:00",
+      "from": "pm",
+      "to": "ds",
+      "topic": "New operating mode, still paused"
+    },
+    {
+      "time": "2026-10-30T00:23:00-05:00",
+      "from": "pm",
+      "to": "dev",
+      "topic": "New operating mode, still paused"
+    },
+    {
+      "time": "2026-10-30T00:35:00-05:00",
+      "from": "ds",
+      "to": "po",
+      "topic": "On hold, will start criteria on resume"
+    },
+    {
+      "time": "2026-10-30T00:40:00-05:00",
+      "from": "qa",
+      "to": "po",
+      "topic": "P1 test plan for Roma review"
+    },
+    {
+      "time": "2026-10-30T00:40:00-05:00",
+      "from": "ds",
+      "to": "dev",
+      "topic": "On hold; will test Dez's Page on resume"
+    },
+    {
+      "time": "2026-10-30T00:41:00-05:00",
+      "from": "qa",
+      "to": "pm",
+      "topic": "Test plan v1 and QA resumed"
+    },
+    {
+      "time": "2026-10-30T00:41:00-05:00",
+      "from": "ds",
+      "to": "pm",
+      "topic": "Design Direction v0.1 and approval check"
+    },
+    {
+      "time": "2026-10-30T00:41:00-05:00",
+      "from": "ds",
+      "to": "dev",
+      "topic": "Test Page features for feasibility"
+    },
+    {
+      "time": "2026-10-30T00:42:00-05:00",
+      "from": "ds",
+      "to": "po",
+      "topic": "Design decisions for the brief"
+    },
+    {
+      "time": "2026-10-30T00:45:00-05:00",
+      "from": "dev",
+      "to": "po",
+      "topic": "S1 spike findings ready"
+    },
+    {
+      "time": "2026-10-30T00:45:00-05:00",
+      "from": "dev",
+      "to": "pm",
+      "topic": "Resumed, S1 spike done"
+    },
+    {
+      "time": "2026-10-30T00:45:00-05:00",
+      "from": "dev",
+      "to": "ds",
+      "topic": "Page kit limits for designs"
+    },
+    {
+      "time": "2026-10-30T01:02:00-05:00",
+      "from": "dev",
+      "to": "ds",
+      "topic": "Test Page for Bruce's checks"
+    },
+    {
+      "time": "2026-10-30T01:10:00-05:00",
+      "from": "dev",
+      "to": "pm",
+      "topic": "Holding; test Page disclosed"
     }
   ],
-  "lastUpdated": "Thu Oct 29, 2026, 10:51 PM CT",
+  "lastUpdated": "Fri Oct 30, 2026, 7:03 AM CT",
   "links": [
     {
       "label": "Charter",
