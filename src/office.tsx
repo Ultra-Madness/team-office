@@ -30,6 +30,7 @@ function stamp(iso: string): string {
   return `${MON[+m[2] - 1]} ${+m[3]}, ${h % 12 || 12}:${m[5]} ${h < 12 ? "AM" : "PM"}`;
 }
 const ago = (iso: string, now: number): string => (now - Date.parse(iso) <= 5 * 60 * 1000 && now >= Date.parse(iso) - 60000 ? "just now" : "earlier");
+const rel = (iso: string, now: number): string => { const m = Math.round((now - Date.parse(iso)) / 60000); if (!isFinite(m)) return ""; if (m < 1) return "just now"; if (m < 60) return `${m} min ago`; const h = Math.floor(m / 60); return `${h} h ${m % 60} min ago`; };
 const newest = [...MESSAGES].sort((a, b) => Date.parse(b.time) - Date.parse(a.time));
 const mine = (k: string) => newest.filter((m) => m.from === k || m.to === k).slice(0, 6);
 // ===================================================
@@ -267,7 +268,7 @@ function App() {
       <div>
         <div style={{ fontSize: 26, fontWeight: 700 }}>Team Office</div>
         <div style={{ color: th.text.secondary, marginTop: 4, fontSize: 14 }}>{PROJECT.name} · {PROJECT.sprint} · Sprint goal: {PROJECT.sprintGoal || "not set yet"}</div>
-        <div style={{ color: th.text.tertiary, fontSize: 12, marginTop: 2 }}><span style={{ fontWeight: 700, color: "#78350F", background: "#FEF3C7", padding: "1px 6px", borderRadius: 6 }}>Last updated {OFFICE.updated}</span> ({OFFICE.asOf}). Not live: it updates when refreshed from the agents' transcripts. Walks replay real messages, with their time. Hover or tap a person to see their messages; click the Team Board to enlarge it.</div>
+        <div style={{ color: th.text.tertiary, fontSize: 12, marginTop: 2 }}><span style={{ fontWeight: 700, color: "#78350F", background: "#FEF3C7", padding: "1px 6px", borderRadius: 6 }}>Last updated {OFFICE.updated} · {rel(OFFICE.asOfIso, nowMs)}</span> ({OFFICE.asOf}). Not live: it updates each time it is refreshed from the agents' transcripts and the Team Board. Newest message {stamp(newest[0].time)} CT ({rel(newest[0].time, nowMs)}). Walks replay real messages, with their time. Hover or tap a person to see their messages; click the Team Board to enlarge it.</div>
         <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginTop: 8, fontSize: 13 }}>
           <span style={{ color: th.text.tertiary }}>Links:</span>
           {OFFICE.links.map((l) => <a key={l.url} href={l.url} target="_blank" rel="noopener noreferrer" style={{ padding: "3px 10px", borderRadius: 999, border: `1px solid ${th.border.default}`, color: th.text.primary, textDecoration: "none" }}>{l.label} ↗</a>)}
@@ -302,6 +303,9 @@ function App() {
             <span style={{ width: 10, height: 10, borderRadius: "50%", background: s.color, display: "inline-block" }} />{s.label}
           </span>
         ))}
+      </div>
+      <div className="of-note" style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap", minHeight: 34, padding: "6px 12px", borderRadius: 12, border: `2px solid ${current ? (OFFICE.team.find((m) => m.key === current.from)?.color || th.border.default) : th.border.default}`, background: th.bg.subtle, fontSize: 14, color: th.text.primary }}>
+        {current ? (<><span>💬</span><b>{nameOf(current.from)} → {nameOf(current.to)}</b><span>“{current.topic}”</span><span style={{ color: th.text.tertiary, fontSize: 12 }}>sent {stamp(current.time)} CT · {rel(current.time, nowMs)} · replay of a real message</span></>) : <span style={{ color: th.text.tertiary }}>Between conversations: the next walk replays the next real message.</span>}
       </div>
       <div style={{ position: "relative" }} onMouseLeave={() => setHover("")}>
       <svg viewBox="0 0 1000 580" width="100%" className={playing ? undefined : "of-paused"} role="img" aria-label="Cartoon office with six team members at their desks" style={{ borderRadius: 18, display: "block" }}>
@@ -352,14 +356,14 @@ function App() {
         {OFFICE.team.map((m) => <Desk key={m.key} m={m} t={time} />)}
         {movingP.map((x) => <Person key={x.m.key} m={x.m} pose={x.pose} seated={false} t={time} />)}
         {seatedP.filter((x) => x.m.status === "blocked").map((x) => <Bubble key={x.m.key + "b"} x={x.pose.pt.x} y={x.pose.pt.y - 46} text="! Blocked" color="#EF4444" think={true} />)}
-        {movingP.filter((x) => x.pose.chatting && x.pose.ev).map((x) => {
+        {movingP.filter((x) => x.pose.ev && (x.pose.ev as Ev).kind === "talk").map((x) => {
           const ev = x.pose.ev as Ev;
           const turn = Math.floor(x.pose.chatT / 1.4) % 2;
           const tgt = seat(ev.to);
           return (
             <g key={x.m.key + "chat"}>
-              <Bubble x={x.pose.pt.x} y={x.pose.pt.y - 48} text={ev.topic} color={x.m.color} sub={`${stamp(ev.time)} CT · ${ago(ev.time, nowMs)}`} />
-              {turn === 1 && <Bubble x={tgt.x} y={tgt.y - 48} text="…" color={(OFFICE.team.find((m) => m.key === ev.to) as Member).color} />}
+              <Bubble x={x.pose.pt.x} y={x.pose.pt.y - 48} text={x.pose.chatting ? ev.topic : `${nameOf(ev.from)} → ${nameOf(ev.to)}`} color={x.m.color} sub={`${stamp(ev.time)} CT · ${rel(ev.time, nowMs)}`} />
+              {x.pose.chatting && turn === 1 && <Bubble x={tgt.x} y={tgt.y - 48} text="…" color={(OFFICE.team.find((m) => m.key === ev.to) as Member).color} />}
             </g>
           );
         })}
@@ -439,9 +443,6 @@ function App() {
           </div>
         );
       })()}
-      </div>
-      <div style={{ fontSize: 13, color: th.text.secondary, minHeight: 20 }}>
-        {current ? `Replaying (${ago(current.time, nowMs)}): ${who(current.from)} to ${who(current.to)}, "${current.topic}", ${stamp(current.time)} CT` : "Between conversations"}
       </div>
       <div style={{ display: "flex", flexWrap: "wrap", gap: 12 }}>
         {OFFICE.team.map((m) => {

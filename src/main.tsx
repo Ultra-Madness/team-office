@@ -16,7 +16,7 @@ function Root() {
         .then((d) => { if (alive) { setErr(""); setData((old: any) => (old && JSON.stringify(old) === JSON.stringify(d) ? old : d)); } })
         .catch((e) => alive && setErr(String(e)));
     load();
-    const id = setInterval(load, 60000);
+    const id = setInterval(load, 30000);
     return () => { alive = false; clearInterval(id); };
   }, []);
   const App = useMemo(() => (data ? makeOffice(data) : null), [data]);
