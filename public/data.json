@@ -11,7 +11,7 @@
     "waitingOnMichael": true
   },
   "BOARD": {
-    "asOf": "Fri Oct 30, 2026, 8:55 AM CT",
+    "asOf": "Fri Oct 30, 2026, 9:08 AM CT",
     "sprintGoal": "Sprint 0: Kick off Project 1, agree roles and working agreement, approve the charter, set cadence and demo gate",
     "waitingOnMichael": "Waiting on Michael: charter approval",
     "cards": [
@@ -284,9 +284,9 @@
     ]
   },
   "OFFICE": {
-    "asOf": "Fri Oct 30, 2026, 8:55 AM CT",
-    "updated": "8:55 AM CT",
-    "asOfIso": "2026-10-30T08:55:00-05:00",
+    "asOf": "Fri Oct 30, 2026, 9:08 AM CT",
+    "updated": "9:08 AM CT",
+    "asOfIso": "2026-10-30T09:08:00-05:00",
     "links": [
       {
         "label": "Charter",
@@ -972,7 +972,7 @@
       "topic": "Holding; test Page disclosed"
     }
   ],
-  "lastUpdated": "Fri Oct 30, 2026, 8:55 AM CT",
+  "lastUpdated": "Fri Oct 30, 2026, 9:08 AM CT",
   "links": [
     {
       "label": "Charter",
