@@ -11,7 +11,7 @@
     "waitingOnMichael": false
   },
   "BOARD": {
-    "asOf": "Sat Oct 31, 2026, 3:32 PM CT",
+    "asOf": "Sat Oct 31, 2026, 3:45 PM CT",
     "sprintGoal": "Sprint 1: new Page shell, design system and wireframe, every card reviewed and QA-checked",
     "waitingOnMichael": "",
     "cards": [
@@ -121,46 +121,11 @@
         "sprint": ""
       },
       {
-        "title": "PO: decisions needed from Michael on P1 (daily refresh, saved marks, images)",
-        "short": "Decisions for Michael",
-        "status": "Done",
-        "role": "po",
-        "sprint": "Sprint 0"
-      },
-      {
-        "title": "IMPEDIMENT RESOLVED: no GitHub login on the box (Pym) - Page only, no repo for v1 (charter decision 4 accepted Oct 30)",
-        "short": "GitHub login (resolved)",
-        "status": "Done",
-        "role": "pm",
-        "sprint": "Sprint 0"
-      },
-      {
-        "title": "Project Charter P1: approved by Michael Oct 30, 2026 (Pym)",
-        "short": "Charter approved",
-        "status": "Done",
-        "role": "pm",
-        "sprint": "Sprint 0"
-      },
-      {
-        "title": "QA: baseline of current Trend Board, DoD and test approach (P1)",
-        "short": "QA baseline + DoD",
-        "status": "In review",
-        "role": "qa",
-        "sprint": "Sprint 1"
-      },
-      {
-        "title": "P1 Spike: technical review of current Trend Board (Dez)",
-        "short": "Tech review spike",
-        "status": "In review",
-        "role": "dev",
-        "sprint": "Sprint 0"
-      },
-      {
-        "title": "Designer: Sprint 0 discovery and design direction (charter findings sent; Design Direction v0.1 drafted)",
-        "short": "Design direction v0.1",
-        "status": "In progress",
-        "role": "ds",
-        "sprint": "Sprint 0"
+        "title": "Add Retro Actions database and PI/sprint linkage to HQ (Anj)",
+        "short": "Retro Actions DB",
+        "status": "Backlog",
+        "role": "sm",
+        "sprint": ""
       },
       {
         "title": "PI 1 planning (short version) and Sprint 1 planning facilitation (Anj)",
@@ -170,11 +135,11 @@
         "sprint": "Sprint 1"
       },
       {
-        "title": "Add Retro Actions database and PI/sprint linkage to HQ (Anj)",
-        "short": "Retro Actions DB",
-        "status": "Backlog",
-        "role": "sm",
-        "sprint": ""
+        "title": "PO: decisions needed from Michael on P1 (daily refresh, saved marks, images)",
+        "short": "Decisions for Michael",
+        "status": "Done",
+        "role": "po",
+        "sprint": "Sprint 0"
       },
       {
         "title": "PO: score the P1 Program Backlog items with WSJF",
@@ -191,6 +156,13 @@
         "sprint": "Sprint 1"
       },
       {
+        "title": "PO: write stories S1-S16 with acceptance criteria on the Team Board",
+        "short": "Write S1-S16",
+        "status": "Done",
+        "role": "po",
+        "sprint": "Sprint 0"
+      },
+      {
         "title": "PO: Sprint 1 demo script",
         "short": "Sprint 1 demo script",
         "status": "Backlog",
@@ -203,125 +175,6 @@
         "status": "In progress",
         "role": "po",
         "sprint": "Sprint 1"
-      },
-      {
-        "title": "S1 Spike: confirm which Page components and features are available for the redesign",
-        "short": "S1 Components spike",
-        "status": "Done",
-        "role": "dev",
-        "sprint": "Sprint 1"
-      },
-      {
-        "title": "S2 As Michael, I want the redesign as a new separate Page so I can compare old and new side by side",
-        "short": "S2 New separate Page",
-        "status": "Done",
-        "role": "dev",
-        "sprint": "Sprint 1"
-      },
-      {
-        "title": "S3 As Michael, I want all fitness and beyond-fitness trends on the new page with every field",
-        "short": "S3 All trends",
-        "status": "Done",
-        "role": "dev",
-        "sprint": "Sprint 1"
-      },
-      {
-        "title": "S4 As Michael, I want the intro, Avoid list, sources and updated stamp carried over",
-        "short": "S4 Carry over content",
-        "status": "Done",
-        "role": "dev",
-        "sprint": "Sprint 1"
-      },
-      {
-        "title": "S5 Task: keep content as data from a one-time dated snapshot, re-synced on request (no daily refresh in v1)",
-        "short": "S5 Data snapshot",
-        "status": "Done",
-        "role": "dev",
-        "sprint": "Sprint 1"
-      },
-      {
-        "title": "S6 As Michael, I want to jump to any trend quickly instead of scrolling through all trends on the snapshot the new Page was built from",
-        "short": "S6 Jump to trend",
-        "status": "Backlog",
-        "role": "dev",
-        "sprint": ""
-      },
-      {
-        "title": "S7 As Michael, I want each trend card to make Film this and the policy flag easy to spot",
-        "short": "S7 Film this + flag",
-        "status": "Backlog",
-        "role": "dev",
-        "sprint": ""
-      },
-      {
-        "title": "S8 As Michael, I want very long trend descriptions to be readable",
-        "short": "S8 Long text",
-        "status": "Backlog",
-        "role": "dev",
-        "sprint": ""
-      },
-      {
-        "title": "S9 As Michael, I want my Try it / Done / Skip marks and filter to keep working",
-        "short": "S9 Marks + filter",
-        "status": "Backlog",
-        "role": "dev",
-        "sprint": ""
-      },
-      {
-        "title": "S10 As Michael, I want to search trends by keyword",
-        "short": "S10 Keyword search",
-        "status": "Backlog",
-        "role": "dev",
-        "sprint": ""
-      },
-      {
-        "title": "S11 As Michael, I want new, updated and last-call trends flagged at a glance",
-        "short": "S11 New/updated flags",
-        "status": "Backlog",
-        "role": "dev",
-        "sprint": ""
-      },
-      {
-        "title": "S12 As Michael, I want policy flags and the Avoid list always visible",
-        "short": "S12 Flags visible",
-        "status": "Backlog",
-        "role": "dev",
-        "sprint": ""
-      },
-      {
-        "title": "S13 As Michael, I want the sources easier to browse",
-        "short": "S13 Sources browse",
-        "status": "Backlog",
-        "role": "dev",
-        "sprint": ""
-      },
-      {
-        "title": "S14 As a phone reader, I want the page readable on a narrow screen",
-        "short": "S14 Mobile",
-        "status": "Backlog",
-        "role": "qa",
-        "sprint": ""
-      },
-      {
-        "title": "S15 As Michael, I want the page to feel like the Muscle Class brand",
-        "short": "S15 Brand feel",
-        "status": "Backlog",
-        "role": "dev",
-        "sprint": ""
-      },
-      {
-        "title": "S16 Task: prepare the sprint demo script for each sprint",
-        "short": "S16 Demo scripts",
-        "status": "Backlog",
-        "role": "po",
-        "sprint": ""
-      },
-      {
-        "title": "PO: write stories S1-S16 with acceptance criteria on the Team Board",
-        "short": "Write S1-S16",
-        "status": "Done",
-        "role": "po",
-        "sprint": "Sprint 0"
       },
       {
         "title": "PO: add the 10 Project 1 items to the Program Backlog",
@@ -373,6 +226,20 @@
         "sprint": "Sprint 0"
       },
       {
+        "title": "IMPEDIMENT RESOLVED: no GitHub login on the box (Pym) - Page only, no repo for v1 (charter decision 4 accepted Oct 30)",
+        "short": "GitHub login (resolved)",
+        "status": "Done",
+        "role": "pm",
+        "sprint": "Sprint 0"
+      },
+      {
+        "title": "Project Charter P1: approved by Michael Oct 30, 2026 (Pym)",
+        "short": "Charter approved",
+        "status": "Done",
+        "role": "pm",
+        "sprint": "Sprint 0"
+      },
+      {
         "title": "Scrum Master input to team page review: old Page reviewed read-only, PI 1 / Sprint 1-4 / IP proposed rows, first 8 RAID rows (Anj)",
         "short": "SM review + RAID",
         "status": "Done",
@@ -385,13 +252,146 @@
         "status": "Done",
         "role": "pm",
         "sprint": "Sprint 0"
+      },
+      {
+        "title": "S1 Spike: confirm which Page components and features are available for the redesign",
+        "short": "S1 Components spike",
+        "status": "Done",
+        "role": "dev",
+        "sprint": "Sprint 1"
+      },
+      {
+        "title": "S7 As Michael, I want each trend card to make Film this and the policy flag easy to spot",
+        "short": "S7 Film this + flag",
+        "status": "Backlog",
+        "role": "dev",
+        "sprint": ""
+      },
+      {
+        "title": "S2 As Michael, I want the redesign as a new separate Page so I can compare old and new side by side",
+        "short": "S2 New separate Page",
+        "status": "Done",
+        "role": "dev",
+        "sprint": "Sprint 1"
+      },
+      {
+        "title": "S12 As Michael, I want policy flags and the Avoid list always visible",
+        "short": "S12 Flags visible",
+        "status": "Backlog",
+        "role": "dev",
+        "sprint": ""
+      },
+      {
+        "title": "S15 As Michael, I want the page to feel like the Muscle Class brand",
+        "short": "S15 Brand feel",
+        "status": "Backlog",
+        "role": "dev",
+        "sprint": ""
+      },
+      {
+        "title": "S6 As Michael, I want to jump to any trend quickly instead of scrolling through all trends on the snapshot the new Page was built from",
+        "short": "S6 Jump to trend",
+        "status": "Backlog",
+        "role": "dev",
+        "sprint": ""
+      },
+      {
+        "title": "S13 As Michael, I want the sources easier to browse",
+        "short": "S13 Sources browse",
+        "status": "Backlog",
+        "role": "dev",
+        "sprint": ""
+      },
+      {
+        "title": "S4 As Michael, I want the intro, Avoid list, sources and updated stamp carried over",
+        "short": "S4 Carry over content",
+        "status": "Done",
+        "role": "dev",
+        "sprint": "Sprint 1"
+      },
+      {
+        "title": "S5 Task: keep content as data from a one-time dated snapshot, re-synced on request (no daily refresh in v1)",
+        "short": "S5 Data snapshot",
+        "status": "Done",
+        "role": "dev",
+        "sprint": "Sprint 1"
+      },
+      {
+        "title": "S16 Task: prepare the sprint demo script for each sprint",
+        "short": "S16 Demo scripts",
+        "status": "Backlog",
+        "role": "po",
+        "sprint": ""
+      },
+      {
+        "title": "S8 As Michael, I want very long trend descriptions to be readable",
+        "short": "S8 Long text",
+        "status": "Backlog",
+        "role": "dev",
+        "sprint": ""
+      },
+      {
+        "title": "S14 As a phone reader, I want the page readable on a narrow screen",
+        "short": "S14 Mobile",
+        "status": "Backlog",
+        "role": "qa",
+        "sprint": ""
+      },
+      {
+        "title": "S3 As Michael, I want all fitness and beyond-fitness trends on the new page with every field",
+        "short": "S3 All trends",
+        "status": "Done",
+        "role": "dev",
+        "sprint": "Sprint 1"
+      },
+      {
+        "title": "S11 As Michael, I want new, updated and last-call trends flagged at a glance",
+        "short": "S11 New/updated flags",
+        "status": "Backlog",
+        "role": "dev",
+        "sprint": ""
+      },
+      {
+        "title": "S10 As Michael, I want to search trends by keyword",
+        "short": "S10 Keyword search",
+        "status": "Backlog",
+        "role": "dev",
+        "sprint": ""
+      },
+      {
+        "title": "S9 As Michael, I want my Try it / Done / Skip marks and filter to keep working",
+        "short": "S9 Marks + filter",
+        "status": "Backlog",
+        "role": "dev",
+        "sprint": ""
+      },
+      {
+        "title": "QA: baseline of current Trend Board, DoD and test approach (P1)",
+        "short": "QA baseline + DoD",
+        "status": "In review",
+        "role": "qa",
+        "sprint": "Sprint 1"
+      },
+      {
+        "title": "P1 Spike: technical review of current Trend Board (Dez)",
+        "short": "Tech review spike",
+        "status": "In review",
+        "role": "dev",
+        "sprint": "Sprint 0"
+      },
+      {
+        "title": "Designer: Sprint 0 discovery and design direction (charter findings sent; Design Direction v0.1 drafted)",
+        "short": "Design direction v0.1",
+        "status": "In progress",
+        "role": "ds",
+        "sprint": "Sprint 0"
       }
     ]
   },
   "OFFICE": {
-    "asOf": "Sat Oct 31, 2026, 3:32 PM CT",
-    "updated": "3:32 PM CT",
-    "asOfIso": "2026-10-31T15:32:00-05:00",
+    "asOf": "Sat Oct 31, 2026, 3:45 PM CT",
+    "updated": "3:45 PM CT",
+    "asOfIso": "2026-10-31T15:45:00-05:00",
     "links": [
       {
         "label": "Charter",
@@ -1678,7 +1678,7 @@
     }
   ],
   "DECISIONS": {
-    "asOf": "Sat Oct 31, 2026, 3:32 PM CT",
+    "asOf": "Sat Oct 31, 2026, 3:45 PM CT",
     "open": [
       {
         "title": "Four borderline flags (onemove, winterarc, hometown, strong30s) match no Avoid row: keep as Warning or mark Danger?",
@@ -1733,7 +1733,7 @@
       }
     ]
   },
-  "lastUpdated": "Sat Oct 31, 2026, 3:32 PM CT",
+  "lastUpdated": "Sat Oct 31, 2026, 3:45 PM CT",
   "links": [
     {
       "label": "Charter",
