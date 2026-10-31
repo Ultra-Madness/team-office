@@ -11,7 +11,7 @@
     "waitingOnMichael": true
   },
   "BOARD": {
-    "asOf": "Fri Oct 30, 2026, 8:01 PM CT",
+    "asOf": "Fri Oct 30, 2026, 8:16 PM CT",
     "sprintGoal": "Sprint 0: Kick off Project 1, agree roles and working agreement, approve the charter, set cadence and demo gate",
     "waitingOnMichael": "Waiting on Michael: charter approval",
     "cards": [
@@ -32,7 +32,7 @@
       {
         "title": "Design: front-end review of S2 to S5 (Bruce)",
         "short": "Design review S2-S5",
-        "status": "Ready",
+        "status": "In review",
         "role": "ds",
         "sprint": "Sprint 1"
       },
@@ -107,7 +107,7 @@
         "sprint": "Sprint 0"
       },
       {
-        "title": "Designer: Sprint 1 discovery and design direction (charter findings sent; Design Direction v0.1 drafted)",
+        "title": "Designer: Sprint 0 discovery and design direction (charter findings sent; Design Direction v0.1 drafted)",
         "short": "Design direction v0.1",
         "status": "In progress",
         "role": "ds",
@@ -165,33 +165,33 @@
       {
         "title": "S2 As Michael, I want the redesign as a new separate Page so I can compare old and new side by side",
         "short": "S2 New separate Page",
-        "status": "Done",
+        "status": "In review",
         "role": "dev",
         "sprint": ""
       },
       {
         "title": "S3 As Michael, I want all fitness and beyond-fitness trends on the new page with every field",
         "short": "S3 All trends",
-        "status": "QA",
+        "status": "In review",
         "role": "dev",
         "sprint": ""
       },
       {
         "title": "S4 As Michael, I want the intro, Avoid list, sources and updated stamp carried over",
         "short": "S4 Carry over content",
-        "status": "QA",
+        "status": "In review",
         "role": "dev",
         "sprint": ""
       },
       {
         "title": "S5 Task: keep content as data from a one-time dated snapshot, re-synced on request (no daily refresh in v1)",
         "short": "S5 Data snapshot",
-        "status": "Done",
+        "status": "In review",
         "role": "dev",
         "sprint": ""
       },
       {
-        "title": "S6 As Michael, I want to jump to any trend quickly instead of scrolling 35 cards",
+        "title": "S6 As Michael, I want to jump to any trend quickly instead of scrolling through all trends on the snapshot the new Page was built from",
         "short": "S6 Jump to trend",
         "status": "Backlog",
         "role": "dev",
@@ -340,9 +340,9 @@
     ]
   },
   "OFFICE": {
-    "asOf": "Fri Oct 30, 2026, 8:01 PM CT",
-    "updated": "8:01 PM CT",
-    "asOfIso": "2026-10-30T20:01:00-05:00",
+    "asOf": "Fri Oct 30, 2026, 8:16 PM CT",
+    "updated": "8:16 PM CT",
+    "asOfIso": "2026-10-30T20:16:00-05:00",
     "links": [
       {
         "label": "Charter",
@@ -1316,7 +1316,7 @@
       "topic": "Snapshot date placement decision"
     }
   ],
-  "lastUpdated": "Fri Oct 30, 2026, 8:01 PM CT",
+  "lastUpdated": "Fri Oct 30, 2026, 8:16 PM CT",
   "links": [
     {
       "label": "Charter",
