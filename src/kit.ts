@@ -16,7 +16,7 @@ const DARK = {
 const KEY = "team-office-theme";
 const sysDark = () => window.matchMedia("(prefers-color-scheme: dark)").matches;
 export function savedMode(): "light" | "dark" | null { const v = localStorage.getItem(KEY); return v === "light" || v === "dark" ? v : null; }
-export function currentMode(): "light" | "dark" { return savedMode() ?? (sysDark() ? "dark" : "light"); }
+export function currentMode(): "light" | "dark" { return savedMode() ?? "dark"; }
 function apply() { const m = currentMode(); document.documentElement.dataset.theme = m; document.documentElement.style.colorScheme = m; window.dispatchEvent(new Event("of-theme")); }
 export function setMode(m: "light" | "dark") { localStorage.setItem(KEY, m); apply(); }
 if (typeof window !== "undefined") { apply(); window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", apply); }

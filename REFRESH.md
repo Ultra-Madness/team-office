@@ -140,3 +140,7 @@ The site refetches data.json every 30 s (src/main.tsx) and shows "Last updated H
   Status = Proposed, Date, a one-line Decision (the question) and Rationale (why it is needed / the default if no answer).
   When Michael answers, Pym sets Status = Decided (it then drops out of the queue and shows under recent decisions).
 - PROJECT.sprint / sprintGoal / phase / stepNote / waitingOnMichael still need a manual edit when a sprint changes (not in the routine).
+
+## Oct 30, late: visual command center
+- src/Command.tsx (hand-written, repo-only) now renders the page: code-drawn SVG animal/robot office, gauges, decision cards, quest, live log. It reads only data.json, so the refresh recipe is unchanged.
+- The old generated office (src/office.tsx from the canvas) is still built and sits behind "Show full details". Do not edit Command.tsx from sync.
