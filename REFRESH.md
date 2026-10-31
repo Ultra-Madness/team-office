@@ -144,3 +144,6 @@ The site refetches data.json every 30 s (src/main.tsx) and shows "Last updated H
 ## Oct 30, late: visual command center
 - src/Command.tsx (hand-written, repo-only) now renders the page: code-drawn SVG animal/robot office, gauges, decision cards, quest, live log. It reads only data.json, so the refresh recipe is unchanged.
 - The old generated office (src/office.tsx from the canvas) is still built and sits behind "Show full details". Do not edit Command.tsx from sync.
+
+## Oct 31, 12 AM CT: dashboard cleanup
+- Command.tsx layout: header (rings, quest/XP/updated chips, switches, ☰), office scene (characters now walk to a teammate's desk carrying an envelope, replaying recent messages), Waiting on Michael cards + team roster, Live feed. The old full/classic view moved into the ☰ drawer. Build/deploy steps unchanged.
