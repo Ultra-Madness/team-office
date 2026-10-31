@@ -210,7 +210,7 @@ function Desk(p: { m: Member; t: number }) {
       <rect x={d.x - 62} y={d.y + 32} width={124} height={34} rx={6} fill="#FFFFFF" stroke={p.m.color} strokeWidth={2} />
       <text className="of-lbl" x={d.x} y={d.y + 46} textAnchor="middle" fontSize={12} fontWeight={700} fill="#111827">{p.m.name || "Name to come"}</text>
       <text className="of-lbl" x={d.x} y={d.y + 60} textAnchor="middle" fontSize={10} fill="#6B7280">{p.m.role}</text>
-      <text className="of-lbl" x={d.x} y={d.y + 82} textAnchor="middle" fontSize={11} fill="#374151">{"Now: " + p.m.now}</text>
+      <text className="of-lbl" x={d.x} y={d.y + 82} textAnchor="middle" fontSize={11} fill="#374151">{"Now: " + (p.m.now.length > 30 ? p.m.now.slice(0, 29) + "…" : p.m.now)}<title>{p.m.now}</title></text>
       {p.m.inbox > 0 && <g><circle cx={d.x + 62} cy={d.y + 32} r={10} fill="#DC2626" stroke="#fff" strokeWidth={2} /><text x={d.x + 62} y={d.y + 36} textAnchor="middle" fontSize={11} fontWeight={700} fill="#fff">{p.m.inbox}</text></g>}
     </g>
   );

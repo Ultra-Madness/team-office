@@ -5,12 +5,21 @@ import { useGrokTheme } from "./kit";
 
 const COLOR: Record<string, string> = { pm: "#3B82F6", po: "#F59E0B", sm: "#10B981", ds: "#EC4899", dev: "#8B5CF6", qa: "#06B6D4", gb: "#9CA3AF", team: "#64748B" };
 const STATE: Record<string, { label: string; color: string }> = {
-  engaged: { label: "Working", color: "#22C55E" }, idle: { label: "Idle", color: "#9CA3AF" }, blocked: { label: "Blocked", color: "#EF4444" },
+  engaged: { label: "Engaged", color: "#22C55E" }, idle: { label: "Idle, waiting", color: "#F59E0B" }, blocked: { label: "Blocked", color: "#EF4444" },
   waiting: { label: "Waiting", color: "#F59E0B" }, paused: { label: "Paused", color: "#A78BFA" }, offline: { label: "Offline", color: "#6B7280" },
 };
 const DONE = ["Done"], DOING = ["In progress", "In review", "QA"];
 const KEY = "team-office-decisions-v1", SND = "team-office-sound";
-type Mark = { state: "approved" | "done" | "open"; at: string };
+type Mark = { state: "approved" | "done" | "open"; at: string; choice?: string };
+// "…: keep as Warning or mark Danger?" -> ["Keep as Warning", "Mark Danger"]; null when the question isn't a two-way choice.
+export function options(title: string): string[] | null {
+  const q = title.includes(":") ? title.slice(title.lastIndexOf(":") + 1) : title;
+  if (!q.trim().endsWith("?")) return null;
+  const parts = q.trim().replace(/\?$/, "").split(/,? or /);
+  if (parts.length !== 2 || parts.some((x) => !x.trim() || x.length > 60)) return null;
+  const cap = (x: string) => x.trim().charAt(0).toUpperCase() + x.trim().slice(1);
+  return parts.map(cap);
+}
 
 // Role badges drawn in code (no images).
 function Badge({ k, size = 26 }: { k: string; size?: number }) {
@@ -66,7 +75,7 @@ export function Dashboard({ data }: { data: any }) {
   const cleared = (dec.open || []).filter((d: any) => marks[idOf(d)] && marks[idOf(d)].state !== "open");
   const xp = Object.values(marks).filter((m) => m.state !== "open").length;
   const beep = () => { if (!sound) return; try { const A = (window as any).AudioContext || (window as any).webkitAudioContext; const a = new A(); const o = a.createOscillator(), g = a.createGain(); o.frequency.value = 880; g.gain.value = 0.05; o.connect(g); g.connect(a.destination); o.start(); o.stop(a.currentTime + 0.12); } catch { /* no sound */ } };
-  const mark = (d: any, state: Mark["state"]) => { const n = { ...marks, [idOf(d)]: { state, at: new Date().toISOString() } }; setMarks(n); localStorage.setItem(KEY, JSON.stringify(n)); if (state !== "open") beep(); };
+  const mark = (d: any, state: Mark["state"], choice?: string) => { const n = { ...marks, [idOf(d)]: { state, at: new Date().toISOString(), choice } }; setMarks(n); localStorage.setItem(KEY, JSON.stringify(n)); if (state !== "open") beep(); };
 
   const box = { background: th.bg.elevated, border: `1px solid ${th.border.default}`, borderRadius: 12, padding: 14, minWidth: 0 } as const;
   const btn = (bg: string, fg = "#fff") => ({ minHeight: 40, padding: "8px 14px", borderRadius: 10, border: "none", background: bg, color: fg, fontWeight: 700, fontSize: 14, cursor: "pointer" });
@@ -108,7 +117,7 @@ export function Dashboard({ data }: { data: any }) {
         <section className="wom" style={{ ...box, borderColor: open.length ? "#F59E0B" : th.border.default }} aria-label="Waiting on Michael">
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
             <h2 style={{ fontSize: 15, margin: 0 }}>Waiting on Michael {open.length > 0 && <span style={{ background: "#F59E0B", color: "#111827", borderRadius: 99, padding: "1px 8px", fontSize: 13 }}>{open.length}</span>}</h2>
-            <span style={{ fontSize: 12, color: th.text.tertiary }}>{xp > 0 ? `${xp} cleared · ` : ""}<label style={{ cursor: "pointer" }}><input type="checkbox" checked={sound} onChange={(e) => { setSound(e.target.checked); localStorage.setItem(SND, e.target.checked ? "on" : "off"); }} /> sound</label></span>
+            <span style={{ fontSize: 12, color: th.text.tertiary }}><span data-t="cleared">{xp > 0 ? `${xp} cleared · ` : ""}</span><label style={{ cursor: "pointer" }}><input type="checkbox" checked={sound} onChange={(e) => { setSound(e.target.checked); localStorage.setItem(SND, e.target.checked ? "on" : "off"); }} /> sound</label></span>
           </div>
           <div style={{ fontSize: 12, color: th.text.secondary, margin: "6px 0 10px", padding: "6px 8px", background: th.bg.subtle, borderRadius: 8 }}>Buttons are <b>saved on this device only</b>. They don't change Notion or tell the team; Pym still records your answer.</div>
           {open.length === 0 && <div style={{ padding: "18px 4px", fontSize: 15 }}>✓ Nothing is waiting on you right now.</div>}
@@ -117,14 +126,15 @@ export function Dashboard({ data }: { data: any }) {
               <a href={d.url} target="_blank" rel="noreferrer" style={{ color: "inherit", fontWeight: 700, fontSize: 15 }}>{d.title}</a>
               <div style={{ fontSize: 12, color: th.text.tertiary, margin: "2px 0 8px" }}>{d.why ? `${d.why} · ` : ""}asked {d.date}</div>
               <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-                <button style={btn("#16A34A")} onClick={() => mark(d, "approved")}>Approve</button>
-                <button style={btn("#2563EB")} onClick={() => mark(d, "done")}>Done</button>
+                {options(d.title) ? options(d.title)!.map((o, j) => <button key={o} style={btn(j ? "#2563EB" : "#16A34A")} onClick={() => mark(d, "approved", o)}>{o}</button>)
+                  : <><button style={btn("#16A34A")} onClick={() => mark(d, "approved")} title="Go ahead with the default">Approve</button>
+                <button style={btn("#2563EB")} onClick={() => mark(d, "done")}>Done</button></>}
                 <button style={btn(th.bg.subtle, th.text.primary)} onClick={() => mark(d, "open")}>Keep open</button>
               </div>
             </div>))}
           {cleared.length > 0 && <div style={{ fontSize: 13, marginTop: 6 }}>
             <b>Cleared on this device</b>
-            {cleared.map((d: any) => <div key={idOf(d)} style={{ display: "flex", justifyContent: "space-between", gap: 8, padding: "4px 0", color: th.text.secondary }}><span>{marks[idOf(d)].state === "approved" ? "✓ Approved" : "✓ Done"}: {d.title}</span><button style={{ ...btn("transparent", th.text.secondary), minHeight: 28, padding: "2px 6px", fontWeight: 400, textDecoration: "underline" }} onClick={() => mark(d, "open")}>Undo</button></div>)}
+            {cleared.map((d: any) => <div key={idOf(d)} style={{ display: "flex", justifyContent: "space-between", gap: 8, padding: "4px 0", color: th.text.secondary }}><span>{marks[idOf(d)].choice ? `✓ ${marks[idOf(d)].choice}` : marks[idOf(d)].state === "approved" ? "✓ Approved" : "✓ Done"}: {d.title}</span><button style={{ ...btn("transparent", th.text.secondary), minHeight: 28, padding: "2px 6px", fontWeight: 400, textDecoration: "underline" }} onClick={() => mark(d, "open")}>Undo</button></div>)}
           </div>}
           <button onClick={() => setShowDone(!showDone)} aria-expanded={showDone} style={{ ...btn("transparent", th.text.secondary), padding: "6px 0", fontWeight: 600, fontSize: 13 }}>{showDone ? "▾" : "▸"} Your recent decisions ({(dec.recent || []).length})</button>
           {showDone && (dec.recent || []).map((d: any) => <div key={idOf(d)} style={{ fontSize: 13, padding: "3px 0" }}><a href={d.url} target="_blank" rel="noreferrer" style={{ color: th.text.secondary }}>{d.title}</a> <span style={{ color: th.text.tertiary }}>· {d.date}</span></div>)}
