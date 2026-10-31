@@ -290,7 +290,6 @@ function App() {
         })}
       </div>
       <div style={{ fontSize: 13, color: th.text.secondary, display: "flex", flexWrap: "wrap", gap: 10, alignItems: "center" }}>
-        <span style={{ padding: "3px 10px", borderRadius: 999, background: "#6366F1", color: "#fff", fontWeight: 700 }}>Team paused by Michael at 5:20 PM CT</span>
         {PROJECT.waitingOnMichael && <span style={{ padding: "3px 10px", borderRadius: 999, background: "#F59E0B", color: "#111827", fontWeight: 700 }}>Waiting on Michael: approve the charter</span>}
         <span>{PROJECT.stepNote}</span>
         <span style={{ color: th.text.tertiary }}>{PROJECT.demoDates}</span>

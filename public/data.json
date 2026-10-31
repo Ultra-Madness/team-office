@@ -1,19 +1,19 @@
 {
   "PROJECT": {
     "name": "Project 1: Muscle Class Trend Board redesign (new version)",
-    "sprint": "PI 1 proposed · Sprint 0 Active (Oct 29 – Nov 1)",
-    "sprintGoal": "Kick off Project 1, agree roles, approve the charter, set cadence and demo gate",
-    "phase": 1,
+    "sprint": "PI 1 · Sprint 1 Active (team-paced, demo target Nov 12)",
+    "sprintGoal": "New Page shell with old content carried over, design system and wireframe ready for review, every card reviewed and QA-checked",
+    "phase": 4,
     "stepsDone": 2,
-    "stepsTotal": 3,
-    "stepNote": "Charter revised for per-sprint demos; approval pending",
-    "demoDates": "Tentative demos: Nov 12, Nov 25, Dec 10, Dec 23, Jan 7",
-    "waitingOnMichael": true
+    "stepsTotal": 5,
+    "stepNote": "Charter approved Oct 30; Sprint 1 build under way",
+    "demoDates": "Sprint 1 demo target: Nov 12 (team-paced)",
+    "waitingOnMichael": false
   },
   "BOARD": {
     "asOf": "Fri Oct 30, 2026, 10:40 PM CT",
-    "sprintGoal": "Sprint 0: Kick off Project 1, agree roles and working agreement, approve the charter, set cadence and demo gate",
-    "waitingOnMichael": "Waiting on Michael: charter approval",
+    "sprintGoal": "Sprint 1: new Page shell, design system and wireframe, every card reviewed and QA-checked",
+    "waitingOnMichael": "",
     "cards": [
       {
         "title": "BUG (Medium) S5: snapshot date shown once at the top only, no bottom date as the card claims",
@@ -1586,6 +1586,37 @@
       "topic": "Snapshot date placement decision"
     }
   ],
+  "DECISIONS": {
+    "asOf": "Fri Oct 30, 2026, 11:00 PM CT",
+    "open": [],
+    "recent": [
+      {
+        "title": "Show the sisters' approved character images with an AI label (S15)",
+        "date": "2026-10-30",
+        "url": "https://app.notion.com/p/40a20ecf0b0f811b8454f8b8e7df390a"
+      },
+      {
+        "title": "Saved marks start fresh on the new Page, separate storage from the old page (S9)",
+        "date": "2026-10-30",
+        "url": "https://app.notion.com/p/40a20ecf0b0f813e95efdd921577b8c6"
+      },
+      {
+        "title": "New Page built from a dated snapshot, re-synced on request; no daily refresh in v1 (S5)",
+        "date": "2026-10-30",
+        "url": "https://app.notion.com/p/40a20ecf0b0f81bbb93af80abfae69e4"
+      },
+      {
+        "title": "Charter approved by Michael, Sprint 1 started",
+        "date": "2026-10-30",
+        "url": "https://app.notion.com/p/40a20ecf0b0f819b958bf13237a49362"
+      },
+      {
+        "title": "Team workday 7:00 AM to 10:00 PM CT; Michael's attention batched into his time blocks",
+        "date": "2026-10-30",
+        "url": "https://app.notion.com/p/40920ecf0b0f8147b905d38b26048b8d"
+      }
+    ]
+  },
   "lastUpdated": "Fri Oct 30, 2026, 10:40 PM CT",
   "links": [
     {

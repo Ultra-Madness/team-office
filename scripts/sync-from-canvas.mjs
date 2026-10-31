@@ -11,7 +11,7 @@ const cut = (a, b) => { const i = src.indexOf(a); const j = src.indexOf(b, i); i
 
 // Data: PROJECT, BOARD, OFFICE, MESSAGES (BOARD_COLS..PHASES are code, kept in office.tsx).
 const dataSrc = cut("const PROJECT = {", "const BOARD_COLS") + cut("const OFFICE = {", "const REPLAY_LAST");
-const js = transformSync(dataSrc + "\nexport default { PROJECT, BOARD, OFFICE, MESSAGES };", { loader: "ts", format: "cjs" }).code;
+const js = transformSync(dataSrc + "\nexport default { PROJECT, BOARD, OFFICE, MESSAGES, DECISIONS: typeof DECISIONS === \"undefined\" ? { open: [], recent: [] } : DECISIONS };", { loader: "ts", format: "cjs" }).code;
 const mod = { exports: {} };
 new Function("module", "exports", js)(mod, mod.exports);
 const data = mod.exports.default;
