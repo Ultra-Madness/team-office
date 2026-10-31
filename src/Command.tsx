@@ -140,33 +140,55 @@ export function Command({ data, classic }: { data: any; classic: any }) {
   const P = dark ? { bg: "#070B16", panel: "#111833", line: "#26305A", text: "#F1F5F9", sub: "#94A3B8", floor: "#0D1328" } : { bg: "#E8ECFA", panel: "#FFFFFF", line: "#CBD2EE", text: "#0F172A", sub: "#475569", floor: "#F4F6FD" };
   const zoneOf = (k: string) => ZONES.find((z) => z.keys.includes(k))!;
 
+  // walking: sender walks to the recipient's desk and back (re-plays recent messages so the room stays alive)
+  const walkable = msgs.filter((m) => DESK[m.from] && DESK[m.to] && m.from !== m.to).slice(0, 6);
+  const [walk, setWalk] = useState<{ k: string; x: number; y: number; flip: boolean } | null>(null);
+  const walkKey = walkable.map((m) => m.from + m.to + m.time).join("|");
+  useEffect(() => {
+    if (!walkable.length) return;
+    let raf = 0, idx = 0, timer: any, stop = false;
+    const go = () => {
+      const m = walkable[idx++ % walkable.length]; const [x1, y1] = DESK[m.from], [x2, y2] = DESK[m.to];
+      const tx = x2 + (x1 < x2 ? -95 : 95), ty = y2 + 10, dur = 5200 / speed, t0 = performance.now();
+      const step = (t: number) => {
+        if (stop) return; const u = Math.min(1, (t - t0) / dur);
+        const leg = u < 0.42 ? u / 0.42 : u < 0.58 ? 1 : 1 - (u - 0.58) / 0.42; const e = leg * leg * (3 - 2 * leg);
+        const x = x1 + (tx - x1) * e, y = y1 + 10 + (ty - y1 - 10) * e - Math.sin(Math.PI * e) * 40;
+        setWalk({ k: m.from, x, y, flip: u < 0.5 ? tx < x1 : tx > x1 });
+        if (u < 1) raf = requestAnimationFrame(step); else { setWalk(null); timer = setTimeout(go, 3500 / speed); }
+      };
+      raf = requestAnimationFrame(step);
+    };
+    timer = setTimeout(go, 1200);
+    return () => { stop = true; cancelAnimationFrame(raf); clearTimeout(timer); setWalk(null); };
+  }, [walkKey, speed]);
+  const [drawer, setDrawer] = useState(false);
+  const short = (t: string, n = 70) => (t && t.length > n ? t.slice(0, n - 1) + "…" : t);
+
   return (
     <div className="cc" style={{ ["--bg" as any]: P.bg, ["--panel" as any]: P.panel, ["--line" as any]: P.line, ["--text" as any]: P.text, ["--sub" as any]: P.sub, ["--spd" as any]: 1 / speed }}>
       <style>{CSS}</style>
-      {/* ===== header: title + gauges + controls ===== */}
       <header className="cc-head">
-        <div className="cc-title"><div className="cc-logo">◆</div><div><div className="cc-h1">TEAM OFFICE</div><div className="cc-h2">{(data.PROJECT?.sprint || "").split("(")[0]}</div></div></div>
+        <div className="cc-title"><div className="cc-logo">◆</div><div><h1 className="cc-h1">Team Office</h1><div className="cc-h2">{(data.PROJECT?.sprint || "").split("(")[0]}</div></div></div>
         <div className="cc-gauges">
           <Gauge label="Project 1" {...count(() => true)} color="#A78BFA" />
-          {sprints.map((s, i) => <Gauge key={s} label={s} {...count((x) => x.sprint === s)} color={i === 0 ? "#22D3EE" : "#34D399"} />)}
+          {sprints.slice(0, 2).map((s, i) => <Gauge key={s} label={s} {...count((x) => x.sprint === s)} color={i === 0 ? "#22D3EE" : "#34D399"} />)}
         </div>
         <div className="cc-ctrl">
-          <div className="cc-quest" title="Daily quest: saved on this device">
-            <div className="cc-qt">⚔ Daily quest</div>
-            <div className="cc-qb"><div style={{ width: `${Math.min(100, (100 * clearedToday) / questGoal)}%` }} /></div>
-            <div className="cc-qs">Clear {questGoal} decision{questGoal > 1 ? "s" : ""} · {Math.min(clearedToday, questGoal)}/{questGoal}{clearedToday >= questGoal ? " ★" : ""}</div>
+          <div className="cc-chips">
+            <span className="cc-chip q" title={`Daily quest: clear ${questGoal} decision(s). Saved on this device.`}>⚔ {Math.min(clearedToday, questGoal)}/{questGoal}{clearedToday >= questGoal ? " ★" : ""}</span>
+            <span className="cc-chip x" data-t="cleared" title="Decisions cleared on this device">★ {xp * 10} XP</span>
+            <span className="cc-chip t" title="Data refreshes every 15 minutes">⟳ {data.OFFICE?.updated}</span>
           </div>
-          <div className="cc-xp" data-t="cleared" title="Decisions cleared on this device">{xp > 0 ? `${xp} cleared · ` : ""}<b>★ {xp * 10} XP</b></div>
           <div className="cc-sw">
             <Flick on={sound} set={setS} label="Sound" /><Flick on={music} set={setM} label="Music" /><Flick on={!dark} set={(v: boolean) => setMode(v ? "light" : "dark")} label="Light" />
             <button className="cc-knob" onClick={turnKnob} aria-label={`Animation speed ${speed}x, tap to change`} title="Animation speed"><span style={{ transform: `rotate(${speed === 0.5 ? -60 : speed === 1 ? 0 : 60}deg)` }} /><i>{speed}×</i></button>
+            <button className="cc-menu" onClick={() => setDrawer(true)} aria-label="Full details" title="Full details">☰</button>
           </div>
         </div>
       </header>
 
       <div className="cc-main">
-        <div className="cc-center">
-        {/* ===== centre: the office ===== */}
         <section className="cc-scene" aria-label="Office scene">
           <svg viewBox="0 0 1000 600" className="cc-svg" role="img" aria-label="Animated office: each teammate at a desk in their team's zone">
             <defs>
@@ -180,7 +202,6 @@ export function Command({ data, classic }: { data: any; classic: any }) {
               <rect x={z.x + 14} y={z.y + 12} width={z.name.length * 11 + 26} height={28} rx={14} fill={z.color} />
               <text x={z.x + 27} y={z.y + 31} fontSize={15} fontWeight={900} fill="#fff" letterSpacing={1}>{z.name.toUpperCase()}</text>
             </g>)}
-            {/* process zone sprint board */}
             <g transform="translate(790 70)">
               <rect width={170} height={120} rx={10} fill="#F8FAFC" stroke="#94A3B8" strokeWidth={3} />
               {[["To do", ["Ready", "Backlog"], "#F59E0B"], ["Doing", DOING, "#3B82F6"], ["Done", DONE, "#22C55E"]].map(([l, ss, c]: any, i) => {
@@ -188,97 +209,79 @@ export function Command({ data, classic }: { data: any; classic: any }) {
                 return <g key={l}><rect x={18 + i * 52} y={96 - h} width={34} height={h} rx={4} fill={c} /><text x={35 + i * 52} y={90 - h} textAnchor="middle" fontSize={13} fontWeight={800} fill="#0F172A">{n}</text><text x={35 + i * 52} y={112} textAnchor="middle" fontSize={10} fill="#475569">{l}</text></g>;
               })}
             </g>
-            {/* plants + sponsor seat */}
             {[[500, 300], [960, 300]].map(([x, y], i) => <g key={i} transform={`translate(${x} ${y})`}><rect x={-9} y={-4} width={18} height={14} rx={3} fill="#92400E" /><circle cx={-6} cy={-10} r={9} fill="#16A34A" /><circle cx={6} cy={-12} r={9} fill="#22C55E" /><circle cx={0} cy={-20} r={8} fill="#15803D" /></g>)}
-            {/* desks + characters */}
             {team.filter((m) => DESK[m.key]).map((m) => {
               const [x, y] = DESK[m.key], s = m.status, z = zoneOf(m.key);
-              const work = s === "engaged", block = s === "blocked";
+              const work = s === "engaged", block = s === "blocked", away = walk?.k === m.key;
               return (
                 <g key={m.key} className={"cc-desk s-" + s} transform={`translate(${x} ${y})`} onClick={() => setSel(m.key)} style={{ cursor: "pointer" }} role="button" tabIndex={0} aria-label={`${m.name}, ${m.role}: ${st(s).label}. Tap for messages.`} onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && setSel(m.key)}>
                   {block && <circle className="cc-alarm" r={78} fill="#EF4444" opacity={0.25} />}
                   {work && <ellipse cx={0} cy={-30} rx={70} ry={40} fill="url(#glow)" className="cc-screenglow" />}
-                  {/* chair behind */}
                   <rect x={-34} y={-20} width={68} height={56} rx={16} fill="#334155" />
-                  <g transform="translate(0 -6) scale(1.5)"><g className="cc-body"><Critter k={m.key} color={m.color} /></g></g>
-                  {/* desk */}
+                  {!away && <g transform="translate(0 -6) scale(1.5)"><g className="cc-body"><Critter k={m.key} color={m.color} /></g></g>}
                   <rect x={-70} y={28} width={140} height={34} rx={8} fill="#A16207" stroke="#713F12" strokeWidth={2} />
                   <rect x={-70} y={28} width={140} height={8} rx={4} fill="#CA8A04" />
-                  {/* monitor */}
                   <g transform="translate(-44 22) scale(.8)"><rect x={-32} y={-26} width={64} height={30} rx={5} fill="#1E293B" stroke="#0F172A" strokeWidth={2} />
                     <rect x={-28} y={-22} width={56} height={22} rx={3} className="cc-screen" fill={block ? "#7F1D1D" : work ? "#0E7490" : s === "paused" ? "#3730A3" : "#334155"} />
                     {work && [0, 1, 2].map((i) => <rect key={i} className="cc-code" style={{ animationDelay: `${i * 0.3}s` }} x={-22} y={-18 + i * 6} width={18 + ((i * 13) % 26)} height={3} rx={1.5} fill="#67E8F9" />)}
                     {block && <text y={-6} textAnchor="middle" fontSize={16} fontWeight={900} fill="#FCA5A5">!</text>}
                   </g>
-                  {work && <g className="cc-hands"><circle cx={-18} cy={30} r={7} fill={m.color} stroke="#0008" /><circle cx={18} cy={30} r={7} fill={m.color} stroke="#0008" /></g>}
-                  {(s === "idle" || s === "waiting") && <text className="cc-zzz" x={30} y={-50} fontSize={22} fontWeight={800} fill="#FBBF24">z</text>}
+                  {work && !away && <g className="cc-hands"><circle cx={-18} cy={30} r={7} fill={m.color} stroke="#0008" /><circle cx={18} cy={30} r={7} fill={m.color} stroke="#0008" /></g>}
+                  {(s === "idle" || s === "waiting") && !away && <text className="cc-zzz" x={30} y={-50} fontSize={22} fontWeight={800} fill="#FBBF24">z</text>}
                   {block && <g className="cc-alert"><circle cx={34} cy={-56} r={14} fill="#EF4444" stroke="#fff" strokeWidth={2} /><text x={34} y={-50} textAnchor="middle" fontSize={18} fontWeight={900} fill="#fff">!</text></g>}
                   <RoleBadge k={m.key} x={52} y={34} c={z.color} />
                   <g transform="translate(0 82)"><rect x={-46} y={-14} width={92} height={26} rx={13} fill={dark ? "#0B1120" : "#fff"} stroke={st(s).color} strokeWidth={3} />
                     <circle cx={-32} cy={-1} r={5} fill={st(s).color} /><text x={6} y={4} textAnchor="middle" fontSize={14} fontWeight={800} fill={dark ? "#F1F5F9" : "#0F172A"}>{m.name}</text></g>
                   {m.inbox > 0 && <g><circle cx={-62} cy={-10} r={11} fill="#F59E0B" stroke="#fff" strokeWidth={2} /><text x={-62} y={-5} textAnchor="middle" fontSize={12} fontWeight={900} fill="#111">{m.inbox}</text></g>}
+                  <title>{`${m.name} (${m.role}): ${st(s).label}${m.now ? " — " + m.now : ""}`}</title>
                 </g>);
             })}
-            {/* flying messages */}
-            {fly.map((m, i) => { const [x1, y1] = DESK[m.from], [x2, y2] = DESK[m.to]; return (
-              <g key={i}><g><rect x={-9} y={-6} width={18} height={12} rx={2} fill="#FDE68A" stroke="#B45309" /><path d="M-9-6l9 7 9-7" fill="none" stroke="#B45309" />
-                <animateMotion dur={`${3 / speed}s`} begin={`-${i * 2.2 + 0.01}s`} repeatCount="indefinite" path={`M${x1} ${y1 - 20} Q${(x1 + x2) / 2} ${Math.min(y1, y2) - 120} ${x2} ${y2 - 20}`} />
-                <animate attributeName="opacity" values="0;1;1;0" dur={`${3 / speed}s`} begin={`-${i * 2.2 + 0.01}s`} repeatCount="indefinite" /></g></g>); })}
+            {walk && byKey(walk.k) && <g className="cc-walker" transform={`translate(${walk.x} ${walk.y}) scale(${walk.flip ? -1.3 : 1.3} 1.3)`} pointerEvents="none">
+              <ellipse cx={0} cy={38} rx={18} ry={5} fill="#000" opacity={0.25} />
+              <g className="cc-step"><Critter k={walk.k} color={byKey(walk.k).color} /></g>
+              <g transform="translate(16 18)"><rect x={-9} y={-6} width={18} height={12} rx={2} fill="#FDE68A" stroke="#B45309" /><path d="M-9-6l9 7 9-7" fill="none" stroke="#B45309" /></g>
+            </g>}
           </svg>
-          <div className="cc-legend">{["engaged", "idle", "blocked", "paused"].map((s) => <span key={s}><i style={{ background: st(s).color }} />{st(s).label}</span>)}<span className="cc-art">Characters drawn in code, not AI images</span></div>
         </section>
 
-        {/* ===== left: divisions ===== */}
-        <section className="cc-rail" aria-label="Team">
-          {ZONES.map((z) => (
-            <div key={z.id} className="cc-zone" style={{ ["--z" as any]: z.color }}>
-              <div className="cc-zn">{z.name}</div>
-              <div className="cc-zm">
-                {z.keys.map(byKey).filter(Boolean).map((m: any) => (
-                  <button key={m.key} className={"cc-mem s-" + m.status} onClick={() => setSel(m.key)} aria-label={`${m.name} ${m.role}: ${st(m.status).label}`}>
-                    <Avatar m={m} size={46} /><span className="cc-mn">{m.name}</span><span className="cc-dot" style={{ background: st(m.status).color }} />
-                  </button>))}
-              </div>
-            </div>))}
-        </section>
-
-        </div>
-        {/* ===== right: decisions ===== */}
         <section className="cc-dec wom" aria-label="Waiting on Michael">
-          <h2>Waiting on Michael {open.length > 0 && <span className="cc-badge">{open.length}</span>}</h2>
-          <div className="cc-note">Saved on this device only</div>
-          {open.length === 0 && <div className="cc-clear">✓ Nothing waiting on you</div>}
+          <div className="cc-ph"><h2>Waiting on Michael</h2>{open.length > 0 && <span className="cc-badge">{open.length}</span>}</div>
+          {open.length === 0 && <div className="cc-clear">✓ All clear</div>}
           <div className="cc-cards">
-            {open.map((d: any, i: number) => { const opts = options(d.title); const q = d.title.includes(":") ? d.title.slice(d.title.lastIndexOf(":") + 1).trim() : d.title; const colors = ["#F59E0B", "#22D3EE", "#A78BFA", "#F472B6"]; return (
+            {open.map((d: any, i: number) => { const opts = options(d.title); const q = d.title.includes(":") ? d.title.slice(d.title.lastIndexOf(":") + 1).trim() : d.title; const colors = ["#F59E0B", "#22D3EE", "#A78BFA", "#F472B6"]; const qq = q.charAt(0).toUpperCase() + q.slice(1); return (
               <div key={idOf(d)} className="cc-card" style={{ ["--c" as any]: colors[i % 4] }}>
-                <div className="cc-cicon"><svg viewBox="0 0 40 40" width={40} height={40}><path d="M20 2l16 9v18l-16 9-16-9V11z" fill="var(--c)" /><text x={20} y={27} textAnchor="middle" fontSize={20} fontWeight={900} fill="#111">?</text></svg></div>
-                <div className="cc-q">{q}</div>
-                <button className="cc-more" onClick={() => setWhy(why === idOf(d) ? "" : idOf(d))} aria-expanded={why === idOf(d)}>{why === idOf(d) ? "Hide details" : "Details"}</button>
+                <div className="cc-ctop"><span className="cc-num">{i + 1}</span><div className="cc-q" title={d.title}>{qq}</div>
+                  <button className="cc-info" onClick={() => setWhy(why === idOf(d) ? "" : idOf(d))} aria-expanded={why === idOf(d)} aria-label="Details">i</button></div>
                 {why === idOf(d) && <div className="cc-why">{d.title}<br />{d.why}<br /><a href={d.url} target="_blank" rel="noreferrer">Open in Notion ↗</a></div>}
                 <div className="cc-btns">
-                  {opts ? opts.map((o, j) => <button key={o} className={"cc-b " + (j ? "b2" : "b1")} onClick={() => mark(d, "approved", o)}>{o}</button>)
+                  {opts ? opts.map((o, j) => <button key={o} className={"cc-b " + (j ? "b2" : "b1")} title={o} onClick={() => mark(d, "approved", o)}>{short(o, 40)}</button>)
                     : <><button className="cc-b b1" onClick={() => mark(d, "approved")} title="Go ahead with the default">Approve</button><button className="cc-b b2" onClick={() => mark(d, "done")}>Done</button></>}
-                  <button className="cc-b b3" onClick={() => mark(d, "open")}>Keep open</button>
+                  <button className="cc-b b3" onClick={() => mark(d, "open")} title="Keep open" aria-label="Keep open">Later</button>
                 </div>
               </div>); })}
           </div>
-          {cleared.length > 0 && <div className="cc-done"><b>Cleared on this device</b>
-            {cleared.map((d: any) => <div key={idOf(d)}><span>{marks[idOf(d)].choice ? `✓ ${marks[idOf(d)].choice}` : marks[idOf(d)].state === "approved" ? "✓ Approved" : "✓ Done"}</span><button onClick={() => mark(d, "open")}>Undo</button></div>)}</div>}
+          {cleared.length > 0 && <div className="cc-done">
+            {cleared.map((d: any) => <div key={idOf(d)}><span title={d.title}>{marks[idOf(d)].choice ? `✓ ${short(marks[idOf(d)].choice!, 30)}` : marks[idOf(d)].state === "approved" ? "✓ Approved" : "✓ Done"}</span><button onClick={() => mark(d, "open")}>Undo</button></div>)}</div>}
+          <div className="cc-roster" aria-label="Team">{team.filter((m) => DESK[m.key]).map((m) => <button key={m.key} className="cc-rm" onClick={() => setSel(m.key)} title={`${m.name}: ${st(m.status).label}`} aria-label={`${m.name}: ${st(m.status).label}`}><Avatar m={m} size={34} /><span>{m.name}</span><i style={{ background: st(m.status).color }} /></button>)}</div>
+        </section>
+
+        <section className="cc-log" aria-label="Live activity">
+          <div className="cc-ph"><h2>● Live</h2></div>
+          {msgs.slice(0, 7).map((m, i) => { const full = `${name(m.from)} → ${name(m.to)}: ${m.topic}`; return (
+            <button key={i} className={"cc-line" + (i === 0 ? " cc-new" : "")} title={`${fmt(m.time)} · ${full}`} onClick={() => byKey(m.from) && setSel(m.from)}>
+              <span className="cc-t">{hm(m.time)}</span>{byKey(m.from) && <Avatar m={byKey(m.from)} size={22} />}<b style={{ color: byKey(m.from)?.color }}>{name(m.from)}</b><span className="cc-arr">→ {name(m.to)}</span>
+              <span className="cc-tp">{i === 0 ? newest.slice(`${name(m.from)} → ${name(m.to)}: `.length, typed) : m.topic}{i === 0 && <span className="cc-caret">▌</span>}</span>
+            </button>); })}
         </section>
       </div>
 
-      {/* ===== live log ===== */}
-      <section className="cc-log" aria-label="Live activity">
-        <div className="cc-logh">● LIVE ACTIVITY</div>
-        <div className="cc-line cc-new">&gt; {msgs[0] && hm(msgs[0].time)} {newest.slice(0, typed)}<span className="cc-caret">▌</span></div>
-        {msgs.slice(1, 8).map((m, i) => <div key={i} className="cc-line" style={{ opacity: 1 - i * 0.11 }}>&gt; {hm(m.time)} <b style={{ color: byKey(m.from)?.color }}>{name(m.from)}</b> → {name(m.to)}: {m.topic}</div>)}
-      </section>
-
-      <div className="cc-foot">
-        <button className="cc-more" onClick={() => setShowClassic(!showClassic)} aria-expanded={showClassic}>{showClassic ? "▾ Hide" : "▸ Show"} full details (classic office, every message, Team Board)</button>
-        <span>Updated {data.OFFICE?.updated} · refreshes every 15 min</span>
-      </div>
-      {showClassic && classic}
+      {drawer && (
+        <div className="cc-drawer" role="dialog" aria-label="Full details" onClick={() => setDrawer(false)}>
+          <div className="cc-drawc" onClick={(e) => e.stopPropagation()}>
+            <div className="cc-drawh"><b>Full details</b><button className="cc-x" aria-label="Close" onClick={() => setDrawer(false)}>✕</button></div>
+            {classic}
+          </div>
+        </div>)}
 
       {person && (
         <div className="cc-pop" role="dialog" aria-label={`${person.name}'s messages`} onClick={() => setSel("")}>
@@ -286,7 +289,7 @@ export function Command({ data, classic }: { data: any; classic: any }) {
             <div className="cc-poph"><Avatar m={person} size={70} /><div style={{ flex: 1 }}><div className="cc-popn">{person.name} {person.key === "pm" && "👑"}</div><div className="cc-popr">{person.role} · {KIND[person.key]}</div>
               <div style={{ color: st(person.status).color, fontWeight: 800 }}>● {st(person.status).label}</div></div>
               <button className="cc-x" aria-label="Close" onClick={() => setSel("")}>✕</button></div>
-            <div className="cc-popnow">{person.now}</div>
+            {person.now && <div className="cc-popnow">{person.now}</div>}
             <div className="cc-poplbl">{person.name}'s messages</div>
             {own.length === 0 && <div>No messages logged yet.</div>}
             {own.map((m, i) => <div key={i} className="cc-msg">→ {name(m.to)}: {m.topic}<div>{fmt(m.time)}</div></div>)}
@@ -308,14 +311,14 @@ const CSS = `
 .cc-gauges{display:flex;gap:14px;justify-content:center}
 .cc-gauge{display:flex;flex-direction:column;align-items:center}
 .cc-glabel{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--sub);margin-top:-4px}
-.cc-ctrl{display:flex;flex-direction:column;gap:8px;align-items:flex-end}
+.cc-ctrl{display:flex;flex-direction:column;gap:10px;align-items:flex-end}
 .cc-quest{background:rgba(251,191,36,.12);border:2px solid rgba(251,191,36,.5);border-radius:12px;padding:6px 10px;min-width:200px}
 .cc-qt{font-size:12px;font-weight:900;color:#FBBF24}
 .cc-qb{height:8px;background:rgba(148,163,184,.25);border-radius:99px;overflow:hidden;margin:4px 0}.cc-qb div{height:100%;background:linear-gradient(90deg,#F59E0B,#FDE047)}
 .cc-qs{font-size:11px;color:var(--sub)}
 .cc-xp{font-size:12px;color:var(--sub)}.cc-xp b{color:#FDE047}
 .cc-sw{display:flex;gap:8px;align-items:center}
-.cc-flick{display:flex;flex-direction:column;align-items:center;gap:2px;background:none;border:none;color:var(--sub);cursor:pointer;padding:2px;min-width:44px}
+.cc-flick{min-height:44px;justify-content:center;display:flex;flex-direction:column;align-items:center;gap:2px;background:none;border:none;color:var(--sub);cursor:pointer;padding:2px;min-width:44px}
 .cc-flick-t{width:36px;height:20px;border-radius:99px;background:#334155;position:relative;border:2px solid #475569;transition:.2s}
 .cc-flick-k{position:absolute;top:1px;left:1px;width:14px;height:14px;border-radius:50%;background:#CBD5E1;transition:.2s}
 .cc-flick.on .cc-flick-t{background:#22C55E;border-color:#16A34A}.cc-flick.on .cc-flick-k{left:17px;background:#fff}
@@ -389,8 +392,38 @@ const CSS = `
 .cc-poplbl{font-size:12px;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:var(--sub)}
 .cc-msg{font-size:13px;padding:6px 0;border-top:1px solid var(--line)}.cc-msg div{font-size:11px;color:var(--sub)}
 .of-theme{display:none!important}
-@media (max-width:1100px){.cc-main{grid-template-columns:1fr}.cc-head{grid-template-columns:1fr}.cc-ctrl{align-items:stretch;flex-direction:row;flex-wrap:wrap;justify-content:space-between}}
+.cc-roster{margin-top:auto;padding-top:12px;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.cc-rm{position:relative;display:flex;flex-direction:column;align-items:center;min-height:56px;background:rgba(148,163,184,.1);border:none;border-radius:12px;color:var(--text);font-size:12px;font-weight:800;cursor:pointer;padding:4px}.cc-rm i{position:absolute;top:5px;right:8px;width:10px;height:10px;border-radius:50%}
+.cc h1.cc-h1{margin:0;text-transform:uppercase}
+.cc-chips{display:flex;gap:6px}.cc-chip{font-size:12px;font-weight:800;border-radius:99px;padding:4px 10px;border:1px solid var(--line);white-space:nowrap}
+.cc-chip.q{color:#FBBF24;border-color:rgba(251,191,36,.5)}.cc-chip.x{color:#FDE047}.cc-chip.t{color:var(--sub)}
+.cc-menu{width:44px;height:44px;border-radius:12px;border:2px solid var(--line);background:rgba(148,163,184,.12);color:var(--text);font-size:20px;cursor:pointer}
+.cc-main{display:grid;grid-template-columns:minmax(0,1fr) 340px;grid-template-areas:"scene dec" "log dec";gap:14px;max-width:1400px;margin:0 auto;align-items:stretch}
+.cc-scene{grid-area:scene}.cc-dec{grid-area:dec;display:flex;flex-direction:column}
+@media (max-width:1100px){.cc-roster{display:none}}.cc-log{grid-area:log;margin:0;max-width:none}
+.cc-ph{display:flex;align-items:center;gap:8px;margin-bottom:10px}.cc-ph h2{margin:0;font-size:15px;font-weight:900;letter-spacing:1px;text-transform:uppercase}
+.cc-cards{gap:10px}.cc-card{padding:10px 12px}
+.cc-ctop{display:flex;gap:8px;align-items:flex-start}
+.cc-num{flex:0 0 26px;height:26px;border-radius:8px;background:var(--c);color:#111;font-weight:900;display:grid;place-items:center;font-size:14px}
+.cc-q{flex:1;font-size:14px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.cc-info{flex:0 0 28px;height:28px;border-radius:50%;border:2px solid var(--c);background:none;color:var(--text);font-weight:900;font-style:italic;cursor:pointer;position:relative}
+.cc-info::after{content:"";position:absolute;inset:-8px}
+.cc-why{margin:8px 0 0}
+.cc-btns{flex-wrap:nowrap;margin-top:8px}.cc-b{flex:1 1 0;min-width:0;white-space:normal;line-height:1.15;padding:6px 8px;font-size:13px}.cc-b.b3{flex:0 0 auto}
+.cc-log{font-family:inherit;color:var(--text);background:var(--panel);border:2px solid #14532D}
+.cc-log h2{color:#22C55E}
+.cc-line{display:flex;align-items:center;gap:8px;width:100%;background:none;border:none;border-radius:10px;color:var(--sub);font-size:13px;padding:4px 6px;cursor:pointer;text-align:left;min-height:34px}
+.cc-line:hover{background:rgba(148,163,184,.12)}.cc-line b{white-space:nowrap}
+.cc-t{font-family:ui-monospace,Menlo,monospace;font-size:12px;opacity:.75}.cc-arr{white-space:nowrap;opacity:.8}
+.cc-tp{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--text)}
+.cc-new{background:rgba(34,197,94,.1)}
+.cc-step{animation:ccWalk calc(.35s*var(--spd)) ease-in-out infinite alternate}
+@keyframes ccWalk{from{transform:translateY(0) rotate(-6deg)}to{transform:translateY(-5px) rotate(6deg)}}
+.cc-drawer{position:fixed;inset:0;background:rgba(2,6,23,.7);z-index:70;display:flex;justify-content:flex-end}
+.cc-drawc{background:var(--bg);width:min(900px,100%);height:100%;overflow:auto;padding:12px;box-shadow:-20px 0 50px rgba(0,0,0,.5)}
+.cc-drawh{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;font-size:18px}
+@media (max-width:1100px){.cc-main{grid-template-columns:1fr;grid-template-areas:"scene" "dec" "log"}.cc-head{grid-template-columns:1fr}.cc-ctrl{align-items:stretch;flex-direction:row;flex-wrap:wrap;justify-content:space-between}}
 @media (max-width:640px){.cc{padding:8px 8px 20px}.cc-head{padding:10px;gap:10px}.cc-h1{font-size:18px}.cc-gauge svg{width:92px;height:92px}.cc-gauges{gap:4px}
 .cc-cards{flex-direction:row;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px}.cc-card{flex:0 0 86%;scroll-snap-align:start}
-.cc-quest{flex:1 1 100%;min-width:0}.cc-ctrl{gap:6px}.cc-art{margin-left:0}.cc-scene{padding:4px}}
+.cc-arr{display:none}.cc-chips{flex-wrap:wrap}.cc-ctrl{gap:6px}.cc-art{margin-left:0}.cc-scene{padding:4px}}
 `;
