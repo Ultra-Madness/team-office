@@ -11,28 +11,49 @@
     "waitingOnMichael": true
   },
   "BOARD": {
-    "asOf": "Fri Oct 30, 2026, 7:35 PM CT",
+    "asOf": "Fri Oct 30, 2026, 7:50 PM CT",
     "sprintGoal": "Sprint 0: Kick off Project 1, agree roles and working agreement, approve the charter, set cadence and demo gate",
     "waitingOnMichael": "Waiting on Michael: charter approval",
     "cards": [
       {
+        "title": "S17 As Michael, I want optional tag fields (lead, effort, group) on each card so I can scan trends faster",
+        "short": "S17 Tag fields",
+        "status": "Backlog",
+        "role": "dev",
+        "sprint": ""
+      },
+      {
+        "title": "S18 As Michael, I want a 'Do this week' list at the top so I know what to film first",
+        "short": "S18 Do this week",
+        "status": "Backlog",
+        "role": "dev",
+        "sprint": ""
+      },
+      {
+        "title": "S19 As Michael, I want severity labels (danger/warning) next to policy flags so the risky ones stand out",
+        "short": "S19 Severity labels",
+        "status": "Backlog",
+        "role": "dev",
+        "sprint": ""
+      },
+      {
         "title": "PO: decisions needed from Michael on P1 (daily refresh, saved marks, images)",
         "short": "Decisions for Michael",
-        "status": "Backlog",
+        "status": "Done",
         "role": "po",
         "sprint": "Sprint 0"
       },
       {
-        "title": "IMPEDIMENT: no GitHub login on the box (Pym) - proposal: Page only, no repo for v1, awaiting Michael (charter decision 4)",
-        "short": "No GitHub login",
-        "status": "In review",
+        "title": "IMPEDIMENT RESOLVED: no GitHub login on the box (Pym) - Page only, no repo for v1 (charter decision 4 accepted Oct 30)",
+        "short": "GitHub login (resolved)",
+        "status": "Done",
         "role": "pm",
         "sprint": "Sprint 0"
       },
       {
-        "title": "Project Charter P1: waiting on Michael's approval (Pym)",
-        "short": "Charter approval",
-        "status": "In review",
+        "title": "Project Charter P1: approved by Michael Oct 30, 2026 (Pym)",
+        "short": "Charter approved",
+        "status": "Done",
         "role": "pm",
         "sprint": "Sprint 0"
       },
@@ -60,7 +81,7 @@
       {
         "title": "PI 1 planning (short version) and Sprint 1 planning facilitation (Anj)",
         "short": "PI 1 + Sprint 1 plan",
-        "status": "Ready",
+        "status": "In progress",
         "role": "sm",
         "sprint": "PI 1 Sprint 1 (proposed)"
       },
@@ -74,14 +95,14 @@
       {
         "title": "PO: score the P1 Program Backlog items with WSJF",
         "short": "WSJF scoring",
-        "status": "Backlog",
+        "status": "Done",
         "role": "po",
         "sprint": ""
       },
       {
         "title": "PO: v2 design brief with Bruce",
         "short": "v2 design brief",
-        "status": "Backlog",
+        "status": "In progress",
         "role": "po",
         "sprint": ""
       },
@@ -95,42 +116,42 @@
       {
         "title": "PO: refine S1-S16 with Bruce, Dez and Kourt (design, size, test notes)",
         "short": "Refine S1-S16",
-        "status": "Backlog",
+        "status": "In progress",
         "role": "po",
         "sprint": ""
       },
       {
         "title": "S1 Spike: confirm which Page components and features are available for the redesign",
         "short": "S1 Components spike",
-        "status": "In review",
+        "status": "Done",
         "role": "dev",
         "sprint": ""
       },
       {
         "title": "S2 As Michael, I want the redesign as a new separate Page so I can compare old and new side by side",
         "short": "S2 New separate Page",
-        "status": "Backlog",
+        "status": "In progress",
         "role": "dev",
         "sprint": ""
       },
       {
-        "title": "S3 As Michael, I want all 17 fitness and 18 beyond-fitness trends on the new page with every field",
-        "short": "S3 All 35 trends",
-        "status": "Backlog",
+        "title": "S3 As Michael, I want all fitness and beyond-fitness trends on the new page with every field",
+        "short": "S3 All trends",
+        "status": "Ready",
         "role": "dev",
         "sprint": ""
       },
       {
         "title": "S4 As Michael, I want the intro, Avoid list, sources and updated stamp carried over",
         "short": "S4 Carry over content",
-        "status": "Backlog",
+        "status": "Ready",
         "role": "dev",
         "sprint": ""
       },
       {
-        "title": "S5 Task: keep content as data in the same shape so the daily refresh can update the new page",
-        "short": "S5 Data shape",
-        "status": "Backlog",
+        "title": "S5 Task: keep content as data from a one-time dated snapshot, re-synced on request (no daily refresh in v1)",
+        "short": "S5 Data snapshot",
+        "status": "In progress",
         "role": "dev",
         "sprint": ""
       },
@@ -184,7 +205,7 @@
         "sprint": ""
       },
       {
-        "title": "S13 As Michael, I want the 66 sources easier to browse",
+        "title": "S13 As Michael, I want the sources easier to browse",
         "short": "S13 Sources browse",
         "status": "Backlog",
         "role": "dev",
@@ -284,9 +305,9 @@
     ]
   },
   "OFFICE": {
-    "asOf": "Fri Oct 30, 2026, 7:35 PM CT",
-    "updated": "7:35 PM CT",
-    "asOfIso": "2026-10-30T19:35:00-05:00",
+    "asOf": "Fri Oct 30, 2026, 7:50 PM CT",
+    "updated": "7:50 PM CT",
+    "asOfIso": "2026-10-30T19:50:00-05:00",
     "links": [
       {
         "label": "Charter",
@@ -316,12 +337,12 @@
         "skin": "#F1C27D",
         "hair": "#3B2A1A",
         "style": "short",
-        "status": "paused",
-        "received": "PAUSE from Michael (via Grok Bot)",
-        "now": "Project paused by Michael; waiting for charter approval and resume.",
-        "next": "Hold until Michael says resume",
+        "status": "engaged",
+        "received": "Blocked: cannot view Pages signed out (from Dez)",
+        "now": "Sprint 1 running; coordinating the team and waiting on demo time blocks.",
+        "next": "Sprint 1 work (see Team Board)",
         "inbox": 4,
-        "last": "Oct 30, 12:23 AM CT"
+        "last": "Oct 30, 7:42 PM CT"
       },
       {
         "key": "po",
@@ -331,12 +352,12 @@
         "skin": "#C68642",
         "hair": "#111111",
         "style": "long",
-        "status": "paused",
-        "received": "PAUSE from Pym",
-        "now": "Paused: 5 cards marked paused",
-        "next": "Hold until Pym says resume",
+        "status": "engaged",
+        "received": "S1 passed QA check (from Kourt)",
+        "now": "Sprint 1 board ready: S2-S5 Ready, criteria updated, 4 decisions logged, S17-S19 added to Backlog; reviewing S1 spike",
+        "next": "Sprint 1 work (see Team Board)",
         "inbox": 0,
-        "last": "about 5:20 PM CT"
+        "last": "Oct 30, 7:50 PM CT"
       },
       {
         "key": "sm",
@@ -346,12 +367,12 @@
         "skin": "#E0AC69",
         "hair": "#8B4513",
         "style": "bun",
-        "status": "paused",
-        "received": "PAUSE from Pym",
-        "now": "Paused: 2 cards marked paused",
-        "next": "Hold until Pym says resume",
+        "status": "engaged",
+        "received": "Sprint 1 testability review and gaps (from Kourt)",
+        "now": "Resumed; Sprint 1 and PI 1 set Active, planning with Roma",
+        "next": "Sprint 1 work (see Team Board)",
         "inbox": 0,
-        "last": "about 5:21 PM CT"
+        "last": "Oct 30, 7:45 PM CT"
       },
       {
         "key": "ds",
@@ -362,11 +383,11 @@
         "hair": "#7C3AED",
         "style": "bob",
         "status": "engaged",
-        "received": "PAUSE from Pym",
-        "now": "Resumed after pause; drafting Design Direction v0.1 for Sprint 1 discovery. Waiting on Pym to confirm charter approval in Notion.",
-        "next": "Hold until Pym says resume",
+        "received": "Confirm you read S1 findings (from Kourt)",
+        "now": "Updating brief counts to Kourt's Oct 30 snapshot (37 trends, 31 flags) and redoing severity on Roma's Avoid-row rule.",
+        "next": "Sprint 1 work (see Team Board)",
         "inbox": 0,
-        "last": "Oct 30, 12:40 AM CT"
+        "last": "Oct 30, 7:50 PM CT"
       },
       {
         "key": "dev",
@@ -376,12 +397,12 @@
         "skin": "#8D5524",
         "hair": "#1F2937",
         "style": "cap",
-        "status": "paused",
-        "received": "PAUSE from Pym",
-        "now": "Holding per Pym until Michael's charter approval is confirmed. No new work, no stories picked up.",
-        "next": "Hold until Pym says resume",
+        "status": "engaged",
+        "received": "S14 verdict wording on S1 (from Kourt)",
+        "now": "S2 and S5 In progress: building the new Page shell with content as data arrays from the Oct 30 snapshot.",
+        "next": "Sprint 1 work (see Team Board)",
         "inbox": 0,
-        "last": "Oct 30, 1:10 AM CT"
+        "last": "Oct 30, 8:02 PM CT"
       },
       {
         "key": "qa",
@@ -391,12 +412,12 @@
         "skin": "#F5D0A9",
         "hair": "#D97706",
         "style": "spiky",
-        "status": "paused",
-        "received": "PAUSE from Pym",
-        "now": "Holding at Pym's request until he confirms the charter approval and says resume. No testing or new work.",
-        "next": "Hold until Pym says resume",
+        "status": "idle",
+        "received": "S14 restated; S2 and S5 started (from Dez)",
+        "now": "S1 passed. Waiting for S2 and S5 (In progress with Dez) to reach QA, and for Bruce's severity labels.",
+        "next": "Sprint 1 work (see Team Board)",
         "inbox": 0,
-        "last": "Oct 30, 12:50 AM CT"
+        "last": "Oct 30, 8:22 PM CT"
       }
     ]
   },
@@ -970,9 +991,231 @@
       "from": "dev",
       "to": "pm",
       "topic": "Holding; test Page disclosed"
+    },
+    {
+      "time": "2026-10-30T19:42:00-05:00",
+      "from": "pm",
+      "to": "dev",
+      "topic": "Resume, Sprint 1 starts"
+    },
+    {
+      "time": "2026-10-30T19:42:00-05:00",
+      "from": "pm",
+      "to": "gb",
+      "topic": "Charter approval confirmed"
+    },
+    {
+      "time": "2026-10-30T19:42:00-05:00",
+      "from": "pm",
+      "to": "sm",
+      "topic": "Resume, Sprint 1 starts"
+    },
+    {
+      "time": "2026-10-30T19:42:00-05:00",
+      "from": "pm",
+      "to": "qa",
+      "topic": "Resume, Sprint 1 starts"
+    },
+    {
+      "time": "2026-10-30T19:42:00-05:00",
+      "from": "pm",
+      "to": "po",
+      "topic": "Resume, Sprint 1 starts"
+    },
+    {
+      "time": "2026-10-30T19:42:00-05:00",
+      "from": "pm",
+      "to": "ds",
+      "topic": "Resume, Sprint 1 starts"
+    },
+    {
+      "time": "2026-10-30T19:44:00-05:00",
+      "from": "po",
+      "to": "qa",
+      "topic": "Sprint 1 cards updated for QA"
+    },
+    {
+      "time": "2026-10-30T19:44:00-05:00",
+      "from": "po",
+      "to": "pm",
+      "topic": "Sprint 1 start and demo choice"
+    },
+    {
+      "time": "2026-10-30T19:44:00-05:00",
+      "from": "po",
+      "to": "sm",
+      "topic": "Sprint 1 cards moved to Ready"
+    },
+    {
+      "time": "2026-10-30T19:44:00-05:00",
+      "from": "po",
+      "to": "ds",
+      "topic": "Build order and severity check"
+    },
+    {
+      "time": "2026-10-30T19:44:00-05:00",
+      "from": "po",
+      "to": "dev",
+      "topic": "S1 reviewed and Sprint 1 order"
+    },
+    {
+      "time": "2026-10-30T19:45:00-05:00",
+      "from": "po",
+      "to": "pm",
+      "topic": "Decisions needed from Michael"
+    },
+    {
+      "time": "2026-10-30T19:45:00-05:00",
+      "from": "po",
+      "to": "ds",
+      "topic": "Answers to Bruce design decisions"
+    },
+    {
+      "time": "2026-10-30T19:45:00-05:00",
+      "from": "po",
+      "to": "qa",
+      "topic": "Test plan feedback and Sprint 1 scope"
+    },
+    {
+      "time": "2026-10-30T19:45:00-05:00",
+      "from": "sm",
+      "to": "team",
+      "topic": "Sprint 1 planning kickoff"
+    },
+    {
+      "time": "2026-10-30T19:45:00-05:00",
+      "from": "sm",
+      "to": "pm",
+      "topic": "Resumed, Sprint 1 setup"
+    },
+    {
+      "time": "2026-10-30T19:46:00-05:00",
+      "from": "sm",
+      "to": "po",
+      "topic": "Sprint 1 scope check and WIP"
+    },
+    {
+      "time": "2026-10-30T19:46:00-05:00",
+      "from": "sm",
+      "to": "pm",
+      "topic": "Sprint 1 impediments and decisions"
+    },
+    {
+      "time": "2026-10-30T19:46:00-05:00",
+      "from": "dev",
+      "to": "sm",
+      "topic": "Sprint 1 estimates and risks"
+    },
+    {
+      "time": "2026-10-30T19:47:00-05:00",
+      "from": "sm",
+      "to": "team",
+      "topic": "Kourt test-readiness gaps routed"
+    },
+    {
+      "time": "2026-10-30T19:47:00-05:00",
+      "from": "sm",
+      "to": "pm",
+      "topic": "GitHub impediment closed, plan approved"
+    },
+    {
+      "time": "2026-10-30T19:50:00-05:00",
+      "from": "ds",
+      "to": "qa",
+      "topic": "Confirmed I read S1 findings"
+    },
+    {
+      "time": "2026-10-30T19:50:00-05:00",
+      "from": "dev",
+      "to": "pm",
+      "topic": "Blocked: cannot view Pages signed out"
+    },
+    {
+      "time": "2026-10-30T19:50:00-05:00",
+      "from": "ds",
+      "to": "po",
+      "topic": "Going ahead with criteria and brief"
+    },
+    {
+      "time": "2026-10-30T19:50:00-05:00",
+      "from": "ds",
+      "to": "sm",
+      "topic": "Sprint 1 design plan"
+    },
+    {
+      "time": "2026-10-30T19:50:00-05:00",
+      "from": "qa",
+      "to": "pm",
+      "topic": "Test plan v2 ready, QA waiting"
+    },
+    {
+      "time": "2026-10-30T19:55:00-05:00",
+      "from": "ds",
+      "to": "po",
+      "topic": "Severity redone on snapshot for her check"
+    },
+    {
+      "time": "2026-10-30T19:55:00-05:00",
+      "from": "dev",
+      "to": "qa",
+      "topic": "Snapshot hash and data plan"
+    },
+    {
+      "time": "2026-10-30T19:55:00-05:00",
+      "from": "qa",
+      "to": "sm",
+      "topic": "Sprint 1 testability review and gaps"
+    },
+    {
+      "time": "2026-10-30T19:56:00-05:00",
+      "from": "qa",
+      "to": "po",
+      "topic": "Criteria need snapshot-based counts"
+    },
+    {
+      "time": "2026-10-30T19:57:00-05:00",
+      "from": "qa",
+      "to": "dev",
+      "topic": "What QA needs at handoff"
+    },
+    {
+      "time": "2026-10-30T19:58:00-05:00",
+      "from": "ds",
+      "to": "po",
+      "topic": "Severity proposal, brief and criteria ready"
+    },
+    {
+      "time": "2026-10-30T20:02:00-05:00",
+      "from": "dev",
+      "to": "qa",
+      "topic": "S14 restated; S2 and S5 started"
+    },
+    {
+      "time": "2026-10-30T20:10:00-05:00",
+      "from": "qa",
+      "to": "dev",
+      "topic": "S14 verdict wording on S1"
+    },
+    {
+      "time": "2026-10-30T20:10:00-05:00",
+      "from": "qa",
+      "to": "ds",
+      "topic": "Confirm you read S1 findings"
+    },
+    {
+      "time": "2026-10-30T20:10:00-05:00",
+      "from": "qa",
+      "to": "po",
+      "topic": "S1 check result"
+    },
+    {
+      "time": "2026-10-30T20:22:00-05:00",
+      "from": "qa",
+      "to": "po",
+      "topic": "S1 passed QA check"
     }
   ],
-  "lastUpdated": "Fri Oct 30, 2026, 7:35 PM CT",
+  "lastUpdated": "Fri Oct 30, 2026, 7:50 PM CT",
   "links": [
     {
       "label": "Charter",
