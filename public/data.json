@@ -11,10 +11,45 @@
     "waitingOnMichael": true
   },
   "BOARD": {
-    "asOf": "Fri Oct 30, 2026, 7:50 PM CT",
+    "asOf": "Fri Oct 30, 2026, 8:01 PM CT",
     "sprintGoal": "Sprint 0: Kick off Project 1, agree roles and working agreement, approve the charter, set cadence and demo gate",
     "waitingOnMichael": "Waiting on Michael: charter approval",
     "cards": [
+      {
+        "title": "BUG (Medium) S5: snapshot date shown once at the top only, no bottom date as the card claims",
+        "short": "S5 date bug",
+        "status": "Done",
+        "role": "dev",
+        "sprint": "Sprint 1"
+      },
+      {
+        "title": "Design: Sprint 1 wireframe and mini design system spec (Bruce)",
+        "short": "Wireframe + design spec",
+        "status": "In progress",
+        "role": "ds",
+        "sprint": "Sprint 1"
+      },
+      {
+        "title": "Design: front-end review of S2 to S5 (Bruce)",
+        "short": "Design review S2-S5",
+        "status": "Ready",
+        "role": "ds",
+        "sprint": "Sprint 1"
+      },
+      {
+        "title": "Design: palette and design system sign-off package for Michael (Bruce)",
+        "short": "Design sign-off pack",
+        "status": "Ready",
+        "role": "ds",
+        "sprint": "Sprint 1"
+      },
+      {
+        "title": "Design: design criteria for S6-S15 and v2 brief (Bruce)",
+        "short": "Design criteria S6-S15",
+        "status": "Done",
+        "role": "ds",
+        "sprint": "Sprint 1"
+      },
       {
         "title": "S17 As Michael, I want optional tag fields (lead, effort, group) on each card so I can scan trends faster",
         "short": "S17 Tag fields",
@@ -130,28 +165,28 @@
       {
         "title": "S2 As Michael, I want the redesign as a new separate Page so I can compare old and new side by side",
         "short": "S2 New separate Page",
-        "status": "In progress",
+        "status": "Done",
         "role": "dev",
         "sprint": ""
       },
       {
         "title": "S3 As Michael, I want all fitness and beyond-fitness trends on the new page with every field",
         "short": "S3 All trends",
-        "status": "Ready",
+        "status": "QA",
         "role": "dev",
         "sprint": ""
       },
       {
         "title": "S4 As Michael, I want the intro, Avoid list, sources and updated stamp carried over",
         "short": "S4 Carry over content",
-        "status": "Ready",
+        "status": "QA",
         "role": "dev",
         "sprint": ""
       },
       {
         "title": "S5 Task: keep content as data from a one-time dated snapshot, re-synced on request (no daily refresh in v1)",
         "short": "S5 Data snapshot",
-        "status": "In progress",
+        "status": "Done",
         "role": "dev",
         "sprint": ""
       },
@@ -305,9 +340,9 @@
     ]
   },
   "OFFICE": {
-    "asOf": "Fri Oct 30, 2026, 7:50 PM CT",
-    "updated": "7:50 PM CT",
-    "asOfIso": "2026-10-30T19:50:00-05:00",
+    "asOf": "Fri Oct 30, 2026, 8:01 PM CT",
+    "updated": "8:01 PM CT",
+    "asOfIso": "2026-10-30T20:01:00-05:00",
     "links": [
       {
         "label": "Charter",
@@ -338,7 +373,7 @@
         "hair": "#3B2A1A",
         "style": "short",
         "status": "engaged",
-        "received": "Blocked: cannot view Pages signed out (from Dez)",
+        "received": "Browser review needs a Cursor sign-in (from Bruce)",
         "now": "Sprint 1 running; coordinating the team and waiting on demo time blocks.",
         "next": "Sprint 1 work (see Team Board)",
         "inbox": 4,
@@ -353,11 +388,11 @@
         "hair": "#111111",
         "style": "long",
         "status": "engaged",
-        "received": "S1 passed QA check (from Kourt)",
-        "now": "Sprint 1 board ready: S2-S5 Ready, criteria updated, 4 decisions logged, S17-S19 added to Backlog; reviewing S1 spike",
+        "received": "Snapshot date placement decision (from Dez)",
+        "now": "S2 accepted by Roma on build sha 8b37f16a (Bruce source review Approved for QA, Kourt QA passed 3/3, DoD ticked). Status set Done. Rendered checks stay open on later stories.",
         "next": "Sprint 1 work (see Team Board)",
         "inbox": 0,
-        "last": "Oct 30, 7:50 PM CT"
+        "last": "Oct 30, 8:00 PM CT"
       },
       {
         "key": "sm",
@@ -368,7 +403,7 @@
         "hair": "#8B4513",
         "style": "bun",
         "status": "engaged",
-        "received": "Sprint 1 testability review and gaps (from Kourt)",
+        "received": "S2 and S5 review recorded (from Bruce)",
         "now": "Resumed; Sprint 1 and PI 1 set Active, planning with Roma",
         "next": "Sprint 1 work (see Team Board)",
         "inbox": 0,
@@ -382,12 +417,12 @@
         "skin": "#FFDBAC",
         "hair": "#7C3AED",
         "style": "bob",
-        "status": "engaged",
-        "received": "Confirm you read S1 findings (from Kourt)",
-        "now": "Updating brief counts to Kourt's Oct 30 snapshot (37 trends, 31 flags) and redoing severity on Roma's Avoid-row rule.",
+        "status": "blocked",
+        "received": "New version published for review (from Dez)",
+        "now": "Rendered checks of S2 blocked by Cursor sign-in; source review continues. Waiting on Pym for the route.",
         "next": "Sprint 1 work (see Team Board)",
         "inbox": 0,
-        "last": "Oct 30, 7:50 PM CT"
+        "last": "Oct 30, 8:20 PM CT"
       },
       {
         "key": "dev",
@@ -398,11 +433,11 @@
         "hair": "#1F2937",
         "style": "cap",
         "status": "engaged",
-        "received": "S14 verdict wording on S1 (from Kourt)",
-        "now": "S2 and S5 In progress: building the new Page shell with content as data arrays from the Oct 30 snapshot.",
+        "received": "S2 changes needed, S5 approved for QA (from Bruce)",
+        "now": "S4 In progress: checking intro, Avoid rows and all 71 source links against the snapshot. S2, S3, S5 In review waiting for Bruce.",
         "next": "Sprint 1 work (see Team Board)",
         "inbox": 0,
-        "last": "Oct 30, 8:02 PM CT"
+        "last": "Oct 30, 9:00 PM CT"
       },
       {
         "key": "qa",
@@ -413,11 +448,11 @@
         "hair": "#D97706",
         "style": "spiky",
         "status": "idle",
-        "received": "S14 restated; S2 and S5 started (from Dez)",
-        "now": "S1 passed. Waiting for S2 and S5 (In progress with Dez) to reach QA, and for Bruce's severity labels.",
+        "received": "Build frozen; S5 card notes corrected (from Dez)",
+        "now": "S2 and S5 testing stopped at Dez's request: they went back to In review until Bruce's review is recorded. Waiting for a fresh QA ping.",
         "next": "Sprint 1 work (see Team Board)",
         "inbox": 0,
-        "last": "Oct 30, 8:22 PM CT"
+        "last": "Oct 30, 8:36 PM CT"
       }
     ]
   },
@@ -1213,9 +1248,75 @@
       "from": "qa",
       "to": "po",
       "topic": "S1 passed QA check"
+    },
+    {
+      "time": "2026-10-30T20:30:00-05:00",
+      "from": "dev",
+      "to": "ds",
+      "topic": "Applying design to v2 Page"
+    },
+    {
+      "time": "2026-10-30T20:30:00-05:00",
+      "from": "dev",
+      "to": "qa",
+      "topic": "Hold QA on S2 and S5"
+    },
+    {
+      "time": "2026-10-30T20:35:00-05:00",
+      "from": "ds",
+      "to": "sm",
+      "topic": "S2 and S5 review recorded"
+    },
+    {
+      "time": "2026-10-30T20:35:00-05:00",
+      "from": "ds",
+      "to": "qa",
+      "topic": "Review recorded, rendered checks not done"
+    },
+    {
+      "time": "2026-10-30T20:35:00-05:00",
+      "from": "ds",
+      "to": "dev",
+      "topic": "S2 changes needed, S5 approved for QA"
+    },
+    {
+      "time": "2026-10-30T20:50:00-05:00",
+      "from": "dev",
+      "to": "ds",
+      "topic": "Preview for review; Danger rule question"
+    },
+    {
+      "time": "2026-10-30T20:50:00-05:00",
+      "from": "dev",
+      "to": "po",
+      "topic": "S3 built; Danger rule needs decision"
+    },
+    {
+      "time": "2026-10-30T20:57:00-05:00",
+      "from": "dev",
+      "to": "ds",
+      "topic": "New version published for review"
+    },
+    {
+      "time": "2026-10-30T20:57:00-05:00",
+      "from": "dev",
+      "to": "po",
+      "topic": "Severity applied in S3"
+    },
+    {
+      "time": "2026-10-30T21:08:00-05:00",
+      "from": "dev",
+      "to": "qa",
+      "topic": "Build frozen; S5 card notes corrected"
+    },
+    {
+      "time": "2026-10-30T21:08:00-05:00",
+      "from": "dev",
+      "to": "po",
+      "topic": "Snapshot date placement decision"
     }
   ],
-  "lastUpdated": "Fri Oct 30, 2026, 7:50 PM CT",
+  "lastUpdated": "Fri Oct 30, 2026, 8:01 PM CT",
   "links": [
     {
       "label": "Charter",
