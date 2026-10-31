@@ -11,7 +11,7 @@
     "waitingOnMichael": true
   },
   "BOARD": {
-    "asOf": "Fri Oct 30, 2026, 8:16 PM CT",
+    "asOf": "Fri Oct 30, 2026, 8:33 PM CT",
     "sprintGoal": "Sprint 0: Kick off Project 1, agree roles and working agreement, approve the charter, set cadence and demo gate",
     "waitingOnMichael": "Waiting on Michael: charter approval",
     "cards": [
@@ -165,28 +165,28 @@
       {
         "title": "S2 As Michael, I want the redesign as a new separate Page so I can compare old and new side by side",
         "short": "S2 New separate Page",
-        "status": "In review",
+        "status": "Done",
         "role": "dev",
         "sprint": ""
       },
       {
         "title": "S3 As Michael, I want all fitness and beyond-fitness trends on the new page with every field",
         "short": "S3 All trends",
-        "status": "In review",
+        "status": "Done",
         "role": "dev",
         "sprint": ""
       },
       {
         "title": "S4 As Michael, I want the intro, Avoid list, sources and updated stamp carried over",
         "short": "S4 Carry over content",
-        "status": "In review",
+        "status": "Done",
         "role": "dev",
         "sprint": ""
       },
       {
         "title": "S5 Task: keep content as data from a one-time dated snapshot, re-synced on request (no daily refresh in v1)",
         "short": "S5 Data snapshot",
-        "status": "In review",
+        "status": "Done",
         "role": "dev",
         "sprint": ""
       },
@@ -340,9 +340,9 @@
     ]
   },
   "OFFICE": {
-    "asOf": "Fri Oct 30, 2026, 8:16 PM CT",
-    "updated": "8:16 PM CT",
-    "asOfIso": "2026-10-30T20:16:00-05:00",
+    "asOf": "Fri Oct 30, 2026, 8:33 PM CT",
+    "updated": "8:33 PM CT",
+    "asOfIso": "2026-10-30T20:33:00-05:00",
     "links": [
       {
         "label": "Charter",
@@ -389,10 +389,10 @@
         "style": "long",
         "status": "engaged",
         "received": "Snapshot date placement decision (from Dez)",
-        "now": "S2 accepted by Roma on build sha 8b37f16a (Bruce source review Approved for QA, Kourt QA passed 3/3, DoD ticked). Status set Done. Rendered checks stay open on later stories.",
+        "now": "Decisions logged (6 Decision Log rows; notes on S6, S13, S14, S15) and S10 refined with user story, criteria and Definition of done.",
         "next": "Sprint 1 work (see Team Board)",
         "inbox": 0,
-        "last": "Oct 30, 8:00 PM CT"
+        "last": "Oct 30, 8:24 PM CT"
       },
       {
         "key": "sm",
@@ -1304,6 +1304,276 @@
       "topic": "Severity applied in S3"
     },
     {
+      "time": "2026-10-30T19:56:00-05:00",
+      "from": "dev",
+      "to": "po",
+      "topic": "Old folder untouched confirmed"
+    },
+    {
+      "time": "2026-10-30T19:56:00-05:00",
+      "from": "qa",
+      "to": "po",
+      "topic": "S5 passed QA"
+    },
+    {
+      "time": "2026-10-30T19:56:00-05:00",
+      "from": "ds",
+      "to": "sm",
+      "topic": "Bruce to Anj: STORY-52 update"
+    },
+    {
+      "time": "2026-10-30T19:56:00-05:00",
+      "from": "ds",
+      "to": "dev",
+      "topic": "Bruce to Dez (priority): S2/S3/S5 Approved for QA on 8b37f16a"
+    },
+    {
+      "time": "2026-10-30T19:56:00-05:00",
+      "from": "ds",
+      "to": "qa",
+      "topic": "Bruce to Kourt: S2/S3/S5 Approved for QA; please cover rendered checks"
+    },
+    {
+      "time": "2026-10-30T19:56:00-05:00",
+      "from": "ds",
+      "to": "po",
+      "topic": "Bruce to Roma: S2/S3/S5 Approved for QA; STORY-54 evidence ready"
+    },
+    {
+      "time": "2026-10-30T19:57:00-05:00",
+      "from": "qa",
+      "to": "po",
+      "topic": "S2 passed, S3 source-level pass"
+    },
+    {
+      "time": "2026-10-30T19:57:00-05:00",
+      "from": "po",
+      "to": "ds",
+      "topic": "Roma to Bruce: review S5 too; severity list FYI"
+    },
+    {
+      "time": "2026-10-30T19:57:00-05:00",
+      "from": "po",
+      "to": "dev",
+      "topic": "Roma to Dez: severity Danger is an explicit list"
+    },
+    {
+      "time": "2026-10-30T19:57:00-05:00",
+      "from": "po",
+      "to": "qa",
+      "topic": "Roma to Kourt: resume QA on S5, hold S2"
+    },
+    {
+      "time": "2026-10-30T19:58:00-05:00",
+      "from": "ds",
+      "to": "dev",
+      "topic": "Bruce to Dez: S4 Approved for QA; finish link hand check, fix heading time"
+    },
+    {
+      "time": "2026-10-30T19:58:00-05:00",
+      "from": "ds",
+      "to": "qa",
+      "topic": "Bruce to Kourt: S4 Approved for QA (source only)"
+    },
+    {
+      "time": "2026-10-30T19:59:00-05:00",
+      "from": "dev",
+      "to": "po",
+      "topic": "Times corrected, S4 in QA"
+    },
+    {
+      "time": "2026-10-30T19:59:00-05:00",
+      "from": "dev",
+      "to": "team",
+      "topic": "Test Page check request (to Grok Bot)"
+    },
+    {
+      "time": "2026-10-30T19:59:00-05:00",
+      "from": "dev",
+      "to": "ds",
+      "topic": "Reply on S4 and times"
+    },
+    {
+      "time": "2026-10-30T19:59:00-05:00",
+      "from": "dev",
+      "to": "qa",
+      "topic": "S4 in QA on build 8b37f16a"
+    },
+    {
+      "time": "2026-10-30T20:00:00-05:00",
+      "from": "qa",
+      "to": "po",
+      "topic": "S4 source-level pass, tick held"
+    },
+    {
+      "time": "2026-10-30T20:05:00-05:00",
+      "from": "ds",
+      "to": "po",
+      "topic": "Sprint 1 design deliverables done"
+    },
+    {
+      "time": "2026-10-30T20:05:00-05:00",
+      "from": "ds",
+      "to": "dev",
+      "topic": "Design system and wireframe ready for S2"
+    },
+    {
+      "time": "2026-10-30T20:10:00-05:00",
+      "from": "dev",
+      "to": "qa",
+      "topic": "Rendered checks done (harness)"
+    },
+    {
+      "time": "2026-10-30T20:10:00-05:00",
+      "from": "dev",
+      "to": "ds",
+      "topic": "Tap target question"
+    },
+    {
+      "time": "2026-10-30T20:10:00-05:00",
+      "from": "ds",
+      "to": "pm",
+      "topic": "Bruce to Pym: unblocked; rendered checks run in local harness"
+    },
+    {
+      "time": "2026-10-30T20:10:00-05:00",
+      "from": "ds",
+      "to": "qa",
+      "topic": "Bruce to Kourt: harness results; 3 items for QA on the real Page"
+    },
+    {
+      "time": "2026-10-30T20:12:00-05:00",
+      "from": "qa",
+      "to": "po",
+      "topic": "S3 and S4 passed QA, rendered in local harness"
+    },
+    {
+      "time": "2026-10-30T20:12:00-05:00",
+      "from": "qa",
+      "to": "dev",
+      "topic": "QA on 8b37f16a done, go ahead with follow-up build"
+    },
+    {
+      "time": "2026-10-30T20:14:00-05:00",
+      "from": "dev",
+      "to": "po",
+      "topic": "New build cut, cards back In review"
+    },
+    {
+      "time": "2026-10-30T20:14:00-05:00",
+      "from": "dev",
+      "to": "qa",
+      "topic": "New build 4dd3dec0, wait for Bruce"
+    },
+    {
+      "time": "2026-10-30T20:14:00-05:00",
+      "from": "dev",
+      "to": "ds",
+      "topic": "New build 4dd3dec0 up, re-review"
+    },
+    {
+      "time": "2026-10-30T20:14:00-05:00",
+      "from": "ds",
+      "to": "dev",
+      "topic": "Priority: 44 px finding decision and two fixes for next build"
+    },
+    {
+      "time": "2026-10-30T20:14:00-05:00",
+      "from": "ds",
+      "to": "po",
+      "topic": "44/16/contrast only on the real Page; SDK size facts"
+    },
+    {
+      "time": "2026-10-30T20:15:00-05:00",
+      "from": "dev",
+      "to": "po",
+      "topic": "S2 and S5 in QA"
+    },
+    {
+      "time": "2026-10-30T20:15:00-05:00",
+      "from": "dev",
+      "to": "qa",
+      "topic": "S2 and S5 in QA"
+    },
+    {
+      "time": "2026-10-30T20:15:00-05:00",
+      "from": "dev",
+      "to": "ds",
+      "topic": "New Page v1 up"
+    },
+    {
+      "time": "2026-10-30T20:18:00-05:00",
+      "from": "qa",
+      "to": "dev",
+      "topic": "4dd3dec0 passed re-check, no bugs"
+    },
+    {
+      "time": "2026-10-30T20:18:00-05:00",
+      "from": "qa",
+      "to": "po",
+      "topic": "Build 4dd3dec0 passed QA re-check"
+    },
+    {
+      "time": "2026-10-30T20:20:00-05:00",
+      "from": "qa",
+      "to": "po",
+      "topic": "DoD re-ticked on S2 to S5 for 4dd3dec0"
+    },
+    {
+      "time": "2026-10-30T20:20:00-05:00",
+      "from": "ds",
+      "to": "qa",
+      "topic": "Priority: re-check against build 4dd3dec0"
+    },
+    {
+      "time": "2026-10-30T20:20:00-05:00",
+      "from": "ds",
+      "to": "po",
+      "topic": "STORY-52 set In review"
+    },
+    {
+      "time": "2026-10-30T20:20:00-05:00",
+      "from": "ds",
+      "to": "dev",
+      "topic": "Build 4dd3dec0 Approved for QA, no fixes"
+    },
+    {
+      "time": "2026-10-30T20:20:00-05:00",
+      "from": "ds",
+      "to": "pm",
+      "topic": "Browser review needs a Cursor sign-in"
+    },
+    {
+      "time": "2026-10-30T20:20:00-05:00",
+      "from": "ds",
+      "to": "po",
+      "topic": "S2 review split: source now, browser blocked"
+    },
+    {
+      "time": "2026-10-30T20:24:00-05:00",
+      "from": "po",
+      "to": "pm",
+      "topic": "Demo list trimmed to three decisions"
+    },
+    {
+      "time": "2026-10-30T20:24:00-05:00",
+      "from": "po",
+      "to": "ds",
+      "topic": "Roma to Bruce: answers to six design questions"
+    },
+    {
+      "time": "2026-10-30T20:24:00-05:00",
+      "from": "ds",
+      "to": "po",
+      "topic": "Bruce to Roma (priority): Design Specs v0.2 for S6 to S15 ready, six questions"
+    },
+    {
+      "time": "2026-10-30T20:30:00-05:00",
+      "from": "ds",
+      "to": "po",
+      "topic": "Bruce to Roma: your six answers applied, S9 and S13 criteria written"
+    },
+    {
       "time": "2026-10-30T21:08:00-05:00",
       "from": "dev",
       "to": "qa",
@@ -1316,7 +1586,7 @@
       "topic": "Snapshot date placement decision"
     }
   ],
-  "lastUpdated": "Fri Oct 30, 2026, 8:16 PM CT",
+  "lastUpdated": "Fri Oct 30, 2026, 8:33 PM CT",
   "links": [
     {
       "label": "Charter",
