@@ -11,7 +11,7 @@
     "waitingOnMichael": false
   },
   "BOARD": {
-    "asOf": "Sat Oct 31, 2026, 10:03 AM CT",
+    "asOf": "Sat Oct 31, 2026, 10:24 AM CT",
     "sprintGoal": "Sprint 1: new Page shell, design system and wireframe, every card reviewed and QA-checked",
     "waitingOnMichael": "",
     "cards": [
@@ -389,9 +389,9 @@
     ]
   },
   "OFFICE": {
-    "asOf": "Sat Oct 31, 2026, 10:03 AM CT",
-    "updated": "10:03 AM CT",
-    "asOfIso": "2026-10-31T10:03:00-05:00",
+    "asOf": "Sat Oct 31, 2026, 10:24 AM CT",
+    "updated": "10:24 AM CT",
+    "asOfIso": "2026-10-31T10:24:00-05:00",
     "links": [
       {
         "label": "Charter",
@@ -438,7 +438,7 @@
         "style": "long",
         "status": "idle",
         "received": "Snapshot date placement decision (from Dez)",
-        "now": "Roma end of day, idle until 7:00 AM CT. S1 to S5 and STORY-54 accepted on build 4dd3dec0 (17 points); demo script v2 with Pym; waiting on Michael's accept or reject.",
+        "now": "Roma end of day, idle until 7:00 AM CT. State: S1 to S5 and STORY-54 accepted on build 4dd3dec0 (17 points); demo script v2 with Pym (three decisions for Michael, logged as Proposed with defaults); waiting on Michael's accept or reject. First items for tomorrow: the four new board cards.",
         "next": "Sprint 1 work (see Team Board)",
         "inbox": 0,
         "last": "Oct 30, 11:08 PM CT"
@@ -468,7 +468,7 @@
         "style": "bob",
         "status": "idle",
         "received": "New version published for review (from Dez)",
-        "now": "End of day, stopping until 7:00 AM CT. Done today: S2 to S5 front-end review (Approved for QA), Design Specs v0.2 for S6 to S15, criteria for S9, S13, S14.",
+        "now": "End of day: past 10:00 PM CT closing time, stopping until 7:00 AM CT. Done today: S2 to S5 front-end review on builds 8b37f16a and 4dd3dec0 (Approved for QA, source plus local harness), STORY-52 In review, Design Specs v0.2 for S6 to S15, criteria for S9, S13, S14. Open: 44 px, contrast, phone sizes on the real Page (Kourt, demo); Roma's reply on specs; re-review any new build before Kourt; Sprint 1 demo material.",
         "next": "Sprint 1 work (see Team Board)",
         "inbox": 0,
         "last": "Oct 30, 11:08 PM CT"
@@ -483,7 +483,7 @@
         "style": "cap",
         "status": "idle",
         "received": "S2 changes needed, S5 approved for QA (from Bruce)",
-        "now": "Stopped for the night. S2-S5 In review on build 4dd3dec0 (Bruce approved, Kourt re-check passed), waiting for Roma's re-acceptance. First items on the card 'Dez: first items for Oct 31'.",
+        "now": "Stopped for the night; no background work. S2-S5 In review on build 4dd3dec0 (Bruce approved, Kourt re-check passed), waiting for Roma's re-acceptance. Old canvas untouched. First items for tomorrow from 7:00 AM CT are on the Team Board card 'Dez: first items for Oct 31' and on each card: re-acceptance, old-hash check, next Ready stories, TEST ONLY Page removal before the demo.",
         "next": "Sprint 1 work (see Team Board)",
         "inbox": 0,
         "last": "Oct 30, 11:12 PM CT"
@@ -498,7 +498,7 @@
         "style": "spiky",
         "status": "idle",
         "received": "Build frozen; S5 card notes corrected (from Dez)",
-        "now": "End of day: S1 to S5 Done and accepted by Roma on build 4dd3dec0. No bugs open. At 7:00 AM CT: check the board for stories in QA or a new build, then test.",
+        "now": "End of day state: S1 to S5 are Done, ticked and accepted by Roma on build 4dd3dec0 (my QA was in the local harness, not the real Page). No bugs open. First items at 7:00 AM CT: (1) read the board and log for stories in QA or a new build hash, (2) check Bruce's review is recorded, then test against Roma's criteria, (3) if nothing new, re-confirm Page hashes and ticks. Task card added to the Team Board. No test runs tonight.",
         "next": "Sprint 1 work (see Team Board)",
         "inbox": 0,
         "last": "Oct 30, 11:09 PM CT"
@@ -1678,31 +1678,31 @@
     }
   ],
   "DECISIONS": {
-    "asOf": "Sat Oct 31, 2026, 10:03 AM CT",
+    "asOf": "Sat Oct 31, 2026, 10:24 AM CT",
     "open": [
       {
         "title": "Four borderline flags (onemove, winterarc, hometown, strong30s) match no Avoid row: keep as Warning or mark Danger?",
         "date": "2026-10-30",
         "url": "https://app.notion.com/p/40a20ecf0b0f8117a47ac63f1fcf7e72",
-        "why": "Default: keep as Warning; Danger would need a new Avoid row for medical/body…"
+        "why": "Default: keep as Warning; Danger would need a new Avoid row for medical/body cl…"
       },
       {
         "title": "Long policy flags: show in full always, or first sentence plus a More link?",
         "date": "2026-10-30",
         "url": "https://app.notion.com/p/40a20ecf0b0f81188589c4ccd1306c92",
-        "why": "Default: full text always (PO recommendation; matches story S12, flags visible…"
+        "why": "Default: full text always (PO recommendation; matches story S12, flags visible …"
       },
       {
         "title": "Sisters' images on the new Page: leave out for now, or arrange an upload route?",
         "date": "2026-10-30",
         "url": "https://app.notion.com/p/40a20ecf0b0f81689f6ff922bfbf299d",
-        "why": "No image upload route exists. Default: leave images out for now; story S15 is…"
+        "why": "No image upload route exists. Default: leave images out for now; story S15 is o…"
       },
       {
         "title": "Sprint 1 demo: accept or reject Sprint 1?",
         "date": "2026-10-30",
         "url": "https://app.notion.com/p/40a20ecf0b0f81d3be3ddeb9ced23e78",
-        "why": "Demo sent to Michael in chat Oct 30 8:20 PM CT; S1-S5 (17 points) accepted by…"
+        "why": "Demo sent to Michael in chat Oct 30 8:20 PM CT; S1-S5 (17 points) accepted by P…"
       }
     ],
     "recent": [
@@ -1733,7 +1733,7 @@
       }
     ]
   },
-  "lastUpdated": "Sat Oct 31, 2026, 10:03 AM CT",
+  "lastUpdated": "Sat Oct 31, 2026, 10:24 AM CT",
   "links": [
     {
       "label": "Charter",
