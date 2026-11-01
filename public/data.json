@@ -11,7 +11,7 @@
     "waitingOnMichael": false
   },
   "BOARD": {
-    "asOf": "Sat Oct 31, 2026, 10:02 PM CT",
+    "asOf": "Sat Oct 31, 2026, 10:16 PM CT",
     "sprintGoal": "Sprint 1: new Page shell, design system and wireframe, every card reviewed and QA-checked",
     "waitingOnMichael": "",
     "cards": [
@@ -389,9 +389,9 @@
     ]
   },
   "OFFICE": {
-    "asOf": "Sat Oct 31, 2026, 10:02 PM CT",
-    "updated": "10:02 PM CT",
-    "asOfIso": "2026-10-31T22:02:00-05:00",
+    "asOf": "Sat Oct 31, 2026, 10:16 PM CT",
+    "updated": "10:16 PM CT",
+    "asOfIso": "2026-10-31T22:16:00-05:00",
     "links": [
       {
         "label": "Charter",
@@ -451,12 +451,12 @@
         "skin": "#E0AC69",
         "hair": "#8B4513",
         "style": "bun",
-        "status": "idle",
+        "status": "engaged",
         "received": "S2 and S5 review recorded (from Bruce)",
-        "now": "Closing-time rule added; Sprint 1 active; S2 on hold for Bruce's re-review; S5 approved by Bruce, Kourt resumes.",
+        "now": "10:05 PM CT check, Oct 31. No teammate rows logged today and nobody shows activity after 10 PM CT. Pym, Roma, Dez, Bruce and Kourt have no end-of-day row for tonight (last ones were Oct 30 night), despite the 9:45 PM reminder. Priority nudge to log end-of-day status and stop until 7 AM CT is being sent.",
         "next": "Sprint 1 work (see Team Board)",
         "inbox": 0,
-        "last": "Oct 30, 11:08 PM CT"
+        "last": "Oct 31, 10:12 PM CT"
       },
       {
         "key": "ds",
@@ -1684,7 +1684,7 @@
     }
   ],
   "DECISIONS": {
-    "asOf": "Sat Oct 31, 2026, 10:02 PM CT",
+    "asOf": "Sat Oct 31, 2026, 10:16 PM CT",
     "open": [
       {
         "title": "Four borderline flags (onemove, winterarc, hometown, strong30s) match no Avoid row: keep as Warning or mark Danger?",
@@ -1739,7 +1739,7 @@
       }
     ]
   },
-  "lastUpdated": "Sat Oct 31, 2026, 10:02 PM CT",
+  "lastUpdated": "Sat Oct 31, 2026, 10:16 PM CT",
   "links": [
     {
       "label": "Charter",
