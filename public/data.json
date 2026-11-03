@@ -11,7 +11,7 @@
     "waitingOnMichael": false
   },
   "BOARD": {
-    "asOf": "Mon Nov 2, 2026, 8:41 PM CT",
+    "asOf": "Mon Nov 2, 2026, 8:51 PM CT",
     "sprintGoal": "Sprint 1: new Page shell, design system and wireframe, every card reviewed and QA-checked",
     "waitingOnMichael": "",
     "cards": [
@@ -389,9 +389,9 @@
     ]
   },
   "OFFICE": {
-    "asOf": "Mon Nov 2, 2026, 8:41 PM CT",
-    "updated": "8:41 PM CT",
-    "asOfIso": "2026-11-02T20:41:00-06:00",
+    "asOf": "Mon Nov 2, 2026, 8:51 PM CT",
+    "updated": "8:51 PM CT",
+    "asOfIso": "2026-11-02T20:51:00-06:00",
     "links": [
       {
         "label": "Charter",
@@ -1690,7 +1690,7 @@
     }
   ],
   "DECISIONS": {
-    "asOf": "Mon Nov 2, 2026, 8:41 PM CT",
+    "asOf": "Mon Nov 2, 2026, 8:51 PM CT",
     "open": [
       {
         "title": "Four borderline flags (onemove, winterarc, hometown, strong30s) match no Avoid row: keep as Warning or mark Danger?",
@@ -1745,7 +1745,7 @@
       }
     ]
   },
-  "lastUpdated": "Mon Nov 2, 2026, 8:41 PM CT",
+  "lastUpdated": "Mon Nov 2, 2026, 8:51 PM CT",
   "links": [
     {
       "label": "Charter",
