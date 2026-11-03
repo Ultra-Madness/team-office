@@ -11,7 +11,7 @@
     "waitingOnMichael": false
   },
   "BOARD": {
-    "asOf": "Mon Nov 2, 2026, 10:07 PM CT",
+    "asOf": "Mon Nov 2, 2026, 10:22 PM CT",
     "sprintGoal": "Sprint 1: new Page shell, design system and wireframe, every card reviewed and QA-checked",
     "waitingOnMichael": "",
     "cards": [
@@ -389,9 +389,9 @@
     ]
   },
   "OFFICE": {
-    "asOf": "Mon Nov 2, 2026, 10:07 PM CT",
-    "updated": "10:07 PM CT",
-    "asOfIso": "2026-11-02T22:07:00-06:00",
+    "asOf": "Mon Nov 2, 2026, 10:22 PM CT",
+    "updated": "10:22 PM CT",
+    "asOfIso": "2026-11-02T22:22:00-06:00",
     "links": [
       {
         "label": "Charter",
@@ -453,10 +453,10 @@
         "style": "bun",
         "status": "idle",
         "received": "S2 and S5 review recorded (from Bruce)",
-        "now": "10:05 PM CT closing check (Sun Nov 1): no teammate activity in the log tonight. Last rows from Pym, Roma, Dez, Bruce and Kourt are from Oct 30 around 11 PM CT, so nobody is active after 10 PM and nobody worked today, which is why no end-of-day rows were expected. No nudges sent. Office quiet until 7 AM CT.",
+        "now": "10:05 PM CT closing check (Mon Nov 2): no teammate activity in the log tonight. Last rows from Pym, Roma, Dez, Bruce and Kourt are from Oct 30 around 11 PM CT, so nobody is active after 10 PM and nobody worked today, which is why no end-of-day rows were expected. No nudges sent. Office quiet until 7 AM CT.",
         "next": "Sprint 1 work (see Team Board)",
         "inbox": 0,
-        "last": "Nov 1, 10:05 PM CT"
+        "last": "Nov 2, 10:05 PM CT"
       },
       {
         "key": "ds",
@@ -1696,7 +1696,7 @@
     }
   ],
   "DECISIONS": {
-    "asOf": "Mon Nov 2, 2026, 10:07 PM CT",
+    "asOf": "Mon Nov 2, 2026, 10:22 PM CT",
     "open": [
       {
         "title": "Four borderline flags (onemove, winterarc, hometown, strong30s) match no Avoid row: keep as Warning or mark Danger?",
@@ -1751,7 +1751,7 @@
       }
     ]
   },
-  "lastUpdated": "Mon Nov 2, 2026, 10:07 PM CT",
+  "lastUpdated": "Mon Nov 2, 2026, 10:22 PM CT",
   "links": [
     {
       "label": "Charter",
