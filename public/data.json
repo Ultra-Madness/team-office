@@ -11,7 +11,7 @@
     "waitingOnMichael": false
   },
   "BOARD": {
-    "asOf": "Mon Nov 2, 2026, 8:51 PM CT",
+    "asOf": "Mon Nov 2, 2026, 9:06 PM CT",
     "sprintGoal": "Sprint 1: new Page shell, design system and wireframe, every card reviewed and QA-checked",
     "waitingOnMichael": "",
     "cards": [
@@ -139,7 +139,7 @@
         "short": "Decisions for Michael",
         "status": "Done",
         "role": "po",
-        "sprint": "Sprint 0"
+        "sprint": "Sprint 1"
       },
       {
         "title": "PO: score the P1 Program Backlog items with WSJF",
@@ -160,7 +160,7 @@
         "short": "Write S1-S16",
         "status": "Done",
         "role": "po",
-        "sprint": "Sprint 0"
+        "sprint": "Sprint 1"
       },
       {
         "title": "PO: Sprint 1 demo script",
@@ -181,77 +181,77 @@
         "short": "10 items to backlog",
         "status": "Done",
         "role": "po",
-        "sprint": "Sprint 0"
+        "sprint": "Sprint 1"
       },
       {
         "title": "PO: send scope, success measures and backlog themes to Pym for the charter",
         "short": "Scope to Pym",
         "status": "Done",
         "role": "po",
-        "sprint": "Sprint 0"
+        "sprint": "Sprint 1"
       },
       {
         "title": "PO: read the live Muscle Class Trend Board page and note what is on it",
         "short": "Read Trend Board",
         "status": "Done",
         "role": "po",
-        "sprint": "Sprint 0"
+        "sprint": "Sprint 1"
       },
       {
         "title": "Sprint 0: Roles page (Scrum Master, Designer, tidy-up), Cadence System Demo wording, Team Board rule, demo schedule risk (Anj)",
         "short": "Roles + board rule",
         "status": "Done",
         "role": "sm",
-        "sprint": "Sprint 0"
+        "sprint": "Sprint 1"
       },
       {
         "title": "Working Agreement, Cadence and Decision Log updated with demo rule (Pym)",
         "short": "Working agreement",
         "status": "Done",
         "role": "pm",
-        "sprint": "Sprint 0"
+        "sprint": "Sprint 1"
       },
       {
         "title": "Standing demo rule and Demo Gate built into Sprints and PIs (Anj)",
         "short": "Demo Gate",
         "status": "Done",
         "role": "sm",
-        "sprint": "Sprint 0"
+        "sprint": "Sprint 1"
       },
       {
         "title": "Kick off Project 1 from Michael's brief (Pym)",
         "short": "Kick off P1",
         "status": "Done",
         "role": "pm",
-        "sprint": "Sprint 0"
+        "sprint": "Sprint 1"
       },
       {
         "title": "IMPEDIMENT RESOLVED: no GitHub login on the box (Pym) - Page only, no repo for v1 (charter decision 4 accepted Oct 30)",
         "short": "GitHub login (resolved)",
         "status": "Done",
         "role": "pm",
-        "sprint": "Sprint 0"
+        "sprint": "Sprint 1"
       },
       {
         "title": "Project Charter P1: approved by Michael Oct 30, 2026 (Pym)",
         "short": "Charter approved",
         "status": "Done",
         "role": "pm",
-        "sprint": "Sprint 0"
+        "sprint": "Sprint 1"
       },
       {
         "title": "Scrum Master input to team page review: old Page reviewed read-only, PI 1 / Sprint 1-4 / IP proposed rows, first 8 RAID rows (Anj)",
         "short": "SM review + RAID",
         "status": "Done",
         "role": "sm",
-        "sprint": "Sprint 0"
+        "sprint": "Sprint 1"
       },
       {
         "title": "Team roster and names set (Michael: Pym, Roma, Anj, Bruce, Dez, Kourt)",
         "short": "Roster + names",
         "status": "Done",
         "role": "pm",
-        "sprint": "Sprint 0"
+        "sprint": "Sprint 1"
       },
       {
         "title": "S1 Spike: confirm which Page components and features are available for the redesign",
@@ -377,21 +377,21 @@
         "short": "Tech review spike",
         "status": "In review",
         "role": "dev",
-        "sprint": "Sprint 0"
+        "sprint": "Sprint 1"
       },
       {
         "title": "Designer: Sprint 0 discovery and design direction (charter findings sent; Design Direction v0.1 drafted)",
         "short": "Design direction v0.1",
         "status": "In progress",
         "role": "ds",
-        "sprint": "Sprint 0"
+        "sprint": "Sprint 1"
       }
     ]
   },
   "OFFICE": {
-    "asOf": "Mon Nov 2, 2026, 8:51 PM CT",
-    "updated": "8:51 PM CT",
-    "asOfIso": "2026-11-02T20:51:00-06:00",
+    "asOf": "Mon Nov 2, 2026, 9:06 PM CT",
+    "updated": "9:06 PM CT",
+    "asOfIso": "2026-11-02T21:06:00-06:00",
     "links": [
       {
         "label": "Charter",
@@ -426,7 +426,7 @@
         "now": "End of day Oct 30. Sprint 1 demo with Michael is awaiting his four answers (Decision Log, Proposed). Resume 7:00 AM CT.",
         "next": "Sprint 1 work (see Team Board)",
         "inbox": 4,
-        "last": "Oct 30, 11:07 PM CT"
+        "last": "Oct 30, 10:07 PM CT"
       },
       {
         "key": "po",
@@ -441,7 +441,7 @@
         "now": "Roma end of day, idle until 7:00 AM CT. State: S1 to S5 and STORY-54 accepted on build 4dd3dec0 (17 points); demo script v2 with Pym (three decisions for Michael, logged as Proposed with defaults); waiting on Michael's accept or reject. First items for tomorrow: the four new board cards.",
         "next": "Sprint 1 work (see Team Board)",
         "inbox": 0,
-        "last": "Oct 30, 11:08 PM CT"
+        "last": "Oct 30, 10:08 PM CT"
       },
       {
         "key": "sm",
@@ -471,7 +471,7 @@
         "now": "End of day: past 10:00 PM CT closing time, stopping until 7:00 AM CT. Done today: S2 to S5 front-end review on builds 8b37f16a and 4dd3dec0 (Approved for QA, source plus local harness), STORY-52 In review, Design Specs v0.2 for S6 to S15, criteria for S9, S13, S14. Open: 44 px, contrast, phone sizes on the real Page (Kourt, demo); Roma's reply on specs; re-review any new build before Kourt; Sprint 1 demo material.",
         "next": "Sprint 1 work (see Team Board)",
         "inbox": 0,
-        "last": "Oct 30, 11:08 PM CT"
+        "last": "Oct 30, 10:08 PM CT"
       },
       {
         "key": "dev",
@@ -486,7 +486,7 @@
         "now": "Stopped for the night; no background work. S2-S5 In review on build 4dd3dec0 (Bruce approved, Kourt re-check passed), waiting for Roma's re-acceptance. Old canvas untouched. First items for tomorrow from 7:00 AM CT are on the Team Board card 'Dez: first items for Oct 31' and on each card: re-acceptance, old-hash check, next Ready stories, TEST ONLY Page removal before the demo.",
         "next": "Sprint 1 work (see Team Board)",
         "inbox": 0,
-        "last": "Oct 30, 11:12 PM CT"
+        "last": "Oct 30, 10:12 PM CT"
       },
       {
         "key": "qa",
@@ -501,7 +501,7 @@
         "now": "End of day state: S1 to S5 are Done, ticked and accepted by Roma on build 4dd3dec0 (my QA was in the local harness, not the real Page). No bugs open. First items at 7:00 AM CT: (1) read the board and log for stories in QA or a new build hash, (2) check Bruce's review is recorded, then test against Roma's criteria, (3) if nothing new, re-confirm Page hashes and ticks. Task card added to the Team Board. No test runs tonight.",
         "next": "Sprint 1 work (see Team Board)",
         "inbox": 0,
-        "last": "Oct 30, 11:09 PM CT"
+        "last": "Oct 30, 10:09 PM CT"
       }
     ]
   },
@@ -1690,7 +1690,7 @@
     }
   ],
   "DECISIONS": {
-    "asOf": "Mon Nov 2, 2026, 8:51 PM CT",
+    "asOf": "Mon Nov 2, 2026, 9:06 PM CT",
     "open": [
       {
         "title": "Four borderline flags (onemove, winterarc, hometown, strong30s) match no Avoid row: keep as Warning or mark Danger?",
@@ -1745,7 +1745,7 @@
       }
     ]
   },
-  "lastUpdated": "Mon Nov 2, 2026, 8:51 PM CT",
+  "lastUpdated": "Mon Nov 2, 2026, 9:06 PM CT",
   "links": [
     {
       "label": "Charter",
