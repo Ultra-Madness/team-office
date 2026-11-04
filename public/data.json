@@ -11,7 +11,7 @@
     "waitingOnMichael": false
   },
   "BOARD": {
-    "asOf": "Wed Nov 4, 2026, 9:05 AM CT",
+    "asOf": "Wed Nov 4, 2026, 9:23 AM CT",
     "sprintGoal": "Sprint 1: new Page shell, design system and wireframe, every card reviewed and QA-checked",
     "waitingOnMichael": "",
     "cards": [
@@ -370,7 +370,7 @@
         "short": "QA baseline + DoD",
         "status": "In review",
         "role": "qa",
-        "sprint": "Sprint 0"
+        "sprint": "Sprint 1"
       },
       {
         "title": "P1 Spike: technical review of current Trend Board (Dez)",
@@ -389,9 +389,9 @@
     ]
   },
   "OFFICE": {
-    "asOf": "Wed Nov 4, 2026, 9:05 AM CT",
-    "updated": "9:05 AM CT",
-    "asOfIso": "2026-11-04T09:05:35-06:00",
+    "asOf": "Wed Nov 4, 2026, 9:23 AM CT",
+    "updated": "9:23 AM CT",
+    "asOfIso": "2026-11-04T09:23:15-06:00",
     "links": [
       {
         "label": "Charter",
@@ -1702,7 +1702,7 @@
     }
   ],
   "DECISIONS": {
-    "asOf": "Wed Nov 4, 2026, 9:05 AM CT",
+    "asOf": "Wed Nov 4, 2026, 9:23 AM CT",
     "open": [
       {
         "title": "Four borderline flags (onemove, winterarc, hometown, strong30s) match no Avoid row: keep as Warning or mark Danger?",
@@ -1757,7 +1757,7 @@
       }
     ]
   },
-  "lastUpdated": "Wed Nov 4, 2026, 9:05 AM CT",
+  "lastUpdated": "Wed Nov 4, 2026, 9:23 AM CT",
   "links": [
     {
       "label": "Charter",
