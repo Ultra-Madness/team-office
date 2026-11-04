@@ -11,7 +11,7 @@
     "waitingOnMichael": false
   },
   "BOARD": {
-    "asOf": "Wed Nov 4, 2026, 8:19 AM CT",
+    "asOf": "Wed Nov 4, 2026, 8:40 AM CT",
     "sprintGoal": "Sprint 1: new Page shell, design system and wireframe, every card reviewed and QA-checked",
     "waitingOnMichael": "",
     "cards": [
@@ -367,7 +367,7 @@
       },
       {
         "title": "QA: baseline of current Trend Board, DoD and test approach (P1)",
-        "short": "Trend Board baseline",
+        "short": "QA baseline + DoD",
         "status": "In review",
         "role": "qa",
         "sprint": "Sprint 0"
@@ -389,9 +389,9 @@
     ]
   },
   "OFFICE": {
-    "asOf": "Wed Nov 4, 2026, 8:19 AM CT",
-    "updated": "8:19 AM CT",
-    "asOfIso": "2026-11-04T08:19:25-06:00",
+    "asOf": "Wed Nov 4, 2026, 8:40 AM CT",
+    "updated": "8:40 AM CT",
+    "asOfIso": "2026-11-04T08:40:32-06:00",
     "links": [
       {
         "label": "Charter",
@@ -426,7 +426,7 @@
         "now": "End of day Oct 30. Sprint 1 demo with Michael is awaiting his four answers (Decision Log, Proposed). Resume 7:00 AM CT.",
         "next": "Sprint 1 work (see Team Board)",
         "inbox": 4,
-        "last": "Oct 30, 10:07 PM CT"
+        "last": "Oct 30, 11:07 PM CT"
       },
       {
         "key": "po",
@@ -441,7 +441,7 @@
         "now": "Roma end of day, idle until 7:00 AM CT. State: S1 to S5 and STORY-54 accepted on build 4dd3dec0 (17 points); demo script v2 with Pym (three decisions for Michael, logged as Proposed with defaults); waiting on Michael's accept or reject. First items for tomorrow: the four new board cards.",
         "next": "Sprint 1 work (see Team Board)",
         "inbox": 0,
-        "last": "Oct 30, 10:08 PM CT"
+        "last": "Oct 30, 11:08 PM CT"
       },
       {
         "key": "sm",
@@ -471,7 +471,7 @@
         "now": "End of day: past 10:00 PM CT closing time, stopping until 7:00 AM CT. Done today: S2 to S5 front-end review on builds 8b37f16a and 4dd3dec0 (Approved for QA, source plus local harness), STORY-52 In review, Design Specs v0.2 for S6 to S15, criteria for S9, S13, S14. Open: 44 px, contrast, phone sizes on the real Page (Kourt, demo); Roma's reply on specs; re-review any new build before Kourt; Sprint 1 demo material.",
         "next": "Sprint 1 work (see Team Board)",
         "inbox": 0,
-        "last": "Oct 30, 10:08 PM CT"
+        "last": "Oct 30, 11:08 PM CT"
       },
       {
         "key": "dev",
@@ -486,7 +486,7 @@
         "now": "Stopped for the night; no background work. S2-S5 In review on build 4dd3dec0 (Bruce approved, Kourt re-check passed), waiting for Roma's re-acceptance. Old canvas untouched. First items for tomorrow from 7:00 AM CT are on the Team Board card 'Dez: first items for Oct 31' and on each card: re-acceptance, old-hash check, next Ready stories, TEST ONLY Page removal before the demo.",
         "next": "Sprint 1 work (see Team Board)",
         "inbox": 0,
-        "last": "Oct 30, 10:12 PM CT"
+        "last": "Oct 30, 11:12 PM CT"
       },
       {
         "key": "qa",
@@ -501,7 +501,7 @@
         "now": "End of day state: S1 to S5 are Done, ticked and accepted by Roma on build 4dd3dec0 (my QA was in the local harness, not the real Page). No bugs open. First items at 7:00 AM CT: (1) read the board and log for stories in QA or a new build hash, (2) check Bruce's review is recorded, then test against Roma's criteria, (3) if nothing new, re-confirm Page hashes and ticks. Task card added to the Team Board. No test runs tonight.",
         "next": "Sprint 1 work (see Team Board)",
         "inbox": 0,
-        "last": "Oct 30, 10:09 PM CT"
+        "last": "Oct 30, 11:09 PM CT"
       }
     ]
   },
@@ -1702,7 +1702,7 @@
     }
   ],
   "DECISIONS": {
-    "asOf": "Wed Nov 4, 2026, 8:19 AM CT",
+    "asOf": "Wed Nov 4, 2026, 8:40 AM CT",
     "open": [
       {
         "title": "Four borderline flags (onemove, winterarc, hometown, strong30s) match no Avoid row: keep as Warning or mark Danger?",
@@ -1757,7 +1757,7 @@
       }
     ]
   },
-  "lastUpdated": "Wed Nov 4, 2026, 8:19 AM CT",
+  "lastUpdated": "Wed Nov 4, 2026, 8:40 AM CT",
   "links": [
     {
       "label": "Charter",
