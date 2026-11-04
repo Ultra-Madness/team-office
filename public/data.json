@@ -11,7 +11,7 @@
     "waitingOnMichael": false
   },
   "BOARD": {
-    "asOf": "Tue Nov 3, 2026, 7:32 PM CT",
+    "asOf": "Tue Nov 3, 2026, 7:51 PM CT",
     "sprintGoal": "Sprint 1: new Page shell, design system and wireframe, every card reviewed and QA-checked",
     "waitingOnMichael": "",
     "cards": [
@@ -389,9 +389,9 @@
     ]
   },
   "OFFICE": {
-    "asOf": "Tue Nov 3, 2026, 7:32 PM CT",
-    "updated": "7:32 PM CT",
-    "asOfIso": "2026-11-03T19:32:09-06:00",
+    "asOf": "Tue Nov 3, 2026, 7:51 PM CT",
+    "updated": "7:51 PM CT",
+    "asOfIso": "2026-11-03T19:51:59-06:00",
     "links": [
       {
         "label": "Charter",
@@ -1696,7 +1696,7 @@
     }
   ],
   "DECISIONS": {
-    "asOf": "Tue Nov 3, 2026, 7:32 PM CT",
+    "asOf": "Tue Nov 3, 2026, 7:51 PM CT",
     "open": [
       {
         "title": "Four borderline flags (onemove, winterarc, hometown, strong30s) match no Avoid row: keep as Warning or mark Danger?",
@@ -1708,7 +1708,7 @@
         "title": "Long policy flags: show in full always, or first sentence plus a More link?",
         "date": "2026-10-30",
         "url": "https://app.notion.com/p/40a20ecf0b0f81188589c4ccd1306c92",
-        "why": "Default: full text always (PO recommendation; matches story S12, flags visible…"
+        "why": "Default: full text always (PO recommendation; matches story S12, flags visible …"
       },
       {
         "title": "Sisters' images on the new Page: leave out for now, or arrange an upload route?",
@@ -1751,7 +1751,7 @@
       }
     ]
   },
-  "lastUpdated": "Tue Nov 3, 2026, 7:32 PM CT",
+  "lastUpdated": "Tue Nov 3, 2026, 7:51 PM CT",
   "links": [
     {
       "label": "Charter",
