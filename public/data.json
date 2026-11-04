@@ -11,7 +11,7 @@
     "waitingOnMichael": false
   },
   "BOARD": {
-    "asOf": "Wed Nov 4, 2026, 7:07 AM CT",
+    "asOf": "Wed Nov 4, 2026, 7:26 AM CT",
     "sprintGoal": "Sprint 1: new Page shell, design system and wireframe, every card reviewed and QA-checked",
     "waitingOnMichael": "",
     "cards": [
@@ -389,9 +389,9 @@
     ]
   },
   "OFFICE": {
-    "asOf": "Wed Nov 4, 2026, 7:07 AM CT",
-    "updated": "7:07 AM CT",
-    "asOfIso": "2026-11-04T07:07:44-06:00",
+    "asOf": "Wed Nov 4, 2026, 7:26 AM CT",
+    "updated": "7:26 AM CT",
+    "asOfIso": "2026-11-04T07:26:00-06:00",
     "links": [
       {
         "label": "Charter",
@@ -1702,31 +1702,31 @@
     }
   ],
   "DECISIONS": {
-    "asOf": "Wed Nov 4, 2026, 7:07 AM CT",
+    "asOf": "Wed Nov 4, 2026, 7:26 AM CT",
     "open": [
       {
         "title": "Four borderline flags (onemove, winterarc, hometown, strong30s) match no Avoid row: keep as Warning or mark Danger?",
         "date": "2026-10-30",
         "url": "https://app.notion.com/p/40a20ecf0b0f8117a47ac63f1fcf7e72",
-        "why": "Default: keep as Warning; Danger would need a new Avoid row for medical/body cla"
+        "why": "Default: keep as Warning; Danger would need a new Avoid row for medical/body cl…"
       },
       {
         "title": "Long policy flags: show in full always, or first sentence plus a More link?",
         "date": "2026-10-30",
         "url": "https://app.notion.com/p/40a20ecf0b0f81188589c4ccd1306c92",
-        "why": "Default: full text always (PO recommendation; matches story S12, flags visible b"
+        "why": "Default: full text always (PO recommendation; matches story S12, flags visible …"
       },
       {
         "title": "Sisters' images on the new Page: leave out for now, or arrange an upload route?",
         "date": "2026-10-30",
         "url": "https://app.notion.com/p/40a20ecf0b0f81689f6ff922bfbf299d",
-        "why": "No image upload route exists. Default: leave images out for now; story S15 is ou"
+        "why": "No image upload route exists. Default: leave images out for now; story S15 is o…"
       },
       {
         "title": "Sprint 1 demo: accept or reject Sprint 1?",
         "date": "2026-10-30",
         "url": "https://app.notion.com/p/40a20ecf0b0f81d3be3ddeb9ced23e78",
-        "why": "Demo sent to Michael in chat Oct 30 8:20 PM CT; S1-S5 (17 points) accepted by PO"
+        "why": "Demo sent to Michael in chat Oct 30 8:20 PM CT; S1-S5 (17 points) accepted by P…"
       }
     ],
     "recent": [
@@ -1757,7 +1757,7 @@
       }
     ]
   },
-  "lastUpdated": "Wed Nov 4, 2026, 7:07 AM CT",
+  "lastUpdated": "Wed Nov 4, 2026, 7:26 AM CT",
   "links": [
     {
       "label": "Charter",
