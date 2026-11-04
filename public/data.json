@@ -11,7 +11,7 @@
     "waitingOnMichael": false
   },
   "BOARD": {
-    "asOf": "Wed Nov 4, 2026, 5:34 PM CT",
+    "asOf": "Wed Nov 4, 2026, 5:53 PM CT",
     "sprintGoal": "Sprint 1: new Page shell, design system and wireframe, every card reviewed and QA-checked",
     "waitingOnMichael": "",
     "cards": [
@@ -20,7 +20,7 @@
         "short": "Record demo verdict",
         "status": "Ready",
         "role": "po",
-        "sprint": "[\"https://app.notion.com/p/40820ecf0b0f81089a3bc4407c31fed6\"]"
+        "sprint": "Sprint 1"
       },
       {
         "title": "PO: Sprint 2 planning with Anj, Dez, Bruce, Kourt: pick from S6 to S14 using WSJF and capacity, with S9 and S13 design criteria in place",
@@ -34,14 +34,14 @@
         "short": "Apply Michael's answers",
         "status": "Ready",
         "role": "po",
-        "sprint": "[\"https://app.notion.com/p/40820ecf0b0f81089a3bc4407c31fed6\"]"
+        "sprint": "Sprint 1"
       },
       {
         "title": "PO: check S2 to S5 Definition of done and notes are intact on build 4dd3dec0, and that no card shows a status that disagrees with its body",
         "short": "Check S2-S5 DoD",
         "status": "Ready",
         "role": "po",
-        "sprint": "[\"https://app.notion.com/p/40820ecf0b0f81089a3bc4407c31fed6\"]"
+        "sprint": "Sprint 1"
       },
       {
         "title": "Dez: first items for Oct 31 (from 7:00 AM CT)",
@@ -55,49 +55,49 @@
         "short": "QA morning start",
         "status": "Ready",
         "role": "qa",
-        "sprint": "[\"https://app.notion.com/p/40820ecf0b0f81089a3bc4407c31fed6\"]"
+        "sprint": "Sprint 1"
       },
       {
         "title": "7 AM: check Michael's answers to the four Sprint 1 demo decisions; set Decision Log rows to Decided, mark old images row Superseded if images left out; clean 'approval pending' wording in charter; find route to remove Dez's TEST ONLY Page (Pym)",
         "short": "Pym: 7 AM checks",
         "status": "Ready",
         "role": "pm",
-        "sprint": "[\"https://app.notion.com/p/40820ecf0b0f81089a3bc4407c31fed6\"]"
+        "sprint": "Sprint 1"
       },
       {
         "title": "BUG (Medium) S5: snapshot date shown once at the top only, no bottom date as the card claims",
         "short": "S5 date bug",
         "status": "Done",
         "role": "dev",
-        "sprint": "[\"https://app.notion.com/p/40820ecf0b0f81089a3bc4407c31fed6\"]"
+        "sprint": "Sprint 1"
       },
       {
         "title": "Design: Sprint 1 wireframe and mini design system spec (Bruce)",
         "short": "Wireframe + design spec",
         "status": "In progress",
         "role": "ds",
-        "sprint": "[\"https://app.notion.com/p/40820ecf0b0f81089a3bc4407c31fed6\"]"
+        "sprint": "Sprint 1"
       },
       {
         "title": "Design: front-end review of S2 to S5 (Bruce)",
         "short": "Design review S2-S5",
         "status": "In review",
         "role": "ds",
-        "sprint": "[\"https://app.notion.com/p/40820ecf0b0f81089a3bc4407c31fed6\"]"
+        "sprint": "Sprint 1"
       },
       {
         "title": "Design: palette and design system sign-off package for Michael (Bruce)",
         "short": "Design sign-off pack",
         "status": "Ready",
         "role": "ds",
-        "sprint": "[\"https://app.notion.com/p/40820ecf0b0f81089a3bc4407c31fed6\"]"
+        "sprint": "Sprint 1"
       },
       {
         "title": "Design: design criteria for S6-S15 and v2 brief (Bruce)",
         "short": "Design criteria S6-S15",
         "status": "Done",
         "role": "ds",
-        "sprint": "[\"https://app.notion.com/p/40820ecf0b0f81089a3bc4407c31fed6\"]"
+        "sprint": "Sprint 1"
       },
       {
         "title": "S17 As Michael, I want optional tag fields (lead, effort, group) on each card so I can scan trends faster",
@@ -132,14 +132,14 @@
         "short": "PI 1 + Sprint 1 plan",
         "status": "In progress",
         "role": "sm",
-        "sprint": "[\"https://app.notion.com/p/40820ecf0b0f81089a3bc4407c31fed6\"]"
+        "sprint": "Sprint 1"
       },
       {
         "title": "PO: decisions needed from Michael on P1 (daily refresh, saved marks, images)",
         "short": "Decisions for Michael",
         "status": "Done",
         "role": "po",
-        "sprint": "[\"https://app.notion.com/p/40820ecf0b0f81979e7ccc2f528d916e\"]"
+        "sprint": "Sprint 0"
       },
       {
         "title": "PO: score the P1 Program Backlog items with WSJF",
@@ -153,112 +153,112 @@
         "short": "v2 design brief",
         "status": "In progress",
         "role": "po",
-        "sprint": "[\"https://app.notion.com/p/40820ecf0b0f81089a3bc4407c31fed6\"]"
+        "sprint": "Sprint 1"
       },
       {
         "title": "PO: write stories S1-S16 with acceptance criteria on the Team Board",
         "short": "Write S1-S16",
         "status": "Done",
         "role": "po",
-        "sprint": "[\"https://app.notion.com/p/40820ecf0b0f81979e7ccc2f528d916e\"]"
+        "sprint": "Sprint 0"
       },
       {
         "title": "PO: Sprint 1 demo script",
         "short": "Sprint 1 demo script",
         "status": "Backlog",
         "role": "po",
-        "sprint": "[\"https://app.notion.com/p/40820ecf0b0f81089a3bc4407c31fed6\"]"
+        "sprint": "Sprint 1"
       },
       {
         "title": "PO: refine S1-S16 with Bruce, Dez and Kourt (design, size, test notes)",
         "short": "Refine S1-S16",
         "status": "In progress",
         "role": "po",
-        "sprint": "[\"https://app.notion.com/p/40820ecf0b0f81089a3bc4407c31fed6\"]"
+        "sprint": "Sprint 1"
       },
       {
         "title": "PO: add the 10 Project 1 items to the Program Backlog",
         "short": "10 items to backlog",
         "status": "Done",
         "role": "po",
-        "sprint": "[\"https://app.notion.com/p/40820ecf0b0f81979e7ccc2f528d916e\"]"
+        "sprint": "Sprint 0"
       },
       {
         "title": "PO: send scope, success measures and backlog themes to Pym for the charter",
         "short": "Scope to Pym",
         "status": "Done",
         "role": "po",
-        "sprint": "[\"https://app.notion.com/p/40820ecf0b0f81979e7ccc2f528d916e\"]"
+        "sprint": "Sprint 0"
       },
       {
         "title": "PO: read the live Muscle Class Trend Board page and note what is on it",
         "short": "Read Trend Board",
         "status": "Done",
         "role": "po",
-        "sprint": "[\"https://app.notion.com/p/40820ecf0b0f81979e7ccc2f528d916e\"]"
+        "sprint": "Sprint 0"
       },
       {
         "title": "Sprint 0: Roles page (Scrum Master, Designer, tidy-up), Cadence System Demo wording, Team Board rule, demo schedule risk (Anj)",
         "short": "Roles + board rule",
         "status": "Done",
         "role": "sm",
-        "sprint": "[\"https://app.notion.com/p/40820ecf0b0f81979e7ccc2f528d916e\"]"
+        "sprint": "Sprint 0"
       },
       {
         "title": "Working Agreement, Cadence and Decision Log updated with demo rule (Pym)",
         "short": "Working agreement",
         "status": "Done",
         "role": "pm",
-        "sprint": "[\"https://app.notion.com/p/40820ecf0b0f81979e7ccc2f528d916e\"]"
+        "sprint": "Sprint 0"
       },
       {
         "title": "Standing demo rule and Demo Gate built into Sprints and PIs (Anj)",
         "short": "Demo Gate",
         "status": "Done",
         "role": "sm",
-        "sprint": "[\"https://app.notion.com/p/40820ecf0b0f81979e7ccc2f528d916e\"]"
+        "sprint": "Sprint 0"
       },
       {
         "title": "Kick off Project 1 from Michael's brief (Pym)",
         "short": "Kick off P1",
         "status": "Done",
         "role": "pm",
-        "sprint": "[\"https://app.notion.com/p/40820ecf0b0f81979e7ccc2f528d916e\"]"
+        "sprint": "Sprint 0"
       },
       {
         "title": "IMPEDIMENT RESOLVED: no GitHub login on the box (Pym) - Page only, no repo for v1 (charter decision 4 accepted Oct 30)",
         "short": "GitHub login (resolved)",
         "status": "Done",
         "role": "pm",
-        "sprint": "[\"https://app.notion.com/p/40820ecf0b0f81979e7ccc2f528d916e\"]"
+        "sprint": "Sprint 0"
       },
       {
         "title": "Project Charter P1: approved by Michael Oct 30, 2026 (Pym)",
         "short": "Charter approved",
         "status": "Done",
         "role": "pm",
-        "sprint": "[\"https://app.notion.com/p/40820ecf0b0f81979e7ccc2f528d916e\"]"
+        "sprint": "Sprint 0"
       },
       {
         "title": "Scrum Master input to team page review: old Page reviewed read-only, PI 1 / Sprint 1-4 / IP proposed rows, first 8 RAID rows (Anj)",
         "short": "SM review + RAID",
         "status": "Done",
         "role": "sm",
-        "sprint": "[\"https://app.notion.com/p/40820ecf0b0f81979e7ccc2f528d916e\"]"
+        "sprint": "Sprint 0"
       },
       {
         "title": "Team roster and names set (Michael: Pym, Roma, Anj, Bruce, Dez, Kourt)",
         "short": "Roster + names",
         "status": "Done",
         "role": "pm",
-        "sprint": "[\"https://app.notion.com/p/40820ecf0b0f81979e7ccc2f528d916e\"]"
+        "sprint": "Sprint 0"
       },
       {
         "title": "S1 Spike: confirm which Page components and features are available for the redesign",
         "short": "S1 Components spike",
         "status": "Done",
         "role": "dev",
-        "sprint": "[\"https://app.notion.com/p/40820ecf0b0f81089a3bc4407c31fed6\"]"
+        "sprint": "Sprint 1"
       },
       {
         "title": "S7 As Michael, I want each trend card to make Film this and the policy flag easy to spot",
@@ -272,7 +272,7 @@
         "short": "S2 New separate Page",
         "status": "Done",
         "role": "dev",
-        "sprint": "[\"https://app.notion.com/p/40820ecf0b0f81089a3bc4407c31fed6\"]"
+        "sprint": "Sprint 1"
       },
       {
         "title": "S12 As Michael, I want policy flags and the Avoid list always visible",
@@ -307,14 +307,14 @@
         "short": "S4 Carry over content",
         "status": "Done",
         "role": "dev",
-        "sprint": "[\"https://app.notion.com/p/40820ecf0b0f81089a3bc4407c31fed6\"]"
+        "sprint": "Sprint 1"
       },
       {
         "title": "S5 Task: keep content as data from a one-time dated snapshot, re-synced on request (no daily refresh in v1)",
         "short": "S5 Data snapshot",
         "status": "Done",
         "role": "dev",
-        "sprint": "[\"https://app.notion.com/p/40820ecf0b0f81089a3bc4407c31fed6\"]"
+        "sprint": "Sprint 1"
       },
       {
         "title": "S16 Task: prepare the sprint demo script for each sprint",
@@ -342,7 +342,7 @@
         "short": "S3 All trends",
         "status": "Done",
         "role": "dev",
-        "sprint": "[\"https://app.notion.com/p/40820ecf0b0f81089a3bc4407c31fed6\"]"
+        "sprint": "Sprint 1"
       },
       {
         "title": "S11 As Michael, I want new, updated and last-call trends flagged at a glance",
@@ -370,28 +370,28 @@
         "short": "QA baseline + DoD",
         "status": "In review",
         "role": "qa",
-        "sprint": "[\"https://app.notion.com/p/40820ecf0b0f81979e7ccc2f528d916e\",\"https://app.notion.com/p/40820ecf0b0f81089a3bc4407c31fed6\"]"
+        "sprint": "Sprint 0"
       },
       {
         "title": "P1 Spike: technical review of current Trend Board (Dez)",
         "short": "Tech review spike",
         "status": "In review",
         "role": "dev",
-        "sprint": "[\"https://app.notion.com/p/40820ecf0b0f81979e7ccc2f528d916e\"]"
+        "sprint": "Sprint 0"
       },
       {
         "title": "Designer: Sprint 0 discovery and design direction (charter findings sent; Design Direction v0.1 drafted)",
         "short": "Design direction v0.1",
         "status": "In progress",
         "role": "ds",
-        "sprint": "[\"https://app.notion.com/p/40820ecf0b0f81979e7ccc2f528d916e\"]"
+        "sprint": "Sprint 0"
       }
     ]
   },
   "OFFICE": {
-    "asOf": "Wed Nov 4, 2026, 5:34 PM CT",
-    "updated": "5:34 PM CT",
-    "asOfIso": "2026-11-04T17:34:00-06:00",
+    "asOf": "Wed Nov 4, 2026, 5:53 PM CT",
+    "updated": "5:53 PM CT",
+    "asOfIso": "2026-11-04T17:53:00-06:00",
     "links": [
       {
         "label": "Charter",
@@ -1702,7 +1702,7 @@
     }
   ],
   "DECISIONS": {
-    "asOf": "Wed Nov 4, 2026, 5:34 PM CT",
+    "asOf": "Wed Nov 4, 2026, 5:53 PM CT",
     "open": [
       {
         "title": "Four borderline flags (onemove, winterarc, hometown, strong30s) match no Avoid row: keep as Warning or mark Danger?",
@@ -1757,7 +1757,7 @@
       }
     ]
   },
-  "lastUpdated": "Wed Nov 4, 2026, 5:34 PM CT",
+  "lastUpdated": "Wed Nov 4, 2026, 5:53 PM CT",
   "links": [
     {
       "label": "Charter",
