@@ -11,7 +11,7 @@
     "waitingOnMichael": false
   },
   "BOARD": {
-    "asOf": "Wed Nov 4, 2026, 1:05 PM CT",
+    "asOf": "Wed Nov 4, 2026, 1:25 PM CT",
     "sprintGoal": "Sprint 1: new Page shell, design system and wireframe, every card reviewed and QA-checked",
     "waitingOnMichael": "",
     "cards": [
@@ -283,9 +283,9 @@
     ]
   },
   "OFFICE": {
-    "asOf": "Wed Nov 4, 2026, 1:05 PM CT",
-    "updated": "1:05 PM CT",
-    "asOfIso": "2026-11-04T13:05:00-06:00",
+    "asOf": "Wed Nov 4, 2026, 1:25 PM CT",
+    "updated": "1:25 PM CT",
+    "asOfIso": "2026-11-04T13:25:00-06:00",
     "links": [
       {
         "label": "Charter",
@@ -321,7 +321,7 @@
         "next": "Sprint 1 work (see Team Board)",
         "inbox": 4,
         "last": "Oct 30, 11:07 PM CT",
-        "last active": "2026-10-30T22:07:00-06:00"
+        "last active": "2026-10-30T23:07:00-05:00"
       },
       {
         "key": "po",
@@ -337,7 +337,7 @@
         "next": "Sprint 1 work (see Team Board)",
         "inbox": 0,
         "last": "Oct 30, 11:08 PM CT",
-        "last active": "2026-10-30T22:08:00-06:00"
+        "last active": "2026-10-30T23:08:00-05:00"
       },
       {
         "key": "sm",
@@ -369,7 +369,7 @@
         "next": "Sprint 1 work (see Team Board)",
         "inbox": 0,
         "last": "Oct 30, 11:08 PM CT",
-        "last active": "2026-10-30T22:08:00-06:00"
+        "last active": "2026-10-30T23:08:00-05:00"
       },
       {
         "key": "dev",
@@ -385,7 +385,7 @@
         "next": "Sprint 1 work (see Team Board)",
         "inbox": 0,
         "last": "Oct 30, 11:12 PM CT",
-        "last active": "2026-10-30T22:12:00-06:00"
+        "last active": "2026-10-30T23:12:00-05:00"
       },
       {
         "key": "qa",
@@ -401,7 +401,7 @@
         "next": "Sprint 1 work (see Team Board)",
         "inbox": 0,
         "last": "Oct 30, 11:09 PM CT",
-        "last active": "2026-10-30T22:09:00-06:00"
+        "last active": "2026-10-30T23:09:00-05:00"
       }
     ]
   },
@@ -1602,7 +1602,7 @@
     }
   ],
   "DECISIONS": {
-    "asOf": "Wed Nov 4, 2026, 1:05 PM CT",
+    "asOf": "Wed Nov 4, 2026, 1:25 PM CT",
     "open": [
       {
         "title": "Four borderline flags (onemove, winterarc, hometown, strong30s) match no Avoid row: keep as Warning or mark Danger?",
@@ -1657,7 +1657,7 @@
       }
     ]
   },
-  "lastUpdated": "Wed Nov 4, 2026, 1:05 PM CT",
+  "lastUpdated": "Wed Nov 4, 2026, 1:25 PM CT",
   "links": [
     {
       "label": "Charter",
